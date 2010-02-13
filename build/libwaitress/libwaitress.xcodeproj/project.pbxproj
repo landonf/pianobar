@@ -1,0 +1,696 @@
+// !$*UTF8*$!
+{
+       archiveVersion = 1;
+       classes = {
+       };
+       objectVersion = 45;
+       objects = {
+
+/* Begin PBXAggregateTarget section */
+              23A27A5023A27A5023A27A50 /* ALL_BUILD */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = 23A349C023A349C023A349C0 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+                     buildPhases = (
+                            23A27C5023A27C5023A27C50 /* CMake ReRun */,
+                            23A3545023A3545023A35450 /* CMake Rules */,
+                     );
+                     dependencies = (
+                            23A6302023A6302023A63020 /* PBXTargetDependency */,
+                     );
+                     name = ALL_BUILD;
+                     productName = ALL_BUILD;
+              };
+              23A4CDF023A4CDF023A4CDF0 /* install */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = 23610A2023610A2023610A20 /* Build configuration list for PBXAggregateTarget "install" */;
+                     buildPhases = (
+                            23A4CFB023A4CFB023A4CFB0 /* CMake ReRun */,
+                            23A4D6F023A4D6F023A4D6F0 /* CMake PostBuild Rules */,
+                     );
+                     dependencies = (
+                            23A1AA0023A1AA0023A1AA00 /* PBXTargetDependency */,
+                     );
+                     name = install;
+                     productName = install;
+              };
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+13C62B013C62B013C62B0000 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/src/waitress.c */ = {isa = PBXBuildFile; fileRef = 236182102361821023618210 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/src/waitress.c */; settings = { COMPILER_FLAGS = ""; }; };
+236113902361139023611390 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 236086502360865023608650 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/src/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+              118BFB0118BFB0118BFB0000 /*  */ = {
+                     isa = PBXBuildStyle;
+              };
+              23A2D87023A2D87023A2D870 /* Debug */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = Debug;
+              };
+              11AE03011AE03011AE030000 /* Release */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = Release;
+              };
+              1150EC01150EC01150EC0000 /* MinSizeRel */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = MinSizeRel;
+              };
+              23A2940023A2940023A29400 /* RelWithDebInfo */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = RelWithDebInfo;
+              };
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+              23A2D42023A2D42023A2D420 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 23A270C023A270C023A270C0 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 1360A201360A201360A20000;
+                     remoteInfo = waitress;
+              };
+              23A1A05023A1A05023A1A050 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 23A270C023A270C023A270C0 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 23A27A5023A27A5023A27A50;
+                     remoteInfo = ALL_BUILD;
+              };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+23A1C7D023A1C7D023A1C7D0 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text"; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+236182102361821023618210 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/src/waitress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.c"; name = "waitress.c"; path = "src/waitress.c"; sourceTree = SOURCE_ROOT; };
+236086502360865023608650 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/src/CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text"; name = "CMakeLists.txt"; path = "src/CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+11FB04011FB04011FB040000 /* waitress */ = {isa = PBXFileReference; explicitFileType = "archive.ar"; path = "libwaitress.a"; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+              23A222D023A222D023A222D0  = {
+                     isa = PBXGroup;
+                     children = (
+                            11AE19011AE19011AE190000 /* Sources */,
+                            23A21D0023A21D0023A21D00 /* Resources */,
+                            23A2955023A2955023A29550 /* Products */,
+                     );
+                     sourceTree = "<group>";
+              };
+              11AE19011AE19011AE190000 /* Sources */ = {
+                     isa = PBXGroup;
+                     children = (
+                            23A2CBC023A2CBC023A2CBC0 /* ALL_BUILD */,
+                            23A1FEB023A1FEB023A1FEB0 /* waitress */,
+                     );
+                     name = Sources;
+                     sourceTree = "<group>";
+              };
+              23A21D0023A21D0023A21D00 /* Resources */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = Resources;
+                     sourceTree = "<group>";
+              };
+              23A2CBC023A2CBC023A2CBC0 /* ALL_BUILD */ = {
+                     isa = PBXGroup;
+                     children = (
+                            23A5BC4023A5BC4023A5BC40 /* CMake Rules */,
+                            23A1C7D023A1C7D023A1C7D0 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/CMakeLists.txt */,
+                     );
+                     name = ALL_BUILD;
+                     sourceTree = "<group>";
+              };
+              23A5BC4023A5BC4023A5BC40 /* CMake Rules */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = "CMake Rules";
+                     sourceTree = "<group>";
+              };
+              23A1FEB023A1FEB023A1FEB0 /* waitress */ = {
+                     isa = PBXGroup;
+                     children = (
+                            23A5109023A5109023A51090 /* Source Files */,
+                            236086502360865023608650 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/src/CMakeLists.txt */,
+                     );
+                     name = waitress;
+                     sourceTree = "<group>";
+              };
+              23A5109023A5109023A51090 /* Source Files */ = {
+                     isa = PBXGroup;
+                     children = (
+                            236182102361821023618210 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/src/waitress.c */,
+                     );
+                     name = "Source Files";
+                     sourceTree = "<group>";
+              };
+              23A2955023A2955023A29550 /* Products */ = {
+                     isa = PBXGroup;
+                     children = (
+                            11FB04011FB04011FB040000 /* waitress */,
+                     );
+                     name = Products;
+                     sourceTree = "<group>";
+              };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+              1360A201360A201360A20000 /* waitress */ = {
+                     isa = PBXNativeTarget;
+                     buildConfigurationList = 1360D301360D301360D30000 /* Build configuration list for PBXNativeTarget "waitress" */;
+                     buildPhases = (
+                            134E2B0134E2B0134E2B0000 /* CMake ReRun */,
+                            236241402362414023624140 /* Sources */,
+                            13C989013C989013C9890000 /* CMake PostBuild Rules */,
+                     );
+                     buildRules = (
+                     );
+                     dependencies = (
+                     );
+                     name = waitress;
+                     productName = waitress;
+                     productReference = 11FB04011FB04011FB040000 /* waitress */;
+                     productType = "com.apple.product-type.library.static";
+              };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+              23A270C023A270C023A270C0 /* Project object */ = {
+                     isa = PBXProject;
+                     attributes = {
+                            BuildIndependentTargetsInParallel = YES;
+                     };
+                     buildConfigurationList = 23A5E7B023A5E7B023A5E7B0 /* Build configuration list for PBXProject  "libwaitress" */;
+                     buildSettings = {
+                     };
+                     buildStyles = (
+                            23A2D87023A2D87023A2D870 /* Debug */,
+                            11AE03011AE03011AE030000 /* Release */,
+                            1150EC01150EC01150EC0000 /* MinSizeRel */,
+                            23A2940023A2940023A29400 /* RelWithDebInfo */,
+                     );
+                     compatibilityVersion = "Xcode 3.1";
+                     hasScannedForEncodings = 0;
+                     mainGroup = 23A222D023A222D023A222D0;
+                     projectDirPath = "../../libwaitress";
+                     projectRoot = "";
+                     targets = (
+                            23A27A5023A27A5023A27A50 /* ALL_BUILD */,
+                            23A4CDF023A4CDF023A4CDF0 /* install */,
+                            1360A201360A201360A20000 /* waitress */,
+                     );
+              };
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+              23A3645023A3645023A36450 /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+              };
+              23A27C5023A27C5023A27C50 /* CMake ReRun */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake ReRun";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/CMakeScripts/ReRunCMake.make";
+              };
+              23A3545023A3545023A35450 /* CMake Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+              };
+              23A1C93023A1C93023A1C930 /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+              };
+              23A4CFB023A4CFB023A4CFB0 /* CMake ReRun */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake ReRun";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/CMakeScripts/ReRunCMake.make";
+              };
+              23A4D6F023A4D6F023A4D6F0 /* CMake PostBuild Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake PostBuild Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+              };
+              134E2B0134E2B0134E2B0000 /* CMake ReRun */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake ReRun";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/CMakeScripts/ReRunCMake.make";
+              };
+              13C989013C989013C9890000 /* CMake PostBuild Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake PostBuild Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/src -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/src/CMakeScripts/waitress_postBuildPhase.make$CONFIGURATION all";
+              };
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+              236241402362414023624140 /* Sources */ = {
+                     isa = PBXSourcesBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                            13C62B013C62B013C62B0000 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/src/waitress.c */,
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+              };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+              23A6302023A6302023A63020 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 1360A201360A201360A20000 /* waitress */;
+                     targetProxy = 23A2D42023A2D42023A2D420 /* PBXContainerItemProxy */;
+              };
+              23A1AA0023A1AA0023A1AA00 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 23A27A5023A27A5023A27A50 /* ALL_BUILD */;
+                     targetProxy = 23A1A05023A1A05023A1A050 /* PBXContainerItemProxy */;
+              };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+              23A1B8F023A1B8F023A1B8F0 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT) ";
+                            MACOSX_DEPLOYMENT_TARGET = "10.6";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/build;
+                     };
+                     name = Debug;
+              };
+              23A1BAB023A1BAB023A1BAB0 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT) ";
+                            MACOSX_DEPLOYMENT_TARGET = "10.6";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/build;
+                     };
+                     name = Release;
+              };
+              23A1BC7023A1BC7023A1BC70 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT) ";
+                            MACOSX_DEPLOYMENT_TARGET = "10.6";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/build;
+                     };
+                     name = MinSizeRel;
+              };
+              23A1BE3023A1BE3023A1BE30 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT) ";
+                            MACOSX_DEPLOYMENT_TARGET = "10.6";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/build;
+                     };
+                     name = RelWithDebInfo;
+              };
+              23A340E023A340E023A340E0 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              23A50C3023A50C3023A50C30 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              23A613E023A613E023A613E0 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              23A4F1A023A4F1A023A4F1A0 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              13A391013A391013A3910000 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              1359C101359C101359C10000 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              23619C0023619C0023619C00 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              134808013480801348080000 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              136109013610901361090000 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/src, );
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "-Wall     ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = waitress;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/src;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              23A5B62023A5B62023A5B620 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 3;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/src, );
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "-Wall     -DNDEBUG  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = waitress;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/src;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              23A4A36023A4A36023A4A360 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = s;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/src, );
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "-Wall     -DNDEBUG  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = waitress;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/src;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              23A4C8D023A4C8D023A4C8D0 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 2;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/src, );
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "-Wall         ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = waitress;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/src;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+              23A5E7B023A5E7B023A5E7B0 /* Build configuration list for PBXProject  "libwaitress" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            23A1B8F023A1B8F023A1B8F0 /* Debug */,
+                            23A1BAB023A1BAB023A1BAB0 /* Release */,
+                            23A1BC7023A1BC7023A1BC70 /* MinSizeRel */,
+                            23A1BE3023A1BE3023A1BE30 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              23A349C023A349C023A349C0 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            23A340E023A340E023A340E0 /* Debug */,
+                            23A50C3023A50C3023A50C30 /* Release */,
+                            23A613E023A613E023A613E0 /* MinSizeRel */,
+                            23A4F1A023A4F1A023A4F1A0 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              23610A2023610A2023610A20 /* Build configuration list for PBXAggregateTarget "install" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            13A391013A391013A3910000 /* Debug */,
+                            1359C101359C101359C10000 /* Release */,
+                            23619C0023619C0023619C00 /* MinSizeRel */,
+                            134808013480801348080000 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              1360D301360D301360D30000 /* Build configuration list for PBXNativeTarget "waitress" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            136109013610901361090000 /* Debug */,
+                            23A5B62023A5B62023A5B620 /* Release */,
+                            23A4A36023A4A36023A4A360 /* MinSizeRel */,
+                            23A4C8D023A4C8D023A4C8D0 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+/* End XCConfigurationList section */
+       };
+       rootObject = 23A270C023A270C023A270C0;
+}

@@ -1,0 +1,708 @@
+// !$*UTF8*$!
+{
+       archiveVersion = 1;
+       classes = {
+       };
+       objectVersion = 45;
+       objects = {
+
+/* Begin PBXAggregateTarget section */
+              23A1FE5023A1FE5023A1FE50 /* ALL_BUILD */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = 1150E101150E101150E10000 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+                     buildPhases = (
+                            23A2005023A2005023A20050 /* CMake ReRun */,
+                            23A2079023A2079023A20790 /* CMake Rules */,
+                     );
+                     dependencies = (
+                            23A3645023A3645023A36450 /* PBXTargetDependency */,
+                     );
+                     name = ALL_BUILD;
+                     productName = ALL_BUILD;
+              };
+              23A27C7023A27C7023A27C70 /* install */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = 23A2737023A2737023A27370 /* Build configuration list for PBXAggregateTarget "install" */;
+                     buildPhases = (
+                            23A27E3023A27E3023A27E30 /* CMake ReRun */,
+                            23A26D5023A26D5023A26D50 /* CMake PostBuild Rules */,
+                     );
+                     dependencies = (
+                            23A2975023A2975023A29750 /* PBXTargetDependency */,
+                     );
+                     name = install;
+                     productName = install;
+              };
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+23A60C3023A60C3023A60C30 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/crypt.c */ = {isa = PBXBuildFile; fileRef = 23A5FB5023A5FB5023A5FB50 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/crypt.c */; settings = { COMPILER_FLAGS = ""; }; };
+23A4BE9023A4BE9023A4BE90 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/http.c */ = {isa = PBXBuildFile; fileRef = 23A5E6C023A5E6C023A5E6C0 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/http.c */; settings = { COMPILER_FLAGS = ""; }; };
+23A4C91023A4C91023A4C910 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/piano.c */ = {isa = PBXBuildFile; fileRef = 23A4C1D023A4C1D023A4C1D0 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/piano.c */; settings = { COMPILER_FLAGS = ""; }; };
+23A4A2E023A4A2E023A4A2E0 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/xml.c */ = {isa = PBXBuildFile; fileRef = 23A5115023A5115023A51150 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/xml.c */; settings = { COMPILER_FLAGS = ""; }; };
+23A5451023A5451023A54510 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 23A4A62023A4A62023A4A620 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+              23A16FD023A16FD023A16FD0 /*  */ = {
+                     isa = PBXBuildStyle;
+              };
+              23A11E2023A11E2023A11E20 /* Debug */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = Debug;
+              };
+              11F15D011F15D011F15D0000 /* Release */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = Release;
+              };
+              11F9FC011F9FC011F9FC0000 /* MinSizeRel */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = MinSizeRel;
+              };
+              11F1B2011F1B2011F1B20000 /* RelWithDebInfo */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = RelWithDebInfo;
+              };
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+              23A35CC023A35CC023A35CC0 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 23A2422023A2422023A24220 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 23A4FBB023A4FBB023A4FBB0;
+                     remoteInfo = piano;
+              };
+              23A2942023A2942023A29420 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 23A2422023A2422023A24220 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 23A1FE5023A1FE5023A1FE50;
+                     remoteInfo = ALL_BUILD;
+              };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+23A1F14023A1F14023A1F140 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text"; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+23A5FB5023A5FB5023A5FB50 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/crypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.c"; name = "crypt.c"; path = "src/crypt.c"; sourceTree = SOURCE_ROOT; };
+23A5E6C023A5E6C023A5E6C0 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/http.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.c"; name = "http.c"; path = "src/http.c"; sourceTree = SOURCE_ROOT; };
+23A4C1D023A4C1D023A4C1D0 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/piano.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.c"; name = "piano.c"; path = "src/piano.c"; sourceTree = SOURCE_ROOT; };
+23A5115023A5115023A51150 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/xml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.c"; name = "xml.c"; path = "src/xml.c"; sourceTree = SOURCE_ROOT; };
+23A4A62023A4A62023A4A620 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text"; name = "CMakeLists.txt"; path = "src/CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+23A351F023A351F023A351F0 /* piano */ = {isa = PBXFileReference; explicitFileType = "archive.ar"; path = "libpiano.a"; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+              11FA78011FA78011FA780000  = {
+                     isa = PBXGroup;
+                     children = (
+                            11F0F4011F0F4011F0F40000 /* Sources */,
+                            23A1B8E023A1B8E023A1B8E0 /* Resources */,
+                            23A1BC8023A1BC8023A1BC80 /* Products */,
+                     );
+                     sourceTree = "<group>";
+              };
+              11F0F4011F0F4011F0F40000 /* Sources */ = {
+                     isa = PBXGroup;
+                     children = (
+                            23A1BE4023A1BE4023A1BE40 /* ALL_BUILD */,
+                            23A2494023A2494023A24940 /* piano */,
+                     );
+                     name = Sources;
+                     sourceTree = "<group>";
+              };
+              23A1B8E023A1B8E023A1B8E0 /* Resources */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = Resources;
+                     sourceTree = "<group>";
+              };
+              23A1BE4023A1BE4023A1BE40 /* ALL_BUILD */ = {
+                     isa = PBXGroup;
+                     children = (
+                            11D80B011D80B011D80B0000 /* CMake Rules */,
+                            23A1F14023A1F14023A1F140 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/CMakeLists.txt */,
+                     );
+                     name = ALL_BUILD;
+                     sourceTree = "<group>";
+              };
+              11D80B011D80B011D80B0000 /* CMake Rules */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = "CMake Rules";
+                     sourceTree = "<group>";
+              };
+              23A2494023A2494023A24940 /* piano */ = {
+                     isa = PBXGroup;
+                     children = (
+                            23A239D023A239D023A239D0 /* Source Files */,
+                            23A4A62023A4A62023A4A620 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/CMakeLists.txt */,
+                     );
+                     name = piano;
+                     sourceTree = "<group>";
+              };
+              23A239D023A239D023A239D0 /* Source Files */ = {
+                     isa = PBXGroup;
+                     children = (
+                            23A5FB5023A5FB5023A5FB50 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/crypt.c */,
+                            23A5E6C023A5E6C023A5E6C0 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/http.c */,
+                            23A4C1D023A4C1D023A4C1D0 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/piano.c */,
+                            23A5115023A5115023A51150 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/xml.c */,
+                     );
+                     name = "Source Files";
+                     sourceTree = "<group>";
+              };
+              23A1BC8023A1BC8023A1BC80 /* Products */ = {
+                     isa = PBXGroup;
+                     children = (
+                            23A351F023A351F023A351F0 /* piano */,
+                     );
+                     name = Products;
+                     sourceTree = "<group>";
+              };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+              23A4FBB023A4FBB023A4FBB0 /* piano */ = {
+                     isa = PBXNativeTarget;
+                     buildConfigurationList = 23A4FFB023A4FFB023A4FFB0 /* Build configuration list for PBXNativeTarget "piano" */;
+                     buildPhases = (
+                            23A4EE8023A4EE8023A4EE80 /* CMake ReRun */,
+                            23A5481023A5481023A54810 /* Sources */,
+                            23A4F5C023A4F5C023A4F5C0 /* CMake PostBuild Rules */,
+                     );
+                     buildRules = (
+                     );
+                     dependencies = (
+                     );
+                     name = piano;
+                     productName = piano;
+                     productReference = 23A351F023A351F023A351F0 /* piano */;
+                     productType = "com.apple.product-type.library.static";
+              };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+              23A2422023A2422023A24220 /* Project object */ = {
+                     isa = PBXProject;
+                     attributes = {
+                            BuildIndependentTargetsInParallel = YES;
+                     };
+                     buildConfigurationList = 23A230B023A230B023A230B0 /* Build configuration list for PBXProject  "libpiano" */;
+                     buildSettings = {
+                     };
+                     buildStyles = (
+                            23A11E2023A11E2023A11E20 /* Debug */,
+                            11F15D011F15D011F15D0000 /* Release */,
+                            11F9FC011F9FC011F9FC0000 /* MinSizeRel */,
+                            11F1B2011F1B2011F1B20000 /* RelWithDebInfo */,
+                     );
+                     compatibilityVersion = "Xcode 3.1";
+                     hasScannedForEncodings = 0;
+                     mainGroup = 11FA78011FA78011FA780000;
+                     projectDirPath = "../../libpiano";
+                     projectRoot = "";
+                     targets = (
+                            23A1FE5023A1FE5023A1FE50 /* ALL_BUILD */,
+                            23A27C7023A27C7023A27C70 /* install */,
+                            23A4FBB023A4FBB023A4FBB0 /* piano */,
+                     );
+              };
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+              23A2657023A2657023A26570 /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+              };
+              23A2005023A2005023A20050 /* CMake ReRun */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake ReRun";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/CMakeScripts/ReRunCMake.make";
+              };
+              23A2079023A2079023A20790 /* CMake Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+              };
+              23A1F84023A1F84023A1F840 /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+              };
+              23A27E3023A27E3023A27E30 /* CMake ReRun */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake ReRun";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/CMakeScripts/ReRunCMake.make";
+              };
+              23A26D5023A26D5023A26D50 /* CMake PostBuild Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake PostBuild Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+              };
+              23A4EE8023A4EE8023A4EE80 /* CMake ReRun */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake ReRun";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/CMakeScripts/ReRunCMake.make";
+              };
+              23A4F5C023A4F5C023A4F5C0 /* CMake PostBuild Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake PostBuild Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/src -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/src/CMakeScripts/piano_postBuildPhase.make$CONFIGURATION all";
+              };
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+              23A5481023A5481023A54810 /* Sources */ = {
+                     isa = PBXSourcesBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                            23A60C3023A60C3023A60C30 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/crypt.c */,
+                            23A4BE9023A4BE9023A4BE90 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/http.c */,
+                            23A4C91023A4C91023A4C910 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/piano.c */,
+                            23A4A2E023A4A2E023A4A2E0 /* /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/xml.c */,
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+              };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+              23A3645023A3645023A36450 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 23A4FBB023A4FBB023A4FBB0 /* piano */;
+                     targetProxy = 23A35CC023A35CC023A35CC0 /* PBXContainerItemProxy */;
+              };
+              23A2975023A2975023A29750 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 23A1FE5023A1FE5023A1FE50 /* ALL_BUILD */;
+                     targetProxy = 23A2942023A2942023A29420 /* PBXContainerItemProxy */;
+              };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+              23A231F023A231F023A231F0 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT) ";
+                            MACOSX_DEPLOYMENT_TARGET = "10.6";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/build;
+                     };
+                     name = Debug;
+              };
+              23A233B023A233B023A233B0 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT) ";
+                            MACOSX_DEPLOYMENT_TARGET = "10.6";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/build;
+                     };
+                     name = Release;
+              };
+              23A2357023A2357023A23570 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT) ";
+                            MACOSX_DEPLOYMENT_TARGET = "10.6";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/build;
+                     };
+                     name = MinSizeRel;
+              };
+              23A224C023A224C023A224C0 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT) ";
+                            MACOSX_DEPLOYMENT_TARGET = "10.6";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/build;
+                     };
+                     name = RelWithDebInfo;
+              };
+              114F8A0114F8A0114F8A0000 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              23A2597023A2597023A25970 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              23A1932023A1932023A19320 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              23A21A4023A21A4023A21A40 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              23A1A45023A1A45023A1A450 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              23A2CBB023A2CBB023A2CBB0 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              11FB31011FB31011FB310000 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              23A4730023A4730023A47300 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = install;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              23A502B023A502B023A502B0 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = ("/Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/../../libwaitress/src", /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/src, "/Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/../../libezxml/src", );
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "-Wall     ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = piano;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/src;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              23A4DE3023A4DE3023A4DE30 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 3;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = ("/Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/../../libwaitress/src", /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/src, "/Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/../../libezxml/src", );
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "-Wall     -DNDEBUG  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = piano;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/src;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              23A6153023A6153023A61530 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = s;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = ("/Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/../../libwaitress/src", /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/src, "/Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/../../libezxml/src", );
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "-Wall     -DNDEBUG  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = piano;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/src;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              23A4E88023A4E88023A4E880 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 2;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = ("/Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/../../libwaitress/src", /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/src, "/Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano/src/../../libezxml/src", );
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "-Wall         ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = piano;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/src;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+              23A230B023A230B023A230B0 /* Build configuration list for PBXProject  "libpiano" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            23A231F023A231F023A231F0 /* Debug */,
+                            23A233B023A233B023A233B0 /* Release */,
+                            23A2357023A2357023A23570 /* MinSizeRel */,
+                            23A224C023A224C023A224C0 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              1150E101150E101150E10000 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            114F8A0114F8A0114F8A0000 /* Debug */,
+                            23A2597023A2597023A25970 /* Release */,
+                            23A1932023A1932023A19320 /* MinSizeRel */,
+                            23A21A4023A21A4023A21A40 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              23A2737023A2737023A27370 /* Build configuration list for PBXAggregateTarget "install" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            23A1A45023A1A45023A1A450 /* Debug */,
+                            23A2CBB023A2CBB023A2CBB0 /* Release */,
+                            11FB31011FB31011FB310000 /* MinSizeRel */,
+                            23A4730023A4730023A47300 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              23A4FFB023A4FFB023A4FFB0 /* Build configuration list for PBXNativeTarget "piano" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            23A502B023A502B023A502B0 /* Debug */,
+                            23A4DE3023A4DE3023A4DE30 /* Release */,
+                            23A6153023A6153023A61530 /* MinSizeRel */,
+                            23A4E88023A4E88023A4E880 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+/* End XCConfigurationList section */
+       };
+       rootObject = 23A2422023A2422023A24220;
+}

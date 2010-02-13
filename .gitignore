@@ -8,3 +8,4 @@ CMakeFiles/
 cmake_install.cmake
 *.a
 install_manifest.txt
+.DS_Store
