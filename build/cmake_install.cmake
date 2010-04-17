@@ -1,8 +1,8 @@
-# Install script for directory: /Users/syco/Projects/PlayerPiano/contrib/pianobar
+# Install script for directory: /Users/syco/Packages/PlayerPiano/contrib/pianobar
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/usr/local")
+  SET(CMAKE_INSTALL_PREFIX "build")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -29,11 +29,11 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT)
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/cmake_install.cmake")
-  INCLUDE("/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwardrobe/cmake_install.cmake")
-  INCLUDE("/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libwaitress/cmake_install.cmake")
-  INCLUDE("/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libezxml/cmake_install.cmake")
-  INCLUDE("/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/src/cmake_install.cmake")
+  INCLUDE("/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/libpiano/cmake_install.cmake")
+  INCLUDE("/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/libwardrobe/cmake_install.cmake")
+  INCLUDE("/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/libwaitress/cmake_install.cmake")
+  INCLUDE("/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/libezxml/cmake_install.cmake")
+  INCLUDE("/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/src/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
@@ -43,7 +43,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

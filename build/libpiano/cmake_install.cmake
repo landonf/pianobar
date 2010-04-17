@@ -1,8 +1,8 @@
-# Install script for directory: /Users/syco/Projects/PlayerPiano/contrib/pianobar/libpiano
+# Install script for directory: /Users/syco/Packages/PlayerPiano/contrib/pianobar/libpiano
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/usr/local")
+  SET(CMAKE_INSTALL_PREFIX "build")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -29,7 +29,7 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT)
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/Users/syco/Projects/PlayerPiano/contrib/pianobar/build/libpiano/src/cmake_install.cmake")
+  INCLUDE("/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/libpiano/src/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

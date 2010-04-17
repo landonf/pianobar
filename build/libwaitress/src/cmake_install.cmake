@@ -1,8 +1,8 @@
-# Install script for directory: /Users/syco/Projects/PlayerPiano/contrib/pianobar/libwaitress/src
+# Install script for directory: /Users/syco/Packages/PlayerPiano/contrib/pianobar/libwaitress/src
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/usr/local")
+  SET(CMAKE_INSTALL_PREFIX "build")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

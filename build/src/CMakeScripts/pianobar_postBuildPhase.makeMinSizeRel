@@ -6,4 +6,4 @@ all: \
 
 pianobar_buildpart_0: 
 	echo "Depend check for xcode"
-	cd /Users/syco/Projects/PlayerPiano/contrib/pianobar/build && make -C /Users/syco/Projects/PlayerPiano/contrib/pianobar/build -f /Users/syco/Projects/PlayerPiano/contrib/pianobar/build/CMakeScripts/XCODE_DEPEND_HELPER.make all.$(CONFIGURATION)
+	cd /Users/syco/Packages/PlayerPiano/contrib/pianobar/build && make -C /Users/syco/Packages/PlayerPiano/contrib/pianobar/build -f /Users/syco/Packages/PlayerPiano/contrib/pianobar/build/CMakeScripts/XCODE_DEPEND_HELPER.make all.$(CONFIGURATION)
