@@ -79,28 +79,28 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 11BC5E011BC5E011BC5E0000 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E9260AD1179579C006F9274 /* libmad */;
+			remoteGlobalIDString = 1E9260AD1179579C006F9274;
 			remoteInfo = libmad;
 		};
 		1E9260B8117957DD006F9274 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 11BC5E011BC5E011BC5E0000 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E9260A71179578F006F9274 /* libfaad */;
+			remoteGlobalIDString = 1E9260A71179578F006F9274;
 			remoteInfo = libfaad;
 		};
 		1E9260BA117957DD006F9274 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 11BC5E011BC5E011BC5E0000 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E9260A11179577F006F9274 /* libao */;
+			remoteGlobalIDString = 1E9260A11179577F006F9274;
 			remoteInfo = libao;
 		};
 		1E9260BC117957E2006F9274 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 11BC5E011BC5E011BC5E0000 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E92609B1179575A006F9274 /* copydeps */;
+			remoteGlobalIDString = 1E92609B1179575A006F9274;
 			remoteInfo = copydeps;
 		};
 		23C1B81023C1B81023C1B810 /* PBXContainerItemProxy */ = {
@@ -363,7 +363,7 @@
 /* Begin PBXLegacyTarget section */
 		1E9260A11179577F006F9274 /* libao */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
+			buildArgumentsString = "$(ACTION) install";
 			buildConfigurationList = 1E9260A61179578F006F9274 /* Build configuration list for PBXLegacyTarget "libao" */;
 			buildPhases = (
 			);
@@ -377,7 +377,7 @@
 		};
 		1E9260A71179578F006F9274 /* libfaad */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
+			buildArgumentsString = "$(ACTION) install";
 			buildConfigurationList = 1E9260A81179578F006F9274 /* Build configuration list for PBXLegacyTarget "libfaad" */;
 			buildPhases = (
 			);
@@ -391,7 +391,7 @@
 		};
 		1E9260AD1179579C006F9274 /* libmad */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
+			buildArgumentsString = "$(ACTION) install";
 			buildConfigurationList = 1E9260AE1179579C006F9274 /* Build configuration list for PBXLegacyTarget "libmad" */;
 			buildPhases = (
 			);
@@ -787,8 +787,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
-				OTHER_CFLAGS = (
-				);
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -817,9 +816,7 @@
 				HEADER_SEARCH_PATHS = /Users/syco/Packages/PlayerPiano/contrib/pianobar/build/libwaitress/src;
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = (
-					"-Wall",
-				);
+				OTHER_CFLAGS = "-Wall";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -844,8 +841,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
-				OTHER_CFLAGS = (
-				);
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -917,9 +913,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = (
-					"-Wall",
-				);
+				OTHER_CFLAGS = "-Wall";
 				OTHER_LDFLAGS = (
 					"-Wl,-search_paths_first",
 					"-headerpad_max_install_names",
@@ -1241,9 +1235,7 @@
 				);
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = (
-					"-Wall",
-				);
+				OTHER_CFLAGS = "-Wall";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1312,9 +1304,7 @@
 				);
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = (
-					"-Wall",
-				);
+				OTHER_CFLAGS = "-Wall";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1339,8 +1329,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
-				OTHER_CFLAGS = (
-				);
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1365,8 +1354,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
-				OTHER_CFLAGS = (
-				);
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1398,9 +1386,7 @@
 				);
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = (
-					"-Wall",
-				);
+				OTHER_CFLAGS = "-Wall";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1428,9 +1414,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = (
-					"-Wall",
-				);
+				OTHER_CFLAGS = "-Wall";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1550,8 +1534,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
-				OTHER_CFLAGS = (
-				);
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1579,9 +1562,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = (
-					"-Wall",
-				);
+				OTHER_CFLAGS = "-Wall";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1606,8 +1587,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
-				OTHER_CFLAGS = (
-				);
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1644,9 +1624,7 @@
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = (
-					"-Wall",
-				);
+				OTHER_CFLAGS = "-Wall";
 				OTHER_LDFLAGS = (
 					"-Wl,-search_paths_first",
 					"-headerpad_max_install_names",
@@ -1713,8 +1691,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
-				OTHER_CFLAGS = (
-				);
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1743,9 +1720,7 @@
 				HEADER_SEARCH_PATHS = /Users/syco/Packages/PlayerPiano/contrib/pianobar/build/libwaitress/src;
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = (
-					"-Wall",
-				);
+				OTHER_CFLAGS = "-Wall";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1770,8 +1745,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INSTALL_PATH = "";
-				OTHER_CFLAGS = (
-				);
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
@@ -1825,9 +1799,7 @@
 		23C59F0023C59F0023C59F00 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_64_BIT)",
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = /Developer/SDKs/MacOSX10.6.sdk;
@@ -1838,9 +1810,7 @@
 		23C5A23023C5A23023C5A230 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_64_BIT)",
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = /Developer/SDKs/MacOSX10.6.sdk;
@@ -1851,9 +1821,7 @@
 		23C5A3F023C5A3F023C5A3F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_64_BIT)",
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = /Developer/SDKs/MacOSX10.6.sdk;
@@ -1864,9 +1832,7 @@
 		23C5A5B023C5A5B023C5A5B0 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_64_BIT)",
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = /Developer/SDKs/MacOSX10.6.sdk;
@@ -1890,9 +1856,7 @@
 				);
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = (
-					"-Wall",
-				);
+				OTHER_CFLAGS = "-Wall";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PREBINDING = NO;
