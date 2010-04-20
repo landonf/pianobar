@@ -72,8 +72,6 @@ int main (int argc, char **argv) {
 	/* terminal attributes _before_ we started messing around with ~ECHO */
 	struct termios termOrig;
 
-	BarUiMsg (MSG_NONE, "Welcome to " PACKAGE "!\n");
-
 	/* save terminal attributes, before disabling echoing */
 	BarTermSave (&termOrig);
 
@@ -84,6 +82,9 @@ int main (int argc, char **argv) {
 	PianoInit (&ph);
 	BarSettingsInit (&settings);
 	BarSettingsRead (&settings);
+
+	BarUiMsg (MSG_NONE, "Welcome to " PACKAGE "! Press %c for a list of commands.\n",
+			settings.keys[BAR_KS_HELP]);
 
 	/* init fds */
 	FD_ZERO(&readSet);
