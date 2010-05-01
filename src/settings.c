@@ -76,6 +76,7 @@ void BarSettingsDestroy (BarSettings_t *settings) {
 	free (settings->password);
 	free (settings->autostartStation);
 	free (settings->eventCmd);
+	free (settings->downloadDir);
 	memset (settings, 0, sizeof (*settings));
 }
 
@@ -91,7 +92,7 @@ void BarSettingsRead (BarSettings_t *settings) {
 	/* _must_ have same order as in BarKeyShortcutId_t */
 	const char defaultKeys[] = {'?', '+', '-', 'a', 'c', 'd', 'e', 'g',
 			'h', 'i', 'j', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'x', '$',
-			'b',
+			'b', '.'
 			};
 	const char *shortcutFileKeys[] = {
 			"act_help", "act_songlove", "act_songban", "act_stationaddmusic",
@@ -100,7 +101,7 @@ void BarSettingsRead (BarSettings_t *settings) {
 			"act_addshared", "act_songmove", "act_songnext", "act_songpause",
 			"act_quit", "act_stationrename", "act_stationchange",
 			"act_songtired", "act_upcoming", "act_stationselectquickmix",
-			"act_debug", "act_bookmark",
+			"act_debug", "act_bookmark", "act_download"
 			};
 
 	/* apply defaults */
@@ -134,6 +135,8 @@ void BarSettingsRead (BarSettings_t *settings) {
 			settings->username = strdup (val);
 		} else if (strcmp ("password", key) == 0) {
 			settings->password = strdup (val);
+		} else if (strcmp ("download_dir", key) == 0) {
+			settings->downloadDir = strdup (val);
 		} else if (memcmp ("act_", key, 4) == 0) {
 			/* keyboard shortcuts */
 			for (i = 0; i < BAR_KS_COUNT; i++) {
@@ -157,6 +160,10 @@ void BarSettingsRead (BarSettings_t *settings) {
 		} else if (strcmp ("history", key) == 0) {
 			settings->history = atoi (val);
 		}
+	}
+	
+	if (settings->downloadDir == NULL) {
+		settings->downloadDir = "/tmp";
 	}
 
 	fclose (configfd);

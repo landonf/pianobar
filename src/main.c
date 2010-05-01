@@ -315,7 +315,7 @@ int main (int argc, char **argv) {
 							BarUiActQuit, BarUiActRenameStation,
 							BarUiActSelectStation, BarUiActTempBanSong,
 							BarUiActPrintUpcoming, BarUiActSelectQuickMix,
-							BarUiActDebug, BarUiActBookmark};
+							BarUiActDebug, BarUiActBookmark, BarUiActDownloadSong};
 					idToF[i] (&ph, &waith, &player, &settings, &playlist,
 							&curStation, &songHistory, &doQuit, curFd);
 					break;
