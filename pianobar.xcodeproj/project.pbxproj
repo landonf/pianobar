@@ -112,14 +112,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = C9ECB1BD119A9C480075E08B /* libezxml.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = C90B18D1119A9238001AD6DF /* libezxml.a */;
+			remoteGlobalIDString = C90B18D1119A9238001AD6DF;
 			remoteInfo = ezxml;
 		};
 		C9ECB1C3119A9C540075E08B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9ECB1BD119A9C480075E08B /* libezxml.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = C90B18D0119A9238001AD6DF /* ezxml */;
+			remoteGlobalIDString = C90B18D0119A9238001AD6DF;
 			remoteInfo = ezxml;
 		};
 /* End PBXContainerItemProxy section */

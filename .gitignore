@@ -7,3 +7,11 @@ CMakeFiles/
 cmake_install.cmake
 *.a
 install_manifest.txt
+.deps/*
+.libs/*
+*.lo
+*.la
+config.log
+config.status
+*.pc
+*.dylib
