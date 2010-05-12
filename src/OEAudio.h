@@ -44,7 +44,7 @@
 }
 
 @property float volume;
-@property (nonatomic, readonly) OERingBuffer * buffer;
+@property (nonatomic, retain) OERingBuffer * buffer;
 - (id)initWithPlayer:(struct audioPlayer *)player;
 
 - (void)createGraph;

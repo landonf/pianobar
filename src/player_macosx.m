@@ -9,6 +9,7 @@
 #include "ui.h"
 
 #import "OEAudio.h"
+#import "OERingBuffer.h"
 
 /* wait while locked, but don't slow down main thread by keeping
  * locks too long */
@@ -132,13 +133,13 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) 
 //					 frameInfo.samples * 2);
             [[(id)player->audio buffer] write:(void*)aacDecoded maxLength:frameInfo.samples * sizeof(short int)];
             
-            [NSThread sleepForTimeInterval: (float)frameInfo.samples / (float) (player->samplerate * player->channels)];
+            //[NSThread sleepForTimeInterval: (float)frameInfo.samples / (float) (player->samplerate * player->channels)];
             
 			/* add played frame length to played time, explained below */
-			player->songPlayed += (unsigned long long int) frameInfo.samples *
+/*			player->songPlayed += (unsigned long long int) frameInfo.samples *
 			(unsigned long long int) BAR_PLAYER_MS_TO_S_FACTOR /
 			(unsigned long long int) player->samplerate /
-			(unsigned long long int) player->channels;
+			(unsigned long long int) player->channels;*/
 			player->bufferRead += frameInfo.bytesconsumed;
 			player->sampleSizeCurr++;
 			/* going through this loop can take up to a few seconds =>
@@ -221,6 +222,11 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) 
 					4096LL * (unsigned long long int) BAR_PLAYER_MS_TO_S_FACTOR /
 					(unsigned long long int) player->samplerate /
 					(unsigned long long int) player->channels;
+                    
+                    OERingBuffer *buffer = [[OERingBuffer alloc] initWithLength:player->songDuration * player->samplerate * player->channels];
+                    [(id)player->audio setBuffer:buffer];
+                    [buffer release];
+                    
 					break;
 				} else {
 					player->sampleSize[player->sampleSizeCurr] =
@@ -441,6 +447,11 @@ void *BarPlayerMacOSXThread(void *data){
 	} while (wRet == WAITRESS_RET_PARTIAL_FILE || wRet == WAITRESS_RET_TIMEOUT
 			 || wRet == WAITRESS_RET_READ_ERR);
 	
+    while([[(id)player->audio buffer] bytesUsed])
+    {
+        sleep(1);
+    }
+    
 	switch (player->audioFormat) {
 #ifdef ENABLE_FAAD
 		case PIANO_AF_AACPLUS:
