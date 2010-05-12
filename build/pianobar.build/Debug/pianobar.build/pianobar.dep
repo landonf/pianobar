@@ -1,9 +1,0 @@
-00000000002fc2ae0000000000028767 913a92acfae25bb2c93df9b74eec4b23 ffffffffffffffffffffffffffffffff 27032 /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/player_macosx.o
-000000004a11e7cc00000000000003b1 12496d1651357f77b330b750313de303 ffffffffffffffffffffffffffffffff 30984 /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui.o
-0000000001b6236c000000000000687f 12c35beef798a268d9bb965fc0db17a3 ffffffffffffffffffffffffffffffff 9424 /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_readline.o
-000000004a73df87000000000002ea1d 976929e25bd6294486f3c9e0e07d2617 ffffffffffffffffffffffffffffffff 39008 /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_act.o
-000000004bea37ca0000000000004ca4 5a4e8896d3ee7ad5885013f4a09c1017 ffffffffffffffffffffffffffffffff 5976 /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/terminal.o
-000000000199e652000000000002c0f0 50da086767629f56364d009314a77513 ffffffffffffffffffffffffffffffff 12628 /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/settings.o
-0000000000000b26000000000002fde5 f54e05962eefd66f09053c6818bf4ac5 ffffffffffffffffffffffffffffffff 24696 /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/main.o
-f90308d19cc978bf925d3e57f3fd0c5a 159ff80511012e915a862d1a2c70fd8a ffffffffffffffffffffffffffffffff 133328 /Users/syco/Packages/pianobar/build/Debug/pianobar
-00000000000077010000000000004073 ff6354fd452b2c3090f81329d137549e ffffffffffffffffffffffffffffffff 21616 /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/player.o
