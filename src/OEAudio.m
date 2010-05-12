@@ -44,7 +44,7 @@ OSStatus RenderCallback(void                       *in,
     
     struct audioPlayer * player = audio->mPlayer;
     
-    player->songPlayed += (unsigned long long int) inNumberFrames *
+    player->songPlayed += (unsigned long long int) inNumberFrames * 2 *
     (unsigned long long int) BAR_PLAYER_MS_TO_S_FACTOR /
     (unsigned long long int) player->samplerate /
     (unsigned long long int) player->channels;
