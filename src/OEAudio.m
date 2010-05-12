@@ -41,6 +41,13 @@ OSStatus RenderCallback(void                       *in,
 {
     OEAudio * audio = (OEAudio*)in;
     [audio getAudioBuffer:ioData->mBuffers[0].mData frameCount:inNumberFrames];
+    
+    struct audioPlayer * player = audio->mPlayer;
+    
+    player->songPlayed += (unsigned long long int) inNumberFrames *
+    (unsigned long long int) BAR_PLAYER_MS_TO_S_FACTOR /
+    (unsigned long long int) player->samplerate /
+    (unsigned long long int) player->channels;
     return 0;
 }
 
@@ -58,7 +65,6 @@ OSStatus RenderCallback(void                       *in,
     if(self)
     {
         mPlayer = player;
-        _buffer = [[OERingBuffer alloc] initWithLength:0x80000];
         [self createGraph];
     }
     
