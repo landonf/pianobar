@@ -12,73 +12,70 @@
 
 #include "config.h"
 
-#ifdef ENABLE_FAAD
-#include <neaacdec.h>
-#endif
-
-#ifdef ENABLE_MAD
-#include <mad.h>
-#endif
-
 #include <CoreAudio/AudioHardware.h>
 #include <pthread.h>
 
 #include <piano.h>
 #include <waitress.h>
+#include <AudioToolbox/AudioToolbox.h>
+#include <CoreAudio/CoreAudio.h>
 
 #define BAR_PLAYER_MS_TO_S_FACTOR 1000
 
+#define kNumAQBufs 3		
+#define kAQBufSize (128 * 1024)
+#define kAQMaxPacketDescs (512)
+
+
 struct audioPlayer {
-	unsigned char buffer[WAITRESS_RECV_BUFFER*2];
-	size_t bufferFilled;
-	size_t bufferRead;
-	size_t bytesReceived;
-	
+
 	enum {
 		PLAYER_FREED = 0, /* thread is not running */
 		PLAYER_STARTING, /* thread is starting */
+        PLAYER_SAMPLESIZE_INITIALIZED,
 		PLAYER_INITIALIZED, /* decoder/waitress initialized */
-		PLAYER_FOUND_ESDS,
-		PLAYER_AUDIO_INITIALIZED, /* audio device opened */
-		PLAYER_FOUND_STSZ,
-		PLAYER_SAMPLESIZE_INITIALIZED,
 		PLAYER_RECV_DATA, /* playing track */
 		PLAYER_FINISHED_PLAYBACK
 	} mode;
 	
 	PianoAudioFormat_t audioFormat;
+    size_t bytesReceived;
 	
-	/* duration and already played time; measured in milliseconds */
+    /* duration and already played time; measured in milliseconds */
 	unsigned long int songDuration;
 	unsigned long int songPlayed;
-
-	/* aac */
-#ifdef ENABLE_FAAD
-	NeAACDecHandle aacHandle;
-	/* stsz atom: sample sizes */
-	unsigned int *sampleSize;
-	size_t sampleSizeN;
-	size_t sampleSizeCurr;
-#endif
-	
-	/* mp3 */
-#ifdef ENABLE_MAD
-	struct mad_stream mp3Stream;
-	struct mad_frame mp3Frame;
-	struct mad_synth mp3Synth;
-#endif
 	
 	unsigned long samplerate;
 	unsigned char channels;
 	
+    AudioFileStreamID audioFileStream;	// the audio file stream parser
+    
+	AudioQueueRef audioQueue;								// the audio queue
+	AudioQueueBufferRef audioQueueBuffer[kNumAQBufs];		// audio queue buffers
+	
+	AudioStreamPacketDescription packetDescs[kAQMaxPacketDescs];	// packet descriptions for enqueuing audio
+	
+	unsigned int fillBufferIndex;	// the index of the audioQueueBuffer that is being filled
+	size_t bytesFilled;				// how many bytes have been filled
+	size_t packetsFilled;			// how many packets have been filled
+    
+	bool inuse[kNumAQBufs];			// flags to indicate that a buffer is still in use
+	bool started;					// flag to indicate that the queue has been started
+	bool failed;					// flag to indicate an error occurred
+
+    
 	float gain;
 	unsigned int scale;
 	
+    AudioFileStreamID streamID;
+    
 	WaitressHandle_t waith;
 	
 	char doQuit;
+    pthread_mutex_t mutex;			// a mutex to protect the inuse flags
 	pthread_mutex_t pauseMutex;
-	
+    pthread_cond_t cond;			// a condition varable for handling the inuse flags
+	pthread_cond_t done;			// a condition varable for handling the inuse flags
     void * audio;
 };
 

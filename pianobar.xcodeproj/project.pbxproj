@@ -34,8 +34,6 @@
 		1E1057E6119A7630008CC292 /* player_macosx.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1057E5119A7630008CC292 /* player_macosx.m */; };
 		1E1057F0119A7938008CC292 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1057EF119A7938008CC292 /* CoreAudio.framework */; };
 		1E1057F2119A7938008CC292 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1057F1119A7938008CC292 /* CoreFoundation.framework */; };
-		82EFC4FB119B02F800D502A5 /* libao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFC4F9119B02F800D502A5 /* libao.a */; };
-		82EFC4FC119B02F800D502A5 /* libfaad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFC4FA119B02F800D502A5 /* libfaad.a */; };
 		82EFC4FE119B030100D502A5 /* libmad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFC4FD119B030100D502A5 /* libmad.a */; };
 		82EFC51D119B03F000D502A5 /* OERingBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EFC51C119B03F000D502A5 /* OERingBuffer.m */; };
 		82EFC525119B040B00D502A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFC524119B040B00D502A5 /* Foundation.framework */; };
@@ -164,8 +162,6 @@
 				1E10576E119A6BFF008CC292 /* libpiano.a in Frameworks */,
 				1E1057F0119A7938008CC292 /* CoreAudio.framework in Frameworks */,
 				1E1057F2119A7938008CC292 /* CoreFoundation.framework in Frameworks */,
-				82EFC4FB119B02F800D502A5 /* libao.a in Frameworks */,
-				82EFC4FC119B02F800D502A5 /* libfaad.a in Frameworks */,
 				82EFC4FE119B030100D502A5 /* libmad.a in Frameworks */,
 				82EFC525119B040B00D502A5 /* Foundation.framework in Frameworks */,
 				82EFC55A119B065E00D502A5 /* AudioToolbox.framework in Frameworks */,

@@ -11,6 +11,8 @@
 #import "OEAudio.h"
 #import "OERingBuffer.h"
 
+#define PRINTERROR(LABEL)	printf("%s\n", LABEL)
+
 /* wait while locked, but don't slow down main thread by keeping
  * locks too long */
 #define QUIT_PAUSE_CHECK \
@@ -24,244 +26,220 @@ return WAITRESS_CB_RET_ERR; \
 #define byteswap32(x) (((x >> 24) & 0x000000ff) | ((x >> 8) & 0x0000ff00) | \
 ((x << 8) & 0x00ff0000) | ((x << 24) & 0xff000000))
 
+void MyAudioQueueOutputCallback(void* inClientData, AudioQueueRef inAQ, AudioQueueBufferRef inBuffer);
+void MyAudioQueueIsRunningCallback(void *inUserData, AudioQueueRef inAQ, AudioQueuePropertyID inID);
 
-/* pandora uses float values with 2 digits precision. Scale them by 100 to get
- * a "nice" integer */
-#define RG_SCALE_FACTOR 100
+void StreamPropertyListenerProc(	void *							inClientData,
+                                AudioFileStreamID				inAudioFileStream,
+                                AudioFileStreamPropertyID		inPropertyID,
+                                UInt32 *						ioFlags);
 
-/*	compute replaygain scale factor
- *	algo taken from here: http://www.dsprelated.com/showmessage/29246/1.php
- *	mpd does the same
- *	@param apply this gain
- *	@return this * yourvalue = newgain value
- */
-static inline unsigned int computeReplayGainScale (float applyGain) {
-	return pow (10.0, applyGain / 20.0) * RG_SCALE_FACTOR;
+void MyPacketsProc(				void *							inClientData,
+                   UInt32							inNumberBytes,
+                   UInt32							inNumberPackets,
+                   const void *					inInputData,
+                   AudioStreamPacketDescription	*inPacketDescriptions);
+
+OSStatus MyEnqueueBuffer(struct audioPlayer* player);
+void WaitForFreeBuffer(struct audioPlayer* player);
+
+void StreamPropertyListenerProc(	void *						inClientData,
+                                AudioFileStreamID				inAudioFileStream,
+                                AudioFileStreamPropertyID		inPropertyID,
+                                UInt32 *						ioFlags)
+{	
+	// this is called by audio file stream when it finds property values
+	struct audioPlayer* player = (struct audioPlayer*)inClientData;
+	OSStatus err = noErr;
+    
+	switch (inPropertyID) {
+		case kAudioFileStreamProperty_ReadyToProducePackets :
+		{
+			// the file stream parser is now ready to produce audio packets.
+			// get the stream format.
+			AudioStreamBasicDescription asbd;
+			UInt32 asbdSize = sizeof(asbd);
+			err = AudioFileStreamGetProperty(inAudioFileStream, kAudioFileStreamProperty_DataFormat, &asbdSize, &asbd);
+			if (err) { PRINTERROR("get kAudioFileStreamProperty_DataFormat"); player->failed = true; break; }
+			
+			// create the audio queue
+			err = AudioQueueNewOutput(&asbd, MyAudioQueueOutputCallback, player, NULL, NULL, 0, &player->audioQueue);
+			if (err) { PRINTERROR("AudioQueueNewOutput"); player->failed = true; break; }
+			
+			// allocate audio queue buffers
+			for (unsigned int i = 0; i < kNumAQBufs; ++i) {
+				err = AudioQueueAllocateBuffer(player->audioQueue, kAQBufSize, &player->audioQueueBuffer[i]);
+				if (err) { PRINTERROR("AudioQueueAllocateBuffer"); player->failed = true; break; }
+			}
+            
+			// get the cookie size
+			UInt32 cookieSize;
+			Boolean writable;
+			err = AudioFileStreamGetPropertyInfo(inAudioFileStream, kAudioFileStreamProperty_MagicCookieData, &cookieSize, &writable);
+			if (err) { PRINTERROR("info kAudioFileStreamProperty_MagicCookieData"); break; }
+			printf("cookieSize %d\n", cookieSize);
+            
+			// get the cookie data
+			void* cookieData = calloc(1, cookieSize);
+			err = AudioFileStreamGetProperty(inAudioFileStream, kAudioFileStreamProperty_MagicCookieData, &cookieSize, cookieData);
+			if (err) { PRINTERROR("get kAudioFileStreamProperty_MagicCookieData"); free(cookieData); break; }
+            
+			// set the cookie on the queue.
+			err = AudioQueueSetProperty(player->audioQueue, kAudioQueueProperty_MagicCookie, cookieData, cookieSize);
+			free(cookieData);
+			if (err) { PRINTERROR("set kAudioQueueProperty_MagicCookie"); break; }
+            
+			// listen for kAudioQueueProperty_IsRunning
+			err = AudioQueueAddPropertyListener(player->audioQueue, kAudioQueueProperty_IsRunning, MyAudioQueueIsRunningCallback, player);
+			if (err) { PRINTERROR("AudioQueueAddPropertyListener"); player->failed = true; break; }
+			
+			break;
+		}
+	}
 }
 
-/*	apply replaygain to signed short value
- *	@param value
- *	@param replaygain scale (calculated by computeReplayGainScale)
- *	@return scaled value
- */
-static inline signed short int applyReplayGain (signed short int value,
-												unsigned int scale) {
-	int tmpReplayBuf = value * scale;
-	/* avoid clipping */
-	if (tmpReplayBuf > SHRT_MAX*RG_SCALE_FACTOR) {
-		return SHRT_MAX;
-	} else if (tmpReplayBuf < SHRT_MIN*RG_SCALE_FACTOR) {
-		return SHRT_MIN;
-	} else {
-		return tmpReplayBuf / RG_SCALE_FACTOR;
+void MyPacketsProc(				void *							inClientData,
+                   UInt32							inNumberBytes,
+                   UInt32							inNumberPackets,
+                   const void *					inInputData,
+                   AudioStreamPacketDescription	*inPacketDescriptions)
+{
+	// this is called by audio file stream when it finds packets of audio
+	struct audioPlayer* player = (struct audioPlayer*)inClientData;
+	printf("got data.  bytes: %d  packets: %d\n", inNumberBytes, inNumberPackets);
+    
+	// the following code assumes we're streaming VBR data. for CBR data, you'd need another code branch here.
+    
+	for (int i = 0; i < inNumberPackets; ++i) {
+		SInt64 packetOffset = inPacketDescriptions[i].mStartOffset;
+		SInt64 packetSize   = inPacketDescriptions[i].mDataByteSize;
+		
+		// if the space remaining in the buffer is not enough for this packet, then enqueue the buffer.
+		size_t bufSpaceRemaining = kAQBufSize - player->bytesFilled;
+		if (bufSpaceRemaining < packetSize) {
+			MyEnqueueBuffer(player);
+			WaitForFreeBuffer(player);
+		}
+		
+		// copy data to the audio queue buffer
+		AudioQueueBufferRef fillBuf = player->audioQueueBuffer[player->fillBufferIndex];
+		memcpy((char*)fillBuf->mAudioData + player->bytesFilled, (const char*)inInputData + packetOffset, packetSize);
+		// fill out packet description
+		player->packetDescs[player->packetsFilled] = inPacketDescriptions[i];
+		player->packetDescs[player->packetsFilled].mStartOffset = player->bytesFilled;
+		// keep track of bytes filled and packets filled
+		player->bytesFilled += packetSize;
+		player->packetsFilled += 1;
+		
+		// if that was the last free packet description, then enqueue the buffer.
+		size_t packetsDescsRemaining = kAQMaxPacketDescs - player->packetsFilled;
+		if (packetsDescsRemaining == 0) {
+			MyEnqueueBuffer(player);
+			WaitForFreeBuffer(player);
+		}
+	}	
+}
+
+OSStatus StartQueueIfNeeded(struct audioPlayer* player)
+{
+	OSStatus err = noErr;
+	if (!player->started) {		// start the queue if it has not been started already
+		err = AudioQueueStart(player->audioQueue, NULL);
+		if (err) { PRINTERROR("AudioQueueStart"); player->failed = true; return err; }		
+		player->started = true;
+		printf("started\n");
+	}
+	return err;
+}
+
+OSStatus MyEnqueueBuffer(struct audioPlayer* player)
+{
+	OSStatus err = noErr;
+	player->inuse[player->fillBufferIndex] = true;		// set in use flag
+	
+	// enqueue buffer
+	AudioQueueBufferRef fillBuf = player->audioQueueBuffer[player->fillBufferIndex];
+	fillBuf->mAudioDataByteSize = player->bytesFilled;		
+	err = AudioQueueEnqueueBuffer(player->audioQueue, fillBuf, player->packetsFilled, player->packetDescs);
+	if (err) { PRINTERROR("AudioQueueEnqueueBuffer"); player->failed = true; return err; }		
+	
+	StartQueueIfNeeded(player);
+	
+	return err;
+}
+
+
+void WaitForFreeBuffer(struct audioPlayer* player)
+{
+	// go to next buffer
+	if (++player->fillBufferIndex >= kNumAQBufs) player->fillBufferIndex = 0;
+	player->bytesFilled = 0;		// reset bytes filled
+	player->packetsFilled = 0;		// reset packets filled
+    
+	// wait until next buffer is not in use
+	printf("->lock\n");
+	pthread_mutex_lock(&player->mutex); 
+	while (player->inuse[player->fillBufferIndex]) {
+		pthread_cond_wait(&player->cond, &player->mutex);
+	}
+	pthread_mutex_unlock(&player->mutex);
+	printf("<-unlock\n");
+}
+
+int MyFindQueueBuffer(struct audioPlayer* player, AudioQueueBufferRef inBuffer)
+{
+	for (unsigned int i = 0; i < kNumAQBufs; ++i) {
+		if (inBuffer == player->audioQueueBuffer[i]) 
+			return i;
+	}
+	return -1;
+}
+
+
+void MyAudioQueueOutputCallback(	void*					inClientData, 
+                                AudioQueueRef			inAQ, 
+                                AudioQueueBufferRef		inBuffer)
+{
+	// this is called by the audio queue when it has finished decoding our data. 
+	// The buffer is now free to be reused.
+	struct audioPlayer* player = (struct audioPlayer*)inClientData;
+    
+	unsigned int bufIndex = MyFindQueueBuffer(player, inBuffer);
+	
+	// signal waiting thread that the buffer is free.
+	pthread_mutex_lock(&player->mutex);
+	player->inuse[bufIndex] = false;
+	pthread_cond_signal(&player->cond);
+	pthread_mutex_unlock(&player->mutex);
+}
+
+void MyAudioQueueIsRunningCallback(		void*					inClientData, 
+                                   AudioQueueRef			inAQ, 
+                                   AudioQueuePropertyID	inID)
+{
+	struct audioPlayer* player = (struct audioPlayer*)inClientData;
+	
+	UInt32 running;
+	UInt32 size;
+	OSStatus err = AudioQueueGetProperty(inAQ, kAudioQueueProperty_IsRunning, &running, &size);
+	if (err) { PRINTERROR("get kAudioQueueProperty_IsRunning"); return; }
+	if (!running) {
+		pthread_mutex_lock(&player->mutex);
+		pthread_cond_signal(&player->done);
+		pthread_mutex_unlock(&player->mutex);
 	}
 }
 
 
-/*	Refill player's buffer with dataSize of data
- *	@param player structure
- *	@param new data
- *	@param data size
- *	@return 1 on success, 0 when buffer overflow occured
- */
-static inline int BarPlayerBufferFill (struct audioPlayer *player, char *data,
-									   size_t dataSize) {
-	/* fill buffer */
-	if (player->bufferFilled + dataSize > sizeof (player->buffer)) {
-		BarUiMsg (MSG_ERR, "Buffer overflow!\n");
-		return 0;
-	}
-	memcpy (player->buffer+player->bufferFilled, data, dataSize);
-	player->bufferFilled += dataSize;
-	player->bufferRead = 0;
-	player->bytesReceived += dataSize;
-	return 1;
-}
-
-/*	move data beginning from read pointer to buffer beginning and
- *	overwrite data already read from buffer
- *	@param player structure
- *	@return nothing at all
- */
-static inline void BarPlayerBufferMove (struct audioPlayer *player) {
-	/* move remaining bytes to buffer beginning */
-	memmove (player->buffer, player->buffer + player->bufferRead,
-			 (player->bufferFilled - player->bufferRead));
-	player->bufferFilled -= player->bufferRead;
-}
-
-#ifdef ENABLE_FAAD
-#pragma mark AAC Decoding
-
-/*	play aac stream
- *	@param streamed data
- *	@param received bytes
- *	@param extra data (player data)
- *	@return received bytes or less on error
- */
 static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) {
-	char *data = ptr;
 	struct audioPlayer *player = stream;
 	
 	QUIT_PAUSE_CHECK;
 	
-	if (!BarPlayerBufferFill (player, data, size)) {
-		return WAITRESS_CB_RET_ERR;
-	}
-	
-	if (player->mode == PLAYER_RECV_DATA) {
-		short int *aacDecoded;
-		NeAACDecFrameInfo frameInfo;
-		size_t i;
-		
-		while ((player->bufferFilled - player->bufferRead) >
-			   player->sampleSize[player->sampleSizeCurr]) {
-			/* decode frame */
-			aacDecoded = NeAACDecDecode(player->aacHandle, &frameInfo,
-										player->buffer + player->bufferRead,
-										player->sampleSize[player->sampleSizeCurr]);
-			if (frameInfo.error != 0) {
-				BarUiMsg (MSG_ERR, "Decoding error: %s\n",
-						  NeAACDecGetErrorMessage (frameInfo.error));
-				break;
-			}
-			for (i = 0; i < frameInfo.samples; i++) {
-				aacDecoded[i] = applyReplayGain (aacDecoded[i], player->scale);
-			}
-			/* ao_play needs bytes: 1 sample = 16 bits = 2 bytes */
-//			ao_play (player->audioOutDevice, (char *) aacDecoded,
-//					 frameInfo.samples * 2);
-            [[(id)player->audio buffer] write:(void*)aacDecoded maxLength:frameInfo.samples * sizeof(short int)];
-            while([[(id)player->audio buffer] bytesUsed] > player->samplerate / 4)
-            {
-                [NSThread sleepForTimeInterval:.01f];
-            }
-            //[NSThread sleepForTimeInterval: (float)frameInfo.samples / (float) (player->samplerate * player->channels)];
-            
-			/* add played frame length to played time, explained below */
-/*			player->songPlayed += (unsigned long long int) frameInfo.samples *
-			(unsigned long long int) BAR_PLAYER_MS_TO_S_FACTOR /
-			(unsigned long long int) player->samplerate /
-			(unsigned long long int) player->channels;*/
-			player->bufferRead += frameInfo.bytesconsumed;
-			player->sampleSizeCurr++;
-			/* going through this loop can take up to a few seconds =>
-			 * allow earlier thread abort */
-			QUIT_PAUSE_CHECK;
-		}
-	} else {
-		if (player->mode == PLAYER_INITIALIZED) {
-			while (player->bufferRead+4 < player->bufferFilled) {
-				if (memcmp (player->buffer + player->bufferRead, "esds",
-							4) == 0) {
-					player->mode = PLAYER_FOUND_ESDS;
-					player->bufferRead += 4;
-					break;
-				}
-				player->bufferRead++;
-			}
-		}
-		if (player->mode == PLAYER_FOUND_ESDS) {
-			/* FIXME: is this the correct way? */
-			/* we're gonna read 10 bytes */
-//#if FAAD_IS_SET_UP
-			while (player->bufferRead+1+4+5 < player->bufferFilled) {
-				if (memcmp (player->buffer + player->bufferRead,
-							"\x05\x80\x80\x80", 4) == 0) {
-					
-					/* +1+4 needs to be replaced by <something>! */
-					player->bufferRead += 1+4;
-					char err = NeAACDecInit2 (player->aacHandle, player->buffer +
-											  player->bufferRead, 5, &player->samplerate,
-											  &player->channels);
-					player->bufferRead += 5;
-					if (err != 0) {
-						BarUiMsg (MSG_ERR, "Error while "
-								  "initializing audio decoder"
-								  "(%i)\n", err);
-						return WAITRESS_CB_RET_ERR;
-					}
-                    player->audio = [[OEAudio alloc] initWithPlayer:player];
-                    [(id)player->audio setVolume:1.0f];
-					player->mode = PLAYER_AUDIO_INITIALIZED;
-					break;
-				}
-				player->bufferRead++;
-			}
-//#endif
-		}
-		if (player->mode == PLAYER_AUDIO_INITIALIZED) {
-			while (player->bufferRead+4+8 < player->bufferFilled) {
-				if (memcmp (player->buffer + player->bufferRead, "stsz",
-							4) == 0) {
-					player->mode = PLAYER_FOUND_STSZ;
-					player->bufferRead += 4;
-					/* skip version and unknown */
-					player->bufferRead += 8;
-					break;
-				}
-				player->bufferRead++;
-			}
-		}
-		/* get frame sizes */
-		if (player->mode == PLAYER_FOUND_STSZ) {
-			while (player->bufferRead+4 < player->bufferFilled) {
-				/* how many frames do we have? */
-				if (player->sampleSizeN == 0) {
-					/* mp4 uses big endian, convert */
-					player->sampleSizeN =
-					byteswap32 (*((int *) (player->buffer +
-										   player->bufferRead)));
-					player->sampleSize = calloc (player->sampleSizeN,
-												 sizeof (player->sampleSizeN));
-					player->bufferRead += 4;
-					player->sampleSizeCurr = 0;
-					/* set up song duration (assuming one frame always contains
-					 * the same number of samples)
-					 * calculation: channels * number of frames * samples per
-					 * frame / samplerate */
-					/* FIXME: Hard-coded number of samples per frame */
-					player->songDuration = (unsigned long long int) player->sampleSizeN *
-					4096LL * (unsigned long long int) BAR_PLAYER_MS_TO_S_FACTOR /
-					(unsigned long long int) player->samplerate /
-					(unsigned long long int) player->channels;
-                    
-					break;
-				} else {
-					player->sampleSize[player->sampleSizeCurr] =
-					byteswap32 (*((int *) (player->buffer +
-										   player->bufferRead)));
-					player->sampleSizeCurr++;
-					player->bufferRead += 4;
-				}
-				/* all sizes read, nearly ready for data mode */
-				if (player->sampleSizeCurr >= player->sampleSizeN) {
-					player->mode = PLAYER_SAMPLESIZE_INITIALIZED;
-					break;
-				}
-			}
-		}
-		/* search for data atom and let the show begin... */
-		if (player->mode == PLAYER_SAMPLESIZE_INITIALIZED) {
-			while (player->bufferRead+4 < player->bufferFilled) {
-				if (memcmp (player->buffer + player->bufferRead, "mdat",
-							4) == 0) {
-					player->mode = PLAYER_RECV_DATA;
-					player->sampleSizeCurr = 0;
-					player->bufferRead += 4;
-					break;
-				}
-				player->bufferRead++;
-			}
-		}
-	}
-	
-	BarPlayerBufferMove (player);
-
-	return WAITRESS_CB_RET_OK;
+    AudioFileStreamParseBytes(player->audioFileStream, size, ptr, 0);
+    
+    return WAITRESS_CB_RET_OK;
 }
-
-#endif /* ENABLE_FAAD */
 
 #ifdef ENABLE_MAD
 #pragma mark MP3 Decoding
@@ -388,18 +366,16 @@ void *BarPlayerThread (void *data){
 void *BarPlayerMacOSXThread(void *data){
 	struct audioPlayer *player = data;
 	
-//	BarPlayerInitializeCoreAudioOutputDevice(player);
+    //	BarPlayerInitializeCoreAudioOutputDevice(player);
 	
 	char extraHeaders[25];
 	void *ret = PLAYER_RET_OK;
-#ifdef ENABLE_FAAD
-	NeAACDecConfigurationPtr conf;
-#endif
+    
 	WaitressReturn_t wRet = WAITRESS_RET_ERR;
 	
 	/* init handles */
 	pthread_mutex_init (&player->pauseMutex, NULL);
-	player->scale = computeReplayGainScale (player->gain);
+//	player->scale = computeReplayGainScale (player->gain);
 	player->waith.data = (void *) player;
 	/* extraHeaders will be initialized later */
 	player->waith.extraHeaders = extraHeaders;
@@ -407,14 +383,12 @@ void *BarPlayerMacOSXThread(void *data){
 	switch (player->audioFormat) {
 #ifdef ENABLE_FAAD
 		case PIANO_AF_AACPLUS:
-			player->aacHandle = NeAACDecOpen();
-			/* set aac conf */
-			conf = NeAACDecGetCurrentConfiguration(player->aacHandle);
-			conf->outputFormat = FAAD_FMT_16BIT;
-		    conf->downMatrix = 1;
-			NeAACDecSetConfiguration(player->aacHandle, conf);
-			
+        {
+            OSStatus err = AudioFileStreamOpen(player, StreamPropertyListenerProc, MyPacketsProc, 
+                                               kAudioFileAAC_ADTSType, &player->audioFileStream);
+            if (err) { PRINTERROR("AudioFileStreamOpen"); }
 			player->waith.callback = BarPlayerAACCb;
+        }
 			break;
 #endif /* ENABLE_FAAD */
 			
@@ -445,16 +419,16 @@ void *BarPlayerMacOSXThread(void *data){
 		wRet = WaitressFetchCall (&player->waith);
 	} while (wRet == WAITRESS_RET_PARTIAL_FILE || wRet == WAITRESS_RET_TIMEOUT
 			 || wRet == WAITRESS_RET_READ_ERR);
-
+    
     while([[(id)player->audio buffer] bytesUsed])
     {
         [NSThread sleepForTimeInterval:.01f];
     }
-
+    
 	switch (player->audioFormat) {
 #ifdef ENABLE_FAAD
 		case PIANO_AF_AACPLUS:
-			NeAACDecClose(player->aacHandle);
+            AudioFileStreamClose(player->streamID);
             [(id)player->audio release];
 			break;
 #endif /* ENABLE_FAAD */
@@ -472,16 +446,12 @@ void *BarPlayerMacOSXThread(void *data){
 			/* this should never happen: thread is aborted above */
 			break;
 	}
-//	if (player->aoError) {
-//		ret = (void *) PLAYER_RET_ERR;
-//	}
-//	ao_close(player->audioOutDevice);
+    //	if (player->aoError) {
+    //		ret = (void *) PLAYER_RET_ERR;
+    //	}
+    //	ao_close(player->audioOutDevice);
 	WaitressFree (&player->waith);
-#ifdef ENABLE_FAAD
-	if (player->sampleSize != NULL) {
-		free (player->sampleSize);
-	}
-#endif /* ENABLE_FAAD */
+    
 	pthread_mutex_destroy (&player->pauseMutex);
 	
 	player->mode = PLAYER_FINISHED_PLAYBACK;

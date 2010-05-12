@@ -6,6 +6,6 @@
 
 /* used libraries */
 #define ENABLE_FAAD
-#define ENABLE_MAD
+//#define ENABLE_MAD
 
 #endif /* _CONFIG_H */
