@@ -42,6 +42,7 @@ OSStatus RenderCallback(void                       *in,
     OEAudio * audio = (OEAudio*)in;
     [audio getAudioBuffer:ioData->mBuffers[0].mData frameCount:inNumberFrames];
     
+    //printf("buffferrrrr:%u : %u\n", [audio->_buffer usedBytes], [audio->_buffer availableBytes]);
     struct audioPlayer * player = audio->mPlayer;
     
     player->songPlayed += (unsigned long long int) inNumberFrames * 2 *
@@ -65,6 +66,7 @@ OSStatus RenderCallback(void                       *in,
     if(self)
     {
         mPlayer = player;
+        _buffer = [[OERingBuffer alloc] initWithLength:player->samplerate/2];
         [self createGraph];
     }
     

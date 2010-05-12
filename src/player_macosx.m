@@ -132,7 +132,10 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) 
 //			ao_play (player->audioOutDevice, (char *) aacDecoded,
 //					 frameInfo.samples * 2);
             [[(id)player->audio buffer] write:(void*)aacDecoded maxLength:frameInfo.samples * sizeof(short int)];
-            
+            while([[(id)player->audio buffer] bytesUsed] > player->samplerate / 4)
+            {
+                [NSThread sleepForTimeInterval:.01f];
+            }
             //[NSThread sleepForTimeInterval: (float)frameInfo.samples / (float) (player->samplerate * player->channels)];
             
 			/* add played frame length to played time, explained below */
@@ -222,10 +225,6 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) 
 					4096LL * (unsigned long long int) BAR_PLAYER_MS_TO_S_FACTOR /
 					(unsigned long long int) player->samplerate /
 					(unsigned long long int) player->channels;
-                    
-                    OERingBuffer *buffer = [[OERingBuffer alloc] initWithLength:player->songDuration * player->samplerate * player->channels];
-                    [(id)player->audio setBuffer:buffer];
-                    [buffer release];
                     
 					break;
 				} else {
@@ -446,12 +445,12 @@ void *BarPlayerMacOSXThread(void *data){
 		wRet = WaitressFetchCall (&player->waith);
 	} while (wRet == WAITRESS_RET_PARTIAL_FILE || wRet == WAITRESS_RET_TIMEOUT
 			 || wRet == WAITRESS_RET_READ_ERR);
-	
+
     while([[(id)player->audio buffer] bytesUsed])
     {
-        sleep(1);
+        [NSThread sleepForTimeInterval:.01f];
     }
-    
+
 	switch (player->audioFormat) {
 #ifdef ENABLE_FAAD
 		case PIANO_AF_AACPLUS:
