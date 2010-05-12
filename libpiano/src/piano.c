@@ -920,6 +920,186 @@ PianoStation_t *PianoFindStationById (PianoStation_t *stations,
 	return NULL;
 }
 
+/*	receive genre stations
+ *	@param piano handle
+ */
+PianoReturn_t PianoGetGenreStations (PianoHandle_t *ph) {
+	char *retStr;
+	PianoReturn_t ret;
+
+	snprintf (ph->waith.path, sizeof (ph->waith.path), "/xml/genre?r=%li",
+			time (NULL));
+	
+	if ((ret = PianoHttpGet (&ph->waith, &retStr)) ==
+			PIANO_RET_OK) {
+		ret = PianoXmlParseGenreExplorer (ph, retStr);
+		PianoFree (retStr, 0);
+	}
+
+	return ret;
+}
+
+/*	make shared stations private, needed to rate songs played on shared
+ *	stations
+ *	@param piano handle
+ *	@param station to transform
+ */
+PianoReturn_t PianoTransformShared (PianoHandle_t *ph,
+		PianoStation_t *station) {
+	char xmlSendBuf[PIANO_SEND_BUFFER_SIZE], *retStr;
+	PianoReturn_t ret;
+
+	snprintf (xmlSendBuf, sizeof (xmlSendBuf), "<?xml version=\"1.0\"?>"
+			"<methodCall><methodName>station.transformShared</methodName>"
+			"<params><param><value><int>%li</int></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"</params></methodCall>", time (NULL), ph->user.authToken,
+			station->id);
+
+	snprintf (ph->waith.path, sizeof (ph->waith.path), PIANO_RPC_PATH
+			"rid=%s&lid=%s&method=transformShared&arg1=%s", ph->routeId,
+			ph->user.listenerId, station->id);
+	
+	if ((ret = PianoHttpPost (&ph->waith, xmlSendBuf, &retStr)) ==
+			PIANO_RET_OK) {
+		ret = PianoXmlParseTranformStation (retStr);
+		/* though this call returns a bunch of "new" data only this one is
+		 * changed and important (at the moment) */
+		if (ret == PIANO_RET_OK) {
+			station->isCreator = 1;
+		}
+		PianoFree (retStr, 0);
+	}
+
+	return ret;
+}
+
+/*	"why dit you play this song?"
+ *	@param piano handle
+ *	@param song (from playlist)
+ *	@param return allocated string; you have to free it yourself
+ */
+PianoReturn_t PianoExplain (PianoHandle_t *ph, const PianoSong_t *song,
+		char **retExplain) {
+	char xmlSendBuf[PIANO_SEND_BUFFER_SIZE], *retStr;
+	PianoReturn_t ret;
+
+	snprintf (xmlSendBuf, sizeof (xmlSendBuf), "<?xml version=\"1.0\"?>"
+			"<methodCall><methodName>playlist.narrative</methodName>"
+			"<params><param><value><int>%li</int></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"</params></methodCall>", time (NULL), ph->user.authToken,
+			song->stationId, song->musicId);
+	
+	snprintf (ph->waith.path, sizeof (ph->waith.path), PIANO_RPC_PATH
+			"rid=%s&lid=%s&method=method=narrative&arg1=%s&arg2=%s",
+			ph->routeId, ph->user.listenerId, song->stationId, song->musicId);
+	
+	if ((ret = PianoHttpPost (&ph->waith, xmlSendBuf, &retStr)) ==
+			PIANO_RET_OK) {
+		ret = PianoXmlParseNarrative (retStr, retExplain);
+		PianoFree (retStr, 0);
+	}
+
+	return ret;
+}
+
+/*	Get seed suggestions by music id
+ *	@param piano handle
+ *	@param music id
+ *	@param max results
+ *	@param result buffer
+ */
+PianoReturn_t PianoSeedSuggestions (PianoHandle_t *ph, const char *musicId,
+		unsigned int max, PianoSearchResult_t *searchResult) {
+	char xmlSendBuf[PIANO_SEND_BUFFER_SIZE], *retStr;
+	PianoReturn_t ret;
+
+	snprintf (xmlSendBuf, sizeof (xmlSendBuf), "<?xml version=\"1.0\"?>"
+			"<methodCall><methodName>music.getSeedSuggestions</methodName>"
+			"<params><param><value><int>%li</int></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"<param><value><int>%u</int></value></param>"
+			"</params></methodCall>", time (NULL), ph->user.authToken,
+			musicId, max);
+	
+	snprintf (ph->waith.path, sizeof (ph->waith.path), PIANO_RPC_PATH
+			"rid=%s&lid=%s&method=method=getSeedSuggestions&arg1=%s&arg2=%u",
+			ph->routeId, ph->user.listenerId, musicId, max);
+	
+	if ((ret = PianoHttpPost (&ph->waith, xmlSendBuf, &retStr)) ==
+			PIANO_RET_OK) {
+		ret = PianoXmlParseSeedSuggestions (retStr, searchResult);
+		PianoFree (retStr, 0);
+	}
+
+	return ret;
+}
+
+/*	Create song bookmark
+ *	@param piano handle
+ *	@param song
+ */
+PianoReturn_t PianoBookmarkSong (PianoHandle_t *ph, PianoSong_t *song) {
+	char xmlSendBuf[PIANO_SEND_BUFFER_SIZE], *retStr;
+	PianoReturn_t ret;
+
+	snprintf (xmlSendBuf, sizeof (xmlSendBuf), "<?xml version=\"1.0\"?>"
+			"<methodCall><methodName>station.createBookmark</methodName>"
+			"<params><param><value><int>%li</int></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"</params></methodCall>", time (NULL), ph->user.authToken,
+			song->stationId, song->musicId);
+	
+	snprintf (ph->waith.path, sizeof (ph->waith.path), PIANO_RPC_PATH
+			"rid=%s&lid=%s&method=method=createBookmark&arg1=%s&arg2=%s",
+			ph->routeId, ph->user.listenerId, song->stationId,
+			song->musicId);
+	
+	if ((ret = PianoHttpPost (&ph->waith, xmlSendBuf, &retStr)) ==
+			PIANO_RET_OK) {
+		ret = PianoXmlParseSimple (retStr);
+		PianoFree (retStr, 0);
+	}
+
+	return ret;
+}
+
+/*	Create artist bookmark
+ *	@param piano handle
+ *	@param song of artist
+ */
+PianoReturn_t PianoBookmarkArtist (PianoHandle_t *ph, PianoSong_t *song) {
+	char xmlSendBuf[PIANO_SEND_BUFFER_SIZE], *retStr;
+	PianoReturn_t ret;
+
+	snprintf (xmlSendBuf, sizeof (xmlSendBuf), "<?xml version=\"1.0\"?>"
+			"<methodCall><methodName>station.createArtistBookmark</methodName>"
+			"<params><param><value><int>%li</int></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"<param><value><string>%s</string></value></param>"
+			"</params></methodCall>", time (NULL), ph->user.authToken,
+			song->artistMusicId);
+	
+	snprintf (ph->waith.path, sizeof (ph->waith.path), PIANO_RPC_PATH
+			"rid=%s&lid=%s&method=method=createArtistBookmark&arg1=%s",
+			ph->routeId, ph->user.listenerId, song->artistMusicId);
+	
+	if ((ret = PianoHttpPost (&ph->waith, xmlSendBuf, &retStr)) ==
+			PIANO_RET_OK) {
+		ret = PianoXmlParseSimple (retStr);
+		PianoFree (retStr, 0);
+	}
+
+	return ret;
+}
+
 /*	convert return value to human-readable string
  *	@param enum
  *	@return error string
