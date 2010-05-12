@@ -34,7 +34,7 @@ void StreamPropertyListenerProc(void * inClientData,
 			if (err) { PRINTERROR("get kAudioFileStreamProperty_DataFormat"); player->failed = true; break; }
 			
             //TODO: Is this really right!?!
-            player->songDuration = player->waith.contentLength * 1000 / asbd.mSampleRate;
+            player->songDuration = player->waith.contentLength * 2000 / asbd.mSampleRate;
             player->samplerate = asbd.mSampleRate;
             
 			// create the audio queue
@@ -84,10 +84,11 @@ void StreamPacketsProc(void * inClientData,
     
 	// the following code assumes we're streaming VBR data. for CBR data, you'd need another code branch here.
     
+    
 	for (int i = 0; i < inNumberPackets; ++i) {
 		SInt64 packetOffset = inPacketDescriptions[i].mStartOffset;
 		SInt64 packetSize   = inPacketDescriptions[i].mDataByteSize;
-		
+        
 		// if the space remaining in the buffer is not enough for this packet, then enqueue the buffer.
 		size_t bufSpaceRemaining = kAQBufSize - player->bytesFilled;
 		if (bufSpaceRemaining < packetSize) {
@@ -175,15 +176,18 @@ void PianobarAudioQueueOutputCallback(void* inClientData,
 	// this is called by the audio queue when it has finished decoding our data. 
 	// The buffer is now free to be reused.
 	struct audioPlayer* player = (struct audioPlayer*)inClientData;
-    
-	unsigned int bufIndex = MyFindQueueBuffer(player, inBuffer);
 
-	// signal waiting thread that the buffer is free.
-	pthread_mutex_lock(&player->mutex);
-	player->inuse[bufIndex] = false;
-    player->songPlayed += (player->samplerate / (1024)) * 4;
-	pthread_cond_signal(&player->cond);
-	pthread_mutex_unlock(&player->mutex);
+    if (player->mode != PLAYER_FREED)
+    {
+        unsigned int bufIndex = MyFindQueueBuffer(player, inBuffer);
+
+        // signal waiting thread that the buffer is free.
+        pthread_mutex_lock(&player->mutex);
+        player->inuse[bufIndex] = false;
+        player->songPlayed += (player->samplerate / (1024)) * 4;
+        pthread_cond_signal(&player->cond);
+        pthread_mutex_unlock(&player->mutex);
+    }
 }
 
 void AudioQueueIsRunningCallback(void* inClientData, 

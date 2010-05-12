@@ -23,6 +23,7 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) 
 	struct audioPlayer *player = stream;
 	
 	QUIT_PAUSE_CHECK;
+    
     AudioFileStreamParseBytes(player->audioFileStream, size, ptr, 0);
     
     return WAITRESS_CB_RET_OK;
