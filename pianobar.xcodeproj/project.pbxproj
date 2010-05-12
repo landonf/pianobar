@@ -339,7 +339,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd libao\n./configure --prefix=$SRCROOT/libao/build --enable-static\nmake\nmake install";
+			shellScript = "if [ ! -f libao/Makefile ]\nthen\n\tcd libao\n\t./configure --prefix=$SRCROOT/libao/build --enable-static\nfi\nmake\nmake install";
 		};
 		C90B187C119A8EDA001AD6DF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -352,7 +352,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd libmad\n./configure --prefix=$SRCROOT/libmad/build\nmake\nmake install";
+			shellScript = "if [ ! -f libmad/Makefile ]\nthen\n\tcd libmad\n\t./configure --prefix=$SRCROOT/libmad/build\nfi\nmake\nmake install";
 		};
 		C90B1880119A8EFA001AD6DF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -365,7 +365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd libfaad2\n./configure --prefix=$SRCROOT/libfaad2/build\nmake\nmake install";
+			shellScript = "if [ ! -f libfaad2/Makefile ]\nthen\n\tcd libfaad2\n\t./configure --prefix=$SRCROOT/libfaad2/build\nfi\nmake\nmake install";
 		};
 /* End PBXShellScriptBuildPhase section */
 
