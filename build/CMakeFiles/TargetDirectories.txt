@@ -1,6 +1,0 @@
-/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/CMakeFiles/ALL_BUILD.dir
-/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/libezxml/src/CMakeFiles/ezxml.dir
-/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/libpiano/src/CMakeFiles/piano.dir
-/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/src/CMakeFiles/pianobar.dir
-/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/libwaitress/src/CMakeFiles/waitress.dir
-/Users/syco/Packages/PlayerPiano/contrib/pianobar/build/libwardrobe/src/CMakeFiles/wardrobe.dir
