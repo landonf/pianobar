@@ -107,12 +107,107 @@ typedef struct PianoSearchResult {
 } PianoSearchResult_t;
 
 typedef enum {
+	/* 0 is reserved: memset (x, 0, sizeof (x)) */
+	PIANO_REQUEST_LOGIN = 1,
+	PIANO_REQUEST_GET_STATIONS = 2,
+	PIANO_REQUEST_GET_PLAYLIST = 3,
+	PIANO_REQUEST_RATE_SONG = 4,
+	PIANO_REQUEST_ADD_FEEDBACK = 5,
+	PIANO_REQUEST_MOVE_SONG = 6,
+	PIANO_REQUEST_RENAME_STATION = 7,
+	PIANO_REQUEST_DELETE_STATION = 8,
+	PIANO_REQUEST_SEARCH = 9,
+	PIANO_REQUEST_CREATE_STATION = 10,
+	PIANO_REQUEST_ADD_SEED = 11,
+	PIANO_REQUEST_ADD_TIRED_SONG = 12,
+	PIANO_REQUEST_SET_QUICKMIX = 13,
+	PIANO_REQUEST_GET_GENRE_STATIONS = 14,
+	PIANO_REQUEST_TRANSFORM_STATION = 15,
+	PIANO_REQUEST_EXPLAIN = 16,
+	PIANO_REQUEST_GET_SEED_SUGGESTIONS = 17,
+	PIANO_REQUEST_BOOKMARK_SONG = 18,
+	PIANO_REQUEST_BOOKMARK_ARTIST = 19,
+} PianoRequestType_t;
+
+typedef struct PianoRequest {
+	PianoRequestType_t type;
+	void *data;
+	char urlPath[1024];
+	char *postData;
+	char *responseData;
+} PianoRequest_t;
+
+/* request data structures */
+typedef struct {
+	char *user;
+	char *password;
+} PianoRequestDataLogin_t;
+
+typedef struct {
+	PianoStation_t *station;
+	PianoAudioFormat_t format;
+	PianoSong_t *retPlaylist;
+} PianoRequestDataGetPlaylist_t;
+
+typedef struct {
+	PianoSong_t *song;
+	PianoSongRating_t rating;
+} PianoRequestDataRateSong_t;
+
+typedef struct {
+	char *stationId;
+	char *musicId;
+	char *matchingSeed;
+	char *userSeed;
+	char *focusTraitId;
+	PianoSongRating_t rating;
+} PianoRequestDataAddFeedback_t;
+
+typedef struct {
+	PianoSong_t *song;
+	PianoStation_t *from;
+	PianoStation_t *to;
+	unsigned short step;
+} PianoRequestDataMoveSong_t;
+
+typedef struct {
+	PianoStation_t *station;
+	char *newName;
+} PianoRequestDataRenameStation_t;
+
+typedef struct {
+	char *searchStr;
+	PianoSearchResult_t searchResult;
+} PianoRequestDataSearch_t;
+
+typedef struct {
+	char *type;
+	char *id;
+} PianoRequestDataCreateStation_t;
+
+typedef struct {
+	PianoStation_t *station;
+	char *musicId;
+} PianoRequestDataAddSeed_t;
+
+typedef struct {
+	PianoSong_t *song;
+	char *retExplain;
+} PianoRequestDataExplain_t;
+
+typedef struct {
+	char *musicId;
+	unsigned short max;
+	PianoSearchResult_t searchResult;
+} PianoRequestDataGetSeedSuggestions_t;
+
+typedef enum {
 	PIANO_RET_ERR = 0,
 	PIANO_RET_OK = 1,
 	PIANO_RET_XML_INVALID = 2,
 	PIANO_RET_AUTH_TOKEN_INVALID = 3,
 	PIANO_RET_AUTH_USER_PASSWORD_INVALID = 4,
-	PIANO_RET_NET_ERROR = 5,
+	PIANO_RET_CONTINUE_REQUEST = 5,
 	PIANO_RET_NOT_AUTHORIZED = 6,
 	PIANO_RET_PROTOCOL_INCOMPATIBLE = 7,
 	PIANO_RET_READONLY_MODE = 8,
@@ -121,7 +216,7 @@ typedef enum {
 	PIANO_RET_STATION_NONEXISTENT = 11,
 	PIANO_RET_OUT_OF_MEMORY = 12,
 	PIANO_RET_OUT_OF_SYNC = 13,
-	PIANO_RET_PLAYLIST_END = 14
+	PIANO_RET_PLAYLIST_END = 14,
 } PianoReturn_t;
 
 void PianoInit (PianoHandle_t *);
@@ -136,9 +231,5 @@ void PianoDestroyRequest (PianoRequest_t *);
 
 PianoStation_t *PianoFindStationById (PianoStation_t *, const char *);
 const char *PianoErrorToStr (PianoReturn_t);
-PianoReturn_t PianoSeedSuggestions (PianoHandle_t *, const char *,
-		unsigned int, PianoSearchResult_t *);
-PianoReturn_t PianoBookmarkSong (PianoHandle_t *, PianoSong_t *);
-PianoReturn_t PianoBookmarkArtist (PianoHandle_t *, PianoSong_t *);
 
 #endif /* _PIANO_H */
