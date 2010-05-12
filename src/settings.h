@@ -27,7 +27,7 @@ THE SOFTWARE.
 #include <piano.h>
 #include <waitress.h>
 
-#include "player.h"
+#include "player_macosx.h"
 
 #define BAR_KS_ARGS PianoHandle_t *ph, WaitressHandle_t *waith, \
 		struct audioPlayer *player, \

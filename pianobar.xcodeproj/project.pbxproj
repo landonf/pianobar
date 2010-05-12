@@ -21,7 +21,6 @@
 		1E105750119A6ABC008CC292 /* xml.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E105747119A6ABC008CC292 /* xml.c */; };
 		1E105751119A6ABC008CC292 /* xml.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E105748119A6ABC008CC292 /* xml.h */; };
 		1E10575F119A6AD3008CC292 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E105752119A6AD3008CC292 /* main.c */; };
-		1E105760119A6AD3008CC292 /* player.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E105753119A6AD3008CC292 /* player.c */; };
 		1E105761119A6AD3008CC292 /* settings.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E105755119A6AD3008CC292 /* settings.c */; };
 		1E105762119A6AD3008CC292 /* terminal.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E105757119A6AD3008CC292 /* terminal.c */; };
 		1E105763119A6AD3008CC292 /* ui_act.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E105759119A6AD3008CC292 /* ui_act.c */; };
@@ -35,6 +34,9 @@
 		1E105796119A6E03008CC292 /* libao.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E105795119A6E03008CC292 /* libao.dylib */; };
 		1E105798119A6E03008CC292 /* libfaad.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E105797119A6E03008CC292 /* libfaad.dylib */; };
 		1E10579A119A6E03008CC292 /* libmad.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E105799119A6E03008CC292 /* libmad.dylib */; };
+		1E1057E6119A7630008CC292 /* player_macosx.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E1057E5119A7630008CC292 /* player_macosx.c */; };
+		1E1057F0119A7938008CC292 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1057EF119A7938008CC292 /* CoreAudio.framework */; };
+		1E1057F2119A7938008CC292 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1057F1119A7938008CC292 /* CoreFoundation.framework */; };
 		8DD76FB00486AB0100D96B5E /* pianobar.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6A0FF2C0290799A04C91782 /* pianobar.1 */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +113,10 @@
 		1E105795119A6E03008CC292 /* libao.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libao.dylib; path = usr/local/lib/libao.dylib; sourceTree = SDKROOT; };
 		1E105797119A6E03008CC292 /* libfaad.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfaad.dylib; path = usr/local/lib/libfaad.dylib; sourceTree = SDKROOT; };
 		1E105799119A6E03008CC292 /* libmad.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmad.dylib; path = usr/local/lib/libmad.dylib; sourceTree = SDKROOT; };
+		1E1057E5119A7630008CC292 /* player_macosx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = player_macosx.c; sourceTree = "<group>"; };
+		1E1057EE119A77FB008CC292 /* player_macosx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player_macosx.h; sourceTree = "<group>"; };
+		1E1057EF119A7938008CC292 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		1E1057F1119A7938008CC292 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		8DD76FB20486AB0100D96B5E /* pianobar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pianobar; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A0FF2C0290799A04C91782 /* pianobar.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = pianobar.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +153,8 @@
 				1E105796119A6E03008CC292 /* libao.dylib in Frameworks */,
 				1E105798119A6E03008CC292 /* libfaad.dylib in Frameworks */,
 				1E10579A119A6E03008CC292 /* libmad.dylib in Frameworks */,
+				1E1057F0119A7938008CC292 /* CoreAudio.framework in Frameworks */,
+				1E1057F2119A7938008CC292 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +170,8 @@
 				1E105795119A6E03008CC292 /* libao.dylib */,
 				1E105797119A6E03008CC292 /* libfaad.dylib */,
 				1E105799119A6E03008CC292 /* libmad.dylib */,
+				1E1057EF119A7938008CC292 /* CoreAudio.framework */,
+				1E1057F1119A7938008CC292 /* CoreFoundation.framework */,
 			);
 			name = pianobar;
 			sourceTree = "<group>";
@@ -229,8 +239,10 @@
 			children = (
 				1E10578A119A6D45008CC292 /* config.h */,
 				1E105752119A6AD3008CC292 /* main.c */,
-				1E105753119A6AD3008CC292 /* player.c */,
 				1E105754119A6AD3008CC292 /* player.h */,
+				1E105753119A6AD3008CC292 /* player.c */,
+				1E1057EE119A77FB008CC292 /* player_macosx.h */,
+				1E1057E5119A7630008CC292 /* player_macosx.c */,
 				1E105755119A6AD3008CC292 /* settings.c */,
 				1E105756119A6AD3008CC292 /* settings.h */,
 				1E105757119A6AD3008CC292 /* terminal.c */,
@@ -415,12 +427,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E10575F119A6AD3008CC292 /* main.c in Sources */,
-				1E105760119A6AD3008CC292 /* player.c in Sources */,
 				1E105761119A6AD3008CC292 /* settings.c in Sources */,
 				1E105762119A6AD3008CC292 /* terminal.c in Sources */,
 				1E105763119A6AD3008CC292 /* ui_act.c in Sources */,
 				1E105764119A6AD3008CC292 /* ui_readline.c in Sources */,
 				1E105765119A6AD3008CC292 /* ui.c in Sources */,
+				1E1057E6119A7630008CC292 /* player_macosx.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

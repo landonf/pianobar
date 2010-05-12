@@ -1,0 +1,131 @@
+Tlibwaitress
+v7
+r0
+t295338752.486805
+cCheck dependencies
+cCompileC build/pianobar.build/Debug/libwaitress.build/Objects-normal/x86_64/waitress.o /Users/syco/Packages/pianobar/libwaitress/src/waitress.c normal x86_64 c com.apple.compilers.gcc.4_2
+cLibtool /Users/syco/Packages/pianobar/build/Debug/libwaitress.a normal x86_64
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/ctype.h
+c000000004A5C14A60000000000002C18
+t1247548582
+s11288
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/fcntl.h
+c000000004A5C14A600000000000003EA
+t1247548582
+s1002
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/netdb.h
+c000000004A4181220000000000003057
+t1245806882
+s12375
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/poll.h
+c000000004A5C14A600000000000003EC
+t1247548582
+s1004
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
+c000000004A5C14A70000000000004174
+t1247548583
+s16756
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
+c000000004A5C14A70000000000002DF5
+t1247548583
+s11765
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/string.h
+c000000004A5C14A70000000000001731
+t1247548583
+s5937
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/sys/socket.h
+c000000004A73D65400000000000059BC
+t1249105492
+s22972
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/sys/types.h
+c000000004A73D6550000000000002905
+t1249105493
+s10501
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/unistd.h
+c000000004A5C14A7000000000000563E
+t1247548583
+s22078
+
+N/Users/syco/Packages/pianobar/build/Debug/libwaitress.a
+t1273641946
+s24672
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libwaitress.build/Objects-normal/x86_64/waitress.LinkFileList
+c000000004BEA3864000000000000006C
+t1273641060
+s108
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libwaitress.build/Objects-normal/x86_64/waitress.o
+t1273641946
+s24236
+
+N/Users/syco/Packages/pianobar/libwaitress/src/config.h
+c000000004BEA351F000000000000001E
+t1273640223
+s30
+
+N/Users/syco/Packages/pianobar/libwaitress/src/waitress.c
+c000000004BEA3B200000000000003AF4
+t1273641760
+s15092
+i<sys/types.h>
+i<sys/socket.h>
+i<netdb.h>
+i<string.h>
+i<unistd.h>
+i<stdio.h>
+i<stdlib.h>
+i<ctype.h>
+i<fcntl.h>
+i<poll.h>
+i"config.h"
+i"waitress.h"
+
+N/Users/syco/Packages/pianobar/libwaitress/src/waitress.h
+c000000004BEA3B200000000000000B87
+t1273641760
+s2951
+i<stdlib.h>
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies295338752#295338752#0(0"0(0#1#0"4300885448#0"0#
+
+CCompileC build/pianobar.build/Debug/libwaitress.build/Objects-normal/x86_64/waitress.o /Users/syco/Packages/pianobar/libwaitress/src/waitress.c normal x86_64 c com.apple.compilers.gcc.4_2
+s295334745.965362
+e295334746.032288
+r1
+xCompileC
+xbuild/pianobar.build/Debug/libwaitress.build/Objects-normal/x86_64/waitress.o
+x/Users/syco/Packages/pianobar/libwaitress/src/waitress.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@64"Compile /Users/syco/Packages/pianobar/libwaitress/src/waitress.c295334745#295334746#0(0"0(0#0#56"/Users/syco/Packages/pianobar/libwaitress/src/waitress.c4300885448#1262"    cd /Users/syco/Packages/pianobar    setenv LANG en_US.US-ASCII    /Users/syco/DeveloperMac/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/libwaitress.build/waitress-generated-files.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libwaitress.build/waitress-own-target-headers.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libwaitress.build/waitress-all-target-headers.hmap -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/libwaitress.build/waitress-project-headers.hmap -F/Users/syco/Packages/pianobar/build/Debug -I/Users/syco/Packages/pianobar/build/Debug/include -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libwaitress.build/DerivedSources/x86_64 -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libwaitress.build/DerivedSources -c /Users/syco/Packages/pianobar/libwaitress/src/waitress.c -o /Users/syco/Packages/pianobar/build/pianobar.build/Debug/libwaitress.build/Objects-normal/x86_64/waitress.o0#
+
+CLibtool /Users/syco/Packages/pianobar/build/Debug/libwaitress.a normal x86_64
+s295334746.032385
+e295334746.092906
+r1
+xLibtool
+x/Users/syco/Packages/pianobar/build/Debug/libwaitress.a
+xnormal
+xx86_64
+lSLF07#2@47"Libtool build/Debug/libwaitress.a normal x86_64295334746#295334746#0(0"0(0#0#0"4300885448#438"    cd /Users/syco/Packages/pianobar    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Users/syco/DeveloperMac/usr/bin/libtool -static -arch_only x86_64 -syslibroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -L/Users/syco/Packages/pianobar/build/Debug -filelist /Users/syco/Packages/pianobar/build/pianobar.build/Debug/libwaitress.build/Objects-normal/x86_64/waitress.LinkFileList -o /Users/syco/Packages/pianobar/build/Debug/libwaitress.a0#
+

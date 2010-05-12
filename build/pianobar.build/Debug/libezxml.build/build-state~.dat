@@ -1,0 +1,121 @@
+Tlibezxml
+v7
+r0
+t295333860.635201
+cCheck dependencies
+cCompileC build/pianobar.build/Debug/libezxml.build/Objects-normal/x86_64/ezxml.o /Users/syco/Packages/pianobar/libezxml/src/ezxml.c normal x86_64 c com.apple.compilers.gcc.4_2
+cLibtool /Users/syco/Packages/pianobar/build/Debug/libezxml.a normal x86_64
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/ctype.h
+c000000004A5C14A60000000000002C18
+t1247548582
+s11288
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/fcntl.h
+c000000004A5C14A600000000000003EA
+t1247548582
+s1002
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
+c000000004A5C14A70000000000004174
+t1247548583
+s16756
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
+c000000004A5C14A70000000000002DF5
+t1247548583
+s11765
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/string.h
+c000000004A5C14A70000000000001731
+t1247548583
+s5937
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/sys/stat.h
+c000000004A73D6550000000000004A1D
+t1249105493
+s18973
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/sys/types.h
+c000000004A73D6550000000000002905
+t1249105493
+s10501
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/unistd.h
+c000000004A5C14A7000000000000563E
+t1247548583
+s22078
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+c000000004A11EB2400000000000010DD
+t1242688292
+s4317
+
+N/Users/syco/Packages/pianobar/build/Debug/libezxml.a
+t1273641060
+s39176
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libezxml.build/Objects-normal/x86_64/ezxml.LinkFileList
+c000000004BEA38640000000000000066
+t1273641060
+s102
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libezxml.build/Objects-normal/x86_64/ezxml.o
+t1273641060
+s38836
+
+N/Users/syco/Packages/pianobar/libezxml/src/ezxml.c
+c000000004BEA37CB0000000000006F0D
+t1273640907
+s28429
+i<stdlib.h>
+i<stdio.h>
+i<stdarg.h>
+i<string.h>
+i<ctype.h>
+i<unistd.h>
+i<sys/types.h>
+i<sys/stat.h>
+i"ezxml.h"
+
+N/Users/syco/Packages/pianobar/libezxml/src/ezxml.h
+c000000004BEA37CB0000000000000F8C
+t1273640907
+s3980
+i<stdlib.h>
+i<stdio.h>
+i<stdarg.h>
+i<fcntl.h>
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies295333860#295333860#0(0"0(0#1#0"4300885448#0"0#
+
+CCompileC build/pianobar.build/Debug/libezxml.build/Objects-normal/x86_64/ezxml.o /Users/syco/Packages/pianobar/libezxml/src/ezxml.c normal x86_64 c com.apple.compilers.gcc.4_2
+s295333860.520022
+e295333860.630136
+r1
+xCompileC
+xbuild/pianobar.build/Debug/libezxml.build/Objects-normal/x86_64/ezxml.o
+x/Users/syco/Packages/pianobar/libezxml/src/ezxml.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@58"Compile /Users/syco/Packages/pianobar/libezxml/src/ezxml.c295333860#295333860#0(0"0(0#0#50"/Users/syco/Packages/pianobar/libezxml/src/ezxml.c4300885448#1220"    cd /Users/syco/Packages/pianobar    setenv LANG en_US.US-ASCII    /Users/syco/DeveloperMac/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/libezxml.build/ezxml-generated-files.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libezxml.build/ezxml-own-target-headers.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libezxml.build/ezxml-all-target-headers.hmap -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/libezxml.build/ezxml-project-headers.hmap -F/Users/syco/Packages/pianobar/build/Debug -I/Users/syco/Packages/pianobar/build/Debug/include -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libezxml.build/DerivedSources/x86_64 -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/libezxml.build/DerivedSources -c /Users/syco/Packages/pianobar/libezxml/src/ezxml.c -o /Users/syco/Packages/pianobar/build/pianobar.build/Debug/libezxml.build/Objects-normal/x86_64/ezxml.o0#
+
+CLibtool /Users/syco/Packages/pianobar/build/Debug/libezxml.a normal x86_64
+s295333860.630231
+e295333860.635163
+r1
+xLibtool
+x/Users/syco/Packages/pianobar/build/Debug/libezxml.a
+xnormal
+xx86_64
+lSLF07#2@44"Libtool build/Debug/libezxml.a normal x86_64295333860#295333860#0(0"0(0#0#0"4300885448#429"    cd /Users/syco/Packages/pianobar    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Users/syco/DeveloperMac/usr/bin/libtool -static -arch_only x86_64 -syslibroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -L/Users/syco/Packages/pianobar/build/Debug -filelist /Users/syco/Packages/pianobar/build/pianobar.build/Debug/libezxml.build/Objects-normal/x86_64/ezxml.LinkFileList -o /Users/syco/Packages/pianobar/build/Debug/libezxml.a0#
+

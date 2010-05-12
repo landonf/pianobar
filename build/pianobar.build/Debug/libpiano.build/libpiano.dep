@@ -1,0 +1,4 @@
+0000000001fbd20c00000000000050cc a0bbddf9d7e04873361e1c4250c33344 ffffffffffffffffffffffffffffffff 31028 /Users/syco/Packages/pianobar/build/pianobar.build/Debug/libpiano.build/Objects-normal/x86_64/xml.o
+000000004a5c16f20000000000003ed4 70f0c926456bdf006ed4678fbaf85ea3 ffffffffffffffffffffffffffffffff 41452 /Users/syco/Packages/pianobar/build/pianobar.build/Debug/libpiano.build/Objects-normal/x86_64/piano.o
+000000004a11eb2400000000000044b8 482319c1f39eea71e5d80aff1a083a80 ffffffffffffffffffffffffffffffff 15636 /Users/syco/Packages/pianobar/build/pianobar.build/Debug/libpiano.build/Objects-normal/x86_64/crypt.o
+98680d1e2a18a19bbd127132f0338441 ac067b321297552e49c01280946f2e88 ffffffffffffffffffffffffffffffff 152888 /Users/syco/Packages/pianobar/build/Debug/libpiano.a

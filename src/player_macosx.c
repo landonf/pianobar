@@ -18,6 +18,9 @@ if (player->doQuit) { \
 return WAITRESS_CB_RET_ERR; \
 }
 
+#define byteswap32(x) (((x >> 24) & 0x000000ff) | ((x >> 8) & 0x0000ff00) | \
+((x << 8) & 0x00ff0000) | ((x << 24) & 0xff000000))
+
 
 /* pandora uses float values with 2 digits precision. Scale them by 100 to get
  * a "nice" integer */
@@ -52,6 +55,38 @@ static inline signed short int applyReplayGain (signed short int value,
 }
 
 
+/*	Refill player's buffer with dataSize of data
+ *	@param player structure
+ *	@param new data
+ *	@param data size
+ *	@return 1 on success, 0 when buffer overflow occured
+ */
+static inline int BarPlayerBufferFill (struct audioPlayer *player, char *data,
+									   size_t dataSize) {
+	/* fill buffer */
+	if (player->bufferFilled + dataSize > sizeof (player->buffer)) {
+		BarUiMsg (MSG_ERR, "Buffer overflow!\n");
+		return 0;
+	}
+	memcpy (player->buffer+player->bufferFilled, data, dataSize);
+	player->bufferFilled += dataSize;
+	player->bufferRead = 0;
+	player->bytesReceived += dataSize;
+	return 1;
+}
+
+/*	move data beginning from read pointer to buffer beginning and
+ *	overwrite data already read from buffer
+ *	@param player structure
+ *	@return nothing at all
+ */
+static inline void BarPlayerBufferMove (struct audioPlayer *player) {
+	/* move remaining bytes to buffer beginning */
+	memmove (player->buffer, player->buffer + player->bufferRead,
+			 (player->bufferFilled - player->bufferRead));
+	player->bufferFilled -= player->bufferRead;
+}
+
 #ifdef ENABLE_FAAD
 #pragma mark AAC Decoding
 
@@ -62,7 +97,6 @@ static inline signed short int applyReplayGain (signed short int value,
  *	@return received bytes or less on error
  */
 static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) {
-#if FAAD_SET_UP
 	char *data = ptr;
 	struct audioPlayer *player = stream;
 	
@@ -92,8 +126,8 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) 
 				aacDecoded[i] = applyReplayGain (aacDecoded[i], player->scale);
 			}
 			/* ao_play needs bytes: 1 sample = 16 bits = 2 bytes */
-			ao_play (player->audioOutDevice, (char *) aacDecoded,
-					 frameInfo.samples * 2);
+//			ao_play (player->audioOutDevice, (char *) aacDecoded,
+//					 frameInfo.samples * 2);
 			/* add played frame length to played time, explained below */
 			player->songPlayed += (unsigned long long int) frameInfo.samples *
 			(unsigned long long int) BAR_PLAYER_MS_TO_S_FACTOR /
@@ -120,6 +154,7 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) 
 		if (player->mode == PLAYER_FOUND_ESDS) {
 			/* FIXME: is this the correct way? */
 			/* we're gonna read 10 bytes */
+#if FAAD_IS_SET_UP
 			while (player->bufferRead+1+4+5 < player->bufferFilled) {
 				if (memcmp (player->buffer + player->bufferRead,
 							"\x05\x80\x80\x80", 4) == 0) {
@@ -156,6 +191,7 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) 
 				}
 				player->bufferRead++;
 			}
+#endif
 		}
 		if (player->mode == PLAYER_AUDIO_INITIALIZED) {
 			while (player->bufferRead+4+8 < player->bufferFilled) {
@@ -223,7 +259,7 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) 
 	}
 	
 	BarPlayerBufferMove (player);
-#endif
+
 	return WAITRESS_CB_RET_OK;
 }
 
@@ -353,6 +389,9 @@ void *BarPlayerThread (void *data){
 
 void *BarPlayerMacOSXThread(void *data){
 	struct audioPlayer *player = data;
+	
+	BarPlayerInitializeCoreAudioOutputDevice(player);
+	
 	char extraHeaders[25];
 	void *ret = PLAYER_RET_OK;
 #ifdef ENABLE_FAAD
@@ -444,4 +483,38 @@ void *BarPlayerMacOSXThread(void *data){
 	player->mode = PLAYER_FINISHED_PLAYBACK;
 	
 	return ret;	
+}
+
+#pragma mark Core Audio
+
+void BarPlayerInitializeCoreAudioOutputDevice(struct audioPlayer *player){
+	OSStatus error = noErr;
+	UInt32 propertySize = 0;
+#define BailIfError(__cmd, __msg) do{ error = (__cmd); BailIfFalse(error == noErr, __msg); }while(0)
+#define BailIfFalse(__cmd, __msg) do{ if(!(__cmd)){ printf("%i - %s\n",error, __msg); goto fail; } }while(0)
+	
+	propertySize = sizeof(AudioDeviceID);
+	BailIfError(AudioHardwareGetProperty(kAudioHardwarePropertyDefaultOutputDevice, &propertySize, &(player->outputDeviceID)), "couldn't get default output device");
+	BailIfFalse(player->outputDeviceID != kAudioDeviceUnknown, "audio output device is unknown");
+	
+	propertySize = sizeof(AudioStreamBasicDescription);
+	BailIfError(AudioDeviceGetProperty(player->outputDeviceID, 0, false, kAudioDevicePropertyStreamFormat, &propertySize, &player->outputStreamBasicDescription), "couldn't get output ASBD");
+	BailIfFalse(player->outputStreamBasicDescription.mFormatID == kAudioFormatLinearPCM, "cannot play non-linear-PCM audio");
+	
+	propertySize = sizeof(UInt32);
+	player->outputBufferByteCount = 1024 * 8;
+	BailIfError(AudioDeviceSetProperty(player->outputDeviceID, 0, 0, false, kAudioDevicePropertyBufferSize, propertySize, &player->outputBufferByteCount), "could not set output buffer byte size");
+
+	BailIfError(AudioDeviceAddIOProc(player->outputDeviceID, BarPlayerMacOSX_AudioDeviceIOProc, player), "could not add render callback");
+	
+	//set up the mutex
+	BailIfError(pthread_mutex_init(&player->outputMutex, NULL), "couldnt init mutex");
+	BailIfError(pthread_cond_init(&player->outputCondition, NULL), "couldnt init condition");
+
+fail:
+	return;
+}
+
+static OSStatus BarPlayerMacOSX_AudioDeviceIOProc(AudioDeviceID inDevice, const AudioTimeStamp *inNow, const AudioBufferList *inInputData, const AudioTimeStamp *inInputTime, AudioBufferList *outOutputData, const AudioTimeStamp *inOutputTime, void *inClientData){
+	
 }

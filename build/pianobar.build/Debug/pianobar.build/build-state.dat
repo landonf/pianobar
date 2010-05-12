@@ -1,0 +1,520 @@
+Tpianobar
+v7
+r0
+t295338752.495194
+cCheck dependencies
+cCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/main.o /Users/syco/Packages/pianobar/src/main.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/settings.o /Users/syco/Packages/pianobar/src/settings.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/terminal.o /Users/syco/Packages/pianobar/src/terminal.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_act.o /Users/syco/Packages/pianobar/src/ui_act.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_readline.o /Users/syco/Packages/pianobar/src/ui_readline.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui.o /Users/syco/Packages/pianobar/src/ui.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/player_macosx.o /Users/syco/Packages/pianobar/src/player_macosx.c normal x86_64 c com.apple.compilers.gcc.4_2
+cLd /Users/syco/Packages/pianobar/build/Debug/pianobar normal x86_64
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
+c000000004ABBF0ED00000000000137EC
+t1253830893
+s79852
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreAudio.framework/Headers/AudioHardware.h
+c000000004A73D820000000000002DC86
+t1249105952
+s187526
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c000000004ABBF0ED0000000000082EC8
+t1253830893
+s536264
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/assert.h
+c000000004A5C14A60000000000000DCB
+t1247548582
+s3531
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/ctype.h
+c000000004A5C14A60000000000002C18
+t1247548582
+s11288
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/errno.h
+c000000004A5C14A600000000000003EB
+t1247548582
+s1003
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/fcntl.h
+c000000004A5C14A600000000000003EA
+t1247548582
+s1002
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/math.h
+c000000004A5C14A000000000000004F1
+t1247548576
+s1265
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/pthread.h
+c000000004A5C14A700000000000038F0
+t1247548583
+s14576
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
+c000000004A5C14A70000000000004174
+t1247548583
+s16756
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
+c000000004A5C14A70000000000002DF5
+t1247548583
+s11765
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/string.h
+c000000004A5C14A70000000000001731
+t1247548583
+s5937
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/strings.h
+c000000004A5C14A60000000000000DA4
+t1247548582
+s3492
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/sys/select.h
+c000000004A73D65400000000000016A2
+t1249105492
+s5794
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/sys/stat.h
+c000000004A73D6550000000000004A1D
+t1249105493
+s18973
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/sys/types.h
+c000000004A73D6550000000000002905
+t1249105493
+s10501
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/sys/wait.h
+c000000004A73D656000000000000273C
+t1249105494
+s10044
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/termios.h
+c000000004A5C14A600000000000004D4
+t1247548582
+s1236
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/time.h
+c000000004A5C14A7000000000000178E
+t1247548583
+s6030
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/include/unistd.h
+c000000004A5C14A7000000000000563E
+t1247548583
+s22078
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+c000000004A11EB240000000000000C7E
+t1242688292
+s3198
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+c000000004A11EB2400000000000010DD
+t1242688292
+s4317
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+c000000004A11EB24000000000000190C
+t1242688292
+s6412
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/local/lib/libao.dylib
+c000000004BEA228A0000000000009448
+t1273635466
+s37960
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/local/lib/libfaad.dylib
+c000000004BEA22EA000000000004E2D0
+t1273635562
+s320208
+
+N/Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/usr/local/lib/libmad.dylib
+c000000004BEA2CF3000000000001F760
+t1273638131
+s128864
+
+N/Users/syco/Packages/pianobar/build/Debug/libpiano.a
+c000000004BEA3BE30000000000025538
+t1273641955
+s152888
+
+N/Users/syco/Packages/pianobar/build/Debug/pianobar
+t1273645933
+s133328
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/main.o
+t1273645933
+s24696
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/pianobar.LinkFileList
+c000000004BEA425300000000000002DB
+t1273643603
+s731
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/player.o
+t1273643589
+s21616
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/player_macosx.o
+t1273645933
+s27032
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/settings.o
+t1273645933
+s12628
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/terminal.o
+t1273641060
+s5976
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui.o
+t1273645933
+s30984
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_act.o
+t1273645933
+s39008
+
+N/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_readline.o
+t1273641060
+s9424
+
+N/Users/syco/Packages/pianobar/libpiano/src/piano.h
+c000000004BEA3B2000000000000017AC
+t1273641760
+s6060
+
+N/Users/syco/Packages/pianobar/libwaitress/src/waitress.h
+c000000004BEA3B200000000000000B87
+t1273641760
+s2951
+i<stdlib.h>
+
+N/Users/syco/Packages/pianobar/src/config.h
+c000000004BEA353E00000000000000A8
+t1273640254
+s168
+
+N/Users/syco/Packages/pianobar/src/main.c
+c000000004BEA42710000000000002AE5
+t1273643633
+s10981
+i<stdlib.h>
+i<string.h>
+i<stdio.h>
+i<unistd.h>
+i<sys/select.h>
+i<time.h>
+i<ctype.h>
+i<sys/types.h>
+i<sys/stat.h>
+i<fcntl.h>
+i<termios.h>
+i<pthread.h>
+i<assert.h>
+i<piano.h>
+i"player_macosx.h"
+i"settings.h"
+i"terminal.h"
+i"config.h"
+i"ui.h"
+i"ui_act.h"
+i"ui_readline.h"
+
+N/Users/syco/Packages/pianobar/src/player.c
+c000000004BEA3B200000000000003CDB
+t1273641760
+s15579
+i<unistd.h>
+i<string.h>
+i<math.h>
+i<stdint.h>
+i<limits.h>
+i"player.h"
+i"config.h"
+i"ui.h"
+
+N/Users/syco/Packages/pianobar/src/player.h
+c000000004BEA423E0000000000000A91
+t1273643582
+s2705
+i"config.h"
+i<neaacdec.h>
+i<mad.h>
+i<ao/ao.h>
+i<pthread.h>
+i<piano.h>
+i<waitress.h>
+
+N/Users/syco/Packages/pianobar/src/player_macosx.c
+c000000004BEA4B6D000000000000410A
+t1273645933
+s16650
+i<unistd.h>
+i<string.h>
+i<math.h>
+i<stdint.h>
+i<limits.h>
+i"player_macosx.h"
+i"config.h"
+i"ui.h"
+
+N/Users/syco/Packages/pianobar/src/player_macosx.h
+c000000004BEA4B5A00000000000009F6
+t1273645914
+s2550
+i"config.h"
+i<neaacdec.h>
+i<mad.h>
+i<CoreAudio/AudioHardware.h>
+i<pthread.h>
+i<piano.h>
+i<waitress.h>
+
+N/Users/syco/Packages/pianobar/src/settings.c
+c000000004BEA394000000000000014B4
+t1273641280
+s5300
+i<string.h>
+i<stdlib.h>
+i<stdio.h>
+i"settings.h"
+i"config.h"
+
+N/Users/syco/Packages/pianobar/src/settings.h
+c000000004BEA42710000000000000A8E
+t1273643633
+s2702
+i<piano.h>
+i<waitress.h>
+i"player_macosx.h"
+
+N/Users/syco/Packages/pianobar/src/terminal.c
+c000000004BEA37CB0000000000000904
+t1273640907
+s2308
+i<termios.h>
+i<stdio.h>
+
+N/Users/syco/Packages/pianobar/src/terminal.h
+c000000004BEA37CB000000000000051D
+t1273640907
+s1309
+
+N/Users/syco/Packages/pianobar/src/ui.c
+c000000004BEA3B2000000000000039C8
+t1273641760
+s14792
+i<stdio.h>
+i<stdarg.h>
+i<unistd.h>
+i<stdlib.h>
+i<string.h>
+i<errno.h>
+i<strings.h>
+i<sys/types.h>
+i<sys/wait.h>
+i"ui.h"
+i"ui_readline.h"
+
+N/Users/syco/Packages/pianobar/src/ui.h
+c000000004BEA427100000000000008CB
+t1273643633
+s2251
+i<piano.h>
+i<waitress.h>
+i"settings.h"
+i"player_macosx.h"
+
+N/Users/syco/Packages/pianobar/src/ui_act.c
+c000000004BEA3B200000000000003C0C
+t1273641760
+s15372
+i<string.h>
+i<unistd.h>
+i<pthread.h>
+i"ui.h"
+i"ui_act.h"
+i"ui_readline.h"
+
+N/Users/syco/Packages/pianobar/src/ui_act.h
+c000000004BEA394000000000000007EE
+t1273641280
+s2030
+i"settings.h"
+
+N/Users/syco/Packages/pianobar/src/ui_readline.c
+c000000004BEA37CB00000000000013CF
+t1273640907
+s5071
+i<stdlib.h>
+i<stdio.h>
+i<string.h>
+
+N/Users/syco/Packages/pianobar/src/ui_readline.h
+c000000004BEA37CB0000000000000519
+t1273640907
+s1305
+
+N/Users/syco/Programs/include/ao/ao.h
+c000000004BEA228A0000000000000F5A
+t1273635466
+s3930
+i<stdio.h>
+i<stdlib.h>
+i<errno.h>
+i"os_types.h"
+i"ao_private.h"
+
+N/Users/syco/Programs/include/ao/os_types.h
+c000000004BEA228A0000000000000512
+t1273635466
+s1298
+
+N/Users/syco/Programs/include/mad.h
+c000000004BEA2CF300000000000069F5
+t1273638131
+s27125
+
+N/Users/syco/Programs/include/neaacdec.h
+c000000004BEA22EA000000000000210F
+t1273635562
+s8463
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies295338752#295338752#0(0"0(0#1#0"4300885448#0"0#
+
+CCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/main.o /Users/syco/Packages/pianobar/src/main.c normal x86_64 c com.apple.compilers.gcc.4_2
+s295338733.461458
+e295338733.648399
+r1
+xCompileC
+xbuild/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/main.o
+x/Users/syco/Packages/pianobar/src/main.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+o/Users/syco/Packages/pianobar/src/main.c: In function 'main':
+o/Users/syco/Packages/pianobar/src/main.c:83: warning: implicit declaration of function 'ao_initialize'
+o/Users/syco/Packages/pianobar/src/main.c:356: warning: implicit declaration of function 'ao_shutdown'
+lSLF07#2@48"Compile /Users/syco/Packages/pianobar/src/main.c295338733#295338733#0(267"/Users/syco/Packages/pianobar/src/main.c: In function 'main':/Users/syco/Packages/pianobar/src/main.c:83: warning: implicit declaration of function 'ao_initialize'/Users/syco/Packages/pianobar/src/main.c:356: warning: implicit declaration of function 'ao_shutdown'2(22@48"Implicit declaration of function 'ao_initialize'295338733#62#103#0(6@40"/Users/syco/Packages/pianobar/src/main.c295336433#83#0#83#0#36"implicit declaration of function '*'0(22@46"Implicit declaration of function 'ao_shutdown'295338733#165#102#0(6@40"/Users/syco/Packages/pianobar/src/main.c295336433#356#0#356#0#36"implicit declaration of function '*'0(0#0#40"/Users/syco/Packages/pianobar/src/main.c4300885448#1345"    cd /Users/syco/Packages/pianobar    setenv LANG en_US.US-ASCII    /Users/syco/DeveloperMac/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-generated-files.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-own-target-headers.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-all-target-headers.hmap -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-project-headers.hmap -F/Users/syco/Packages/pianobar/build/Debug -I/Users/syco/Packages/pianobar/build/Debug/include -I/Users/syco/Programs/include -I/Users/syco/Packages/pianobar/libwaitress/src -I/Users/syco/Packages/pianobar/libpiano/src -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources/x86_64 -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources -c /Users/syco/Packages/pianobar/src/main.c -o /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/main.o0#
+
+CCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/player.o /Users/syco/Packages/pianobar/src/player.c normal x86_64 c com.apple.compilers.gcc.4_2
+s295336389.628946
+e295336389.756801
+r1
+xCompileC
+xbuild/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/player.o
+x/Users/syco/Packages/pianobar/src/player.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@50"Compile /Users/syco/Packages/pianobar/src/player.c295336389#295336389#0(0"0(0#0#42"/Users/syco/Packages/pianobar/src/player.c4300885448#1349"    cd /Users/syco/Packages/pianobar    setenv LANG en_US.US-ASCII    /Users/syco/DeveloperMac/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-generated-files.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-own-target-headers.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-all-target-headers.hmap -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-project-headers.hmap -F/Users/syco/Packages/pianobar/build/Debug -I/Users/syco/Packages/pianobar/build/Debug/include -I/Users/syco/Programs/include -I/Users/syco/Packages/pianobar/libwaitress/src -I/Users/syco/Packages/pianobar/libpiano/src -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources/x86_64 -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources -c /Users/syco/Packages/pianobar/src/player.c -o /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/player.o0#
+
+CCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/player_macosx.o /Users/syco/Packages/pianobar/src/player_macosx.c normal x86_64 c com.apple.compilers.gcc.4_2
+s295338733.625189
+e295338733.626846
+r1
+xCompileC
+xbuild/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/player_macosx.o
+x/Users/syco/Packages/pianobar/src/player_macosx.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@57"Compile /Users/syco/Packages/pianobar/src/player_macosx.c295338733#295338733#0(1260"/Users/syco/Packages/pianobar/src/player_macosx.c: In function 'BarPlayerInitializeCoreAudioOutputDevice':/Users/syco/Packages/pianobar/src/player_macosx.c:497: warning: 'AudioHardwareGetProperty' is deprecated (declared at /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreAudio.framework/Headers/AudioHardware.h:1119)/Users/syco/Packages/pianobar/src/player_macosx.c:501: warning: 'AudioDeviceGetProperty' is deprecated (declared at /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreAudio.framework/Headers/AudioHardware.h:2367)/Users/syco/Packages/pianobar/src/player_macosx.c:506: warning: 'AudioDeviceSetProperty' is deprecated (declared at /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreAudio.framework/Headers/AudioHardware.h:2402)/Users/syco/Packages/pianobar/src/player_macosx.c:508: warning: 'AudioDeviceAddIOProc' is deprecated (declared at /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreAudio.framework/Headers/AudioHardware.h:2146)/Users/syco/Packages/pianobar/src/player_macosx.c: In function 'BarPlayerMacOSX_AudioDeviceIOProc':/Users/syco/Packages/pianobar/src/player_macosx.c:520: warning: control reaches end of non-void function5(22@174"'AudioHardwareGetProperty' is deprecated (declared at /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreAudio.framework/Headers/AudioHardware.h:1119)295338733#107#239#0(6@49"/Users/syco/Packages/pianobar/src/player_macosx.c295338733#497#0#497#0#33"'*' is deprecated (declared at *)0(22@172"'AudioDeviceGetProperty' is deprecated (declared at /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreAudio.framework/Headers/AudioHardware.h:2367)295338733#346#237#0(6@49"/Users/syco/Packages/pianobar/src/player_macosx.c295338733#501#0#501#0#33"'*' is deprecated (declared at *)0(22@172"'AudioDeviceSetProperty' is deprecated (declared at /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreAudio.framework/Headers/AudioHardware.h:2402)295338733#583#237#0(6@49"/Users/syco/Packages/pianobar/src/player_macosx.c295338733#506#0#506#0#33"'*' is deprecated (declared at *)0(22@170"'AudioDeviceAddIOProc' is deprecated (declared at /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreAudio.framework/Headers/AudioHardware.h:2146)295338733#820#235#0(6@49"/Users/syco/Packages/pianobar/src/player_macosx.c295338733#508#0#508#0#33"'*' is deprecated (declared at *)0(22@40"Control reaches end of non-void function295338733#1155#105#0(6@49"/Users/syco/Packages/pianobar/src/player_macosx.c295338733#520#0#520#0#40"control reaches end of non-void function0(0#0#49"/Users/syco/Packages/pianobar/src/player_macosx.c4300885448#1363"    cd /Users/syco/Packages/pianobar    setenv LANG en_US.US-ASCII    /Users/syco/DeveloperMac/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-generated-files.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-own-target-headers.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-all-target-headers.hmap -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-project-headers.hmap -F/Users/syco/Packages/pianobar/build/Debug -I/Users/syco/Packages/pianobar/build/Debug/include -I/Users/syco/Programs/include -I/Users/syco/Packages/pianobar/libwaitress/src -I/Users/syco/Packages/pianobar/libpiano/src -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources/x86_64 -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources -c /Users/syco/Packages/pianobar/src/player_macosx.c -o /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/player_macosx.o0#
+
+CCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/settings.o /Users/syco/Packages/pianobar/src/settings.c normal x86_64 c com.apple.compilers.gcc.4_2
+s295338733.462290
+e295338733.625070
+r1
+xCompileC
+xbuild/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/settings.o
+x/Users/syco/Packages/pianobar/src/settings.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@52"Compile /Users/syco/Packages/pianobar/src/settings.c295338733#295338733#0(0"0(0#0#44"/Users/syco/Packages/pianobar/src/settings.c4300885448#1353"    cd /Users/syco/Packages/pianobar    setenv LANG en_US.US-ASCII    /Users/syco/DeveloperMac/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-generated-files.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-own-target-headers.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-all-target-headers.hmap -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-project-headers.hmap -F/Users/syco/Packages/pianobar/build/Debug -I/Users/syco/Packages/pianobar/build/Debug/include -I/Users/syco/Programs/include -I/Users/syco/Packages/pianobar/libwaitress/src -I/Users/syco/Packages/pianobar/libpiano/src -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources/x86_64 -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources -c /Users/syco/Packages/pianobar/src/settings.c -o /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/settings.o0#
+
+CCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/terminal.o /Users/syco/Packages/pianobar/src/terminal.c normal x86_64 c com.apple.compilers.gcc.4_2
+s295333860.856905
+e295333860.910814
+r1
+xCompileC
+xbuild/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/terminal.o
+x/Users/syco/Packages/pianobar/src/terminal.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+o/Users/syco/Packages/pianobar/src/terminal.c: In function 'BarTermSetBuffer':
+o/Users/syco/Packages/pianobar/src/terminal.c:55: warning: implicit declaration of function 'setlinebuf'
+lSLF07#2@52"Compile /Users/syco/Packages/pianobar/src/terminal.c295333860#295333860#0(182"/Users/syco/Packages/pianobar/src/terminal.c: In function 'BarTermSetBuffer':/Users/syco/Packages/pianobar/src/terminal.c:55: warning: implicit declaration of function 'setlinebuf'1(22@45"Implicit declaration of function 'setlinebuf'295333860#78#104#0(6@44"/Users/syco/Packages/pianobar/src/terminal.c295333707#55#0#55#0#36"implicit declaration of function '*'0(0#0#44"/Users/syco/Packages/pianobar/src/terminal.c4300885448#1353"    cd /Users/syco/Packages/pianobar    setenv LANG en_US.US-ASCII    /Users/syco/DeveloperMac/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-generated-files.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-own-target-headers.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-all-target-headers.hmap -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-project-headers.hmap -F/Users/syco/Packages/pianobar/build/Debug -I/Users/syco/Packages/pianobar/build/Debug/include -I/Users/syco/Programs/include -I/Users/syco/Packages/pianobar/libwaitress/src -I/Users/syco/Packages/pianobar/libpiano/src -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources/x86_64 -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources -c /Users/syco/Packages/pianobar/src/terminal.c -o /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/terminal.o0#
+
+CCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui.o /Users/syco/Packages/pianobar/src/ui.c normal x86_64 c com.apple.compilers.gcc.4_2
+s295338733.464351
+e295338733.685416
+r1
+xCompileC
+xbuild/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui.o
+x/Users/syco/Packages/pianobar/src/ui.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@46"Compile /Users/syco/Packages/pianobar/src/ui.c295338733#295338733#0(0"0(0#0#38"/Users/syco/Packages/pianobar/src/ui.c4300885448#1341"    cd /Users/syco/Packages/pianobar    setenv LANG en_US.US-ASCII    /Users/syco/DeveloperMac/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-generated-files.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-own-target-headers.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-all-target-headers.hmap -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-project-headers.hmap -F/Users/syco/Packages/pianobar/build/Debug -I/Users/syco/Packages/pianobar/build/Debug/include -I/Users/syco/Programs/include -I/Users/syco/Packages/pianobar/libwaitress/src -I/Users/syco/Packages/pianobar/libpiano/src -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources/x86_64 -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources -c /Users/syco/Packages/pianobar/src/ui.c -o /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui.o0#
+
+CCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_act.o /Users/syco/Packages/pianobar/src/ui_act.c normal x86_64 c com.apple.compilers.gcc.4_2
+s295338733.463249
+e295338733.673273
+r1
+xCompileC
+xbuild/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_act.o
+x/Users/syco/Packages/pianobar/src/ui_act.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@50"Compile /Users/syco/Packages/pianobar/src/ui_act.c295338733#295338733#0(0"0(0#0#42"/Users/syco/Packages/pianobar/src/ui_act.c4300885448#1349"    cd /Users/syco/Packages/pianobar    setenv LANG en_US.US-ASCII    /Users/syco/DeveloperMac/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-generated-files.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-own-target-headers.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-all-target-headers.hmap -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-project-headers.hmap -F/Users/syco/Packages/pianobar/build/Debug -I/Users/syco/Packages/pianobar/build/Debug/include -I/Users/syco/Programs/include -I/Users/syco/Packages/pianobar/libwaitress/src -I/Users/syco/Packages/pianobar/libpiano/src -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources/x86_64 -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources -c /Users/syco/Packages/pianobar/src/ui_act.c -o /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_act.o0#
+
+CCompileC build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_readline.o /Users/syco/Packages/pianobar/src/ui_readline.c normal x86_64 c com.apple.compilers.gcc.4_2
+s295333860.928986
+e295333860.994221
+r1
+xCompileC
+xbuild/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_readline.o
+x/Users/syco/Packages/pianobar/src/ui_readline.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@55"Compile /Users/syco/Packages/pianobar/src/ui_readline.c295333860#295333860#0(0"0(0#0#47"/Users/syco/Packages/pianobar/src/ui_readline.c4300885448#1359"    cd /Users/syco/Packages/pianobar    setenv LANG en_US.US-ASCII    /Users/syco/DeveloperMac/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-generated-files.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-own-target-headers.hmap -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-all-target-headers.hmap -iquote /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/pianobar-project-headers.hmap -F/Users/syco/Packages/pianobar/build/Debug -I/Users/syco/Packages/pianobar/build/Debug/include -I/Users/syco/Programs/include -I/Users/syco/Packages/pianobar/libwaitress/src -I/Users/syco/Packages/pianobar/libpiano/src -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources/x86_64 -I/Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/DerivedSources -c /Users/syco/Packages/pianobar/src/ui_readline.c -o /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/ui_readline.o0#
+
+CLd /Users/syco/Packages/pianobar/build/Debug/pianobar normal x86_64
+s295338733.685536
+e295338733.709642
+r1
+xLd
+x/Users/syco/Packages/pianobar/build/Debug/pianobar
+xnormal
+xx86_64
+lSLF07#2@55"Link /Users/syco/Packages/pianobar/build/Debug/pianobar295338733#295338733#0(0"0(0#0#0"4300885448#558"    cd /Users/syco/Packages/pianobar    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Users/syco/DeveloperMac/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Users/syco/DeveloperMac/SDKs/MacOSX10.6.sdk -L/Users/syco/Packages/pianobar/build/Debug -F/Users/syco/Packages/pianobar/build/Debug -filelist /Users/syco/Packages/pianobar/build/pianobar.build/Debug/pianobar.build/Objects-normal/x86_64/pianobar.LinkFileList -mmacosx-version-min=10.6 -lpiano -lao -lfaad -lmad -framework CoreAudio -framework CoreFoundation -o /Users/syco/Packages/pianobar/build/Debug/pianobar0#
+

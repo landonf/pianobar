@@ -44,7 +44,7 @@ THE SOFTWARE.
 /* pandora.com library */
 #include <piano.h>
 
-#include "player.h"
+#include "player_macosx.h"
 #include "settings.h"
 #include "terminal.h"
 #include "config.h"
