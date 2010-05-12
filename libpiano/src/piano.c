@@ -984,13 +984,6 @@ const char *PianoErrorToStr (PianoReturn_t ret) {
 			return "Playlist end.";
 			break;
 
-<<<<<<< HEAD
-		case PIANO_RET_QUICKMIX_NOT_PLAYABLE:
-			return "Quickmix not playable.";
-			break;
-
-=======
->>>>>>> bf79a91a3f6381cade8a9e0fd50c2897bfb316c9
 		default:
 			return "No error message available.";
 			break;
