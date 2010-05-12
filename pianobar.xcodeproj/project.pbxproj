@@ -31,13 +31,11 @@
 		1E10576E119A6BFF008CC292 /* libpiano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E105729119A6A33008CC292 /* libpiano.a */; };
 		1E10577A119A6CD0008CC292 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E105779119A6CD0008CC292 /* config.h */; };
 		1E10577D119A6CF6008CC292 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E10577B119A6CDE008CC292 /* config.h */; };
-		1E1057E6119A7630008CC292 /* player_macosx.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1057E5119A7630008CC292 /* player_macosx.m */; };
+		1E1057E6119A7630008CC292 /* player_macosx.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E1057E5119A7630008CC292 /* player_macosx.c */; };
 		1E1057F0119A7938008CC292 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1057EF119A7938008CC292 /* CoreAudio.framework */; };
 		1E1057F2119A7938008CC292 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1057F1119A7938008CC292 /* CoreFoundation.framework */; };
-		82EFC4FE119B030100D502A5 /* libmad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFC4FD119B030100D502A5 /* libmad.a */; };
-		82EFC51D119B03F000D502A5 /* OERingBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EFC51C119B03F000D502A5 /* OERingBuffer.m */; };
+		821DAC7D119B56F700078BBF /* mac_audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 821DAC7C119B56F700078BBF /* mac_audio.c */; };
 		82EFC525119B040B00D502A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFC524119B040B00D502A5 /* Foundation.framework */; };
-		82EFC52C119B042800D502A5 /* OEAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EFC52B119B042800D502A5 /* OEAudio.m */; };
 		82EFC55A119B065E00D502A5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFC559119B065E00D502A5 /* AudioToolbox.framework */; };
 		82EFC55F119B066B00D502A5 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFC543119B064E00D502A5 /* AudioUnit.framework */; };
 		8DD76FB00486AB0100D96B5E /* pianobar.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6A0FF2C0290799A04C91782 /* pianobar.1 */; };
@@ -113,18 +111,13 @@
 		1E105779119A6CD0008CC292 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = src/config.h; sourceTree = "<group>"; };
 		1E10577B119A6CDE008CC292 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = src/config.h; sourceTree = "<group>"; };
 		1E10578A119A6D45008CC292 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		1E1057E5119A7630008CC292 /* player_macosx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = player_macosx.m; sourceTree = "<group>"; };
+		1E1057E5119A7630008CC292 /* player_macosx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = player_macosx.c; sourceTree = "<group>"; };
 		1E1057EE119A77FB008CC292 /* player_macosx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player_macosx.h; sourceTree = "<group>"; };
 		1E1057EF119A7938008CC292 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		1E1057F1119A7938008CC292 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		82EFC4F9119B02F800D502A5 /* libao.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libao.a; sourceTree = "<group>"; };
-		82EFC4FA119B02F800D502A5 /* libfaad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfaad.a; sourceTree = "<group>"; };
-		82EFC4FD119B030100D502A5 /* libmad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmad.a; sourceTree = "<group>"; };
-		82EFC51B119B03F000D502A5 /* OERingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OERingBuffer.h; sourceTree = "<group>"; };
-		82EFC51C119B03F000D502A5 /* OERingBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OERingBuffer.m; sourceTree = "<group>"; };
+		821DAC7B119B56F700078BBF /* mac_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mac_audio.h; sourceTree = "<group>"; };
+		821DAC7C119B56F700078BBF /* mac_audio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mac_audio.c; sourceTree = "<group>"; };
 		82EFC524119B040B00D502A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		82EFC52A119B042800D502A5 /* OEAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEAudio.h; sourceTree = "<group>"; };
-		82EFC52B119B042800D502A5 /* OEAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEAudio.m; sourceTree = "<group>"; };
 		82EFC543119B064E00D502A5 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		82EFC559119B065E00D502A5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8DD76FB20486AB0100D96B5E /* pianobar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pianobar; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,7 +155,6 @@
 				1E10576E119A6BFF008CC292 /* libpiano.a in Frameworks */,
 				1E1057F0119A7938008CC292 /* CoreAudio.framework in Frameworks */,
 				1E1057F2119A7938008CC292 /* CoreFoundation.framework in Frameworks */,
-				82EFC4FE119B030100D502A5 /* libmad.a in Frameworks */,
 				82EFC525119B040B00D502A5 /* Foundation.framework in Frameworks */,
 				82EFC55A119B065E00D502A5 /* AudioToolbox.framework in Frameworks */,
 				82EFC55F119B066B00D502A5 /* AudioUnit.framework in Frameworks */,
@@ -178,9 +170,6 @@
 				08FB7795FE84155DC02AAC07 /* Source */,
 				C6A0FF2B0290797F04C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
-				82EFC4F9119B02F800D502A5 /* libao.a */,
-				82EFC4FD119B030100D502A5 /* libmad.a */,
-				82EFC4FA119B02F800D502A5 /* libfaad.a */,
 				1E1057EF119A7938008CC292 /* CoreAudio.framework */,
 				1E1057F1119A7938008CC292 /* CoreFoundation.framework */,
 				82EFC524119B040B00D502A5 /* Foundation.framework */,
@@ -251,16 +240,12 @@
 		1E105711119A69E8008CC292 /* pianobar */ = {
 			isa = PBXGroup;
 			children = (
-				82EFC52A119B042800D502A5 /* OEAudio.h */,
-				82EFC52B119B042800D502A5 /* OEAudio.m */,
-				82EFC51B119B03F000D502A5 /* OERingBuffer.h */,
-				82EFC51C119B03F000D502A5 /* OERingBuffer.m */,
 				1E10578A119A6D45008CC292 /* config.h */,
 				1E105752119A6AD3008CC292 /* main.c */,
 				1E105754119A6AD3008CC292 /* player.h */,
 				1E105753119A6AD3008CC292 /* player.c */,
 				1E1057EE119A77FB008CC292 /* player_macosx.h */,
-				1E1057E5119A7630008CC292 /* player_macosx.m */,
+				1E1057E5119A7630008CC292 /* player_macosx.c */,
 				1E105755119A6AD3008CC292 /* settings.c */,
 				1E105756119A6AD3008CC292 /* settings.h */,
 				1E105757119A6AD3008CC292 /* terminal.c */,
@@ -271,6 +256,8 @@
 				1E10575C119A6AD3008CC292 /* ui_readline.h */,
 				1E10575D119A6AD3008CC292 /* ui.c */,
 				1E10575E119A6AD3008CC292 /* ui.h */,
+				821DAC7B119B56F700078BBF /* mac_audio.h */,
+				821DAC7C119B56F700078BBF /* mac_audio.c */,
 			);
 			name = pianobar;
 			path = src;
@@ -450,9 +437,8 @@
 				1E105763119A6AD3008CC292 /* ui_act.c in Sources */,
 				1E105764119A6AD3008CC292 /* ui_readline.c in Sources */,
 				1E105765119A6AD3008CC292 /* ui.c in Sources */,
-				1E1057E6119A7630008CC292 /* player_macosx.m in Sources */,
-				82EFC51D119B03F000D502A5 /* OERingBuffer.m in Sources */,
-				82EFC52C119B042800D502A5 /* OEAudio.m in Sources */,
+				1E1057E6119A7630008CC292 /* player_macosx.c in Sources */,
+				821DAC7D119B56F700078BBF /* mac_audio.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

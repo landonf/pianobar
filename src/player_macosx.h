@@ -45,9 +45,6 @@ struct audioPlayer {
 	unsigned long int songDuration;
 	unsigned long int songPlayed;
 	
-	unsigned long samplerate;
-	unsigned char channels;
-	
     AudioFileStreamID audioFileStream;	// the audio file stream parser
     
 	AudioQueueRef audioQueue;								// the audio queue
