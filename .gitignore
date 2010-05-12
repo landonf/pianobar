@@ -16,3 +16,5 @@ config.status
 *.pc
 *.dylib
 *.list
+libfaad2/frontend/faad
+libmad/mad.h
