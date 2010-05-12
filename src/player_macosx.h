@@ -79,25 +79,12 @@ struct audioPlayer {
 	char doQuit;
 	pthread_mutex_t pauseMutex;
 	
-	// audio output
-	AudioDeviceID                outputDeviceID;
-    AudioStreamBasicDescription  outputStreamBasicDescription;	
-    UInt32                       outputBufferByteCount;
-	void                        *outputBuffer; // TODO switch this to a ring buffer?
-    unsigned int                 outputFirstValidByteOffset;
-    unsigned int                 outputValidByteCount;
-    pthread_mutex_t              outputMutex;
-    pthread_cond_t               outputCondition;	
-	
+    void * audio;
 };
 
 enum {PLAYER_RET_OK = 0, PLAYER_RET_ERR = 1};
 
 void *BarPlayerThread (void *data);
 void *BarPlayerMacOSXThread(void *data);
-
-void BarPlayerInitializeCoreAudioOutputDevice(struct audioPlayer *player);
-
-static OSStatus BarPlayerMacOSX_AudioDeviceIOProc(AudioDeviceID inDevice, const AudioTimeStamp *inNow, const AudioBufferList *inInputData, const AudioTimeStamp *inInputTime, AudioBufferList *outOutputData, const AudioTimeStamp *inOutputTime, void *inClientData);
 
 #endif /* _PLAYER_MACOSX_H */
