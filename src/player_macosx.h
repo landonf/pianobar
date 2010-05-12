@@ -23,7 +23,7 @@
 #define BAR_PLAYER_MS_TO_S_FACTOR 1000
 
 #define kNumAQBufs 3		
-#define kAQBufSize (128 * 1024)
+#define kAQBufSize (1024)
 #define kAQMaxPacketDescs (512)
 
 
@@ -67,7 +67,7 @@ struct audioPlayer {
     AudioFileStreamID streamID;
     
 	WaitressHandle_t waith;
-	
+	unsigned long samplerate;
 	char doQuit;
     pthread_mutex_t mutex;			// a mutex to protect the inuse flags
 	pthread_mutex_t pauseMutex;

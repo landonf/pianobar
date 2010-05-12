@@ -21,6 +21,8 @@ void StreamPropertyListenerProc(void * inClientData,
 	struct audioPlayer* player = (struct audioPlayer*)inClientData;
 	OSStatus err = noErr;
     
+//    printf("found property '%c%c%c%c'\n", (inPropertyID>>24)&255, (inPropertyID>>16)&255, (inPropertyID>>8)&255, inPropertyID&255);
+
 	switch (inPropertyID) {
 		case kAudioFileStreamProperty_ReadyToProducePackets :
 		{
@@ -31,6 +33,10 @@ void StreamPropertyListenerProc(void * inClientData,
 			err = AudioFileStreamGetProperty(inAudioFileStream, kAudioFileStreamProperty_DataFormat, &asbdSize, &asbd);
 			if (err) { PRINTERROR("get kAudioFileStreamProperty_DataFormat"); player->failed = true; break; }
 			
+            //TODO: Is this really right!?!
+            player->songDuration = player->waith.contentLength * 1000 / asbd.mSampleRate;
+            player->samplerate = asbd.mSampleRate;
+            
 			// create the audio queue
 			err = AudioQueueNewOutput(&asbd, PianobarAudioQueueOutputCallback, player, NULL, NULL, 0, &player->audioQueue);
 			if (err) { PRINTERROR("AudioQueueNewOutput"); player->failed = true; break; }
@@ -40,6 +46,7 @@ void StreamPropertyListenerProc(void * inClientData,
 				err = AudioQueueAllocateBuffer(player->audioQueue, kAQBufSize, &player->audioQueueBuffer[i]);
 				if (err) { PRINTERROR("AudioQueueAllocateBuffer"); player->failed = true; break; }
 			}
+            
             
 			// get the cookie size
 			UInt32 cookieSize;
@@ -129,7 +136,6 @@ OSStatus EnqueueBuffer(struct audioPlayer* player)
 	err = AudioQueueEnqueueBuffer(player->audioQueue, fillBuf, player->packetsFilled, player->packetDescs);
 	if (err) { PRINTERROR("AudioQueueEnqueueBuffer"); player->failed = true; return err; }		
 
-	player->songPlayed = player->waith.contentReceived;
 	StartQueueIfNeeded(player);
 	
 	return err;
@@ -171,10 +177,11 @@ void PianobarAudioQueueOutputCallback(void* inClientData,
 	struct audioPlayer* player = (struct audioPlayer*)inClientData;
     
 	unsigned int bufIndex = MyFindQueueBuffer(player, inBuffer);
-	
+
 	// signal waiting thread that the buffer is free.
 	pthread_mutex_lock(&player->mutex);
 	player->inuse[bufIndex] = false;
+    player->songPlayed += (player->samplerate / (1024)) * 4;
 	pthread_cond_signal(&player->cond);
 	pthread_mutex_unlock(&player->mutex);
 }
