@@ -1,0 +1,161 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C90B18E7119A92A2001AD6DF /* ezxml.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B18E5119A92A2001AD6DF /* ezxml.c */; };
+		C90B18E8119A92A2001AD6DF /* ezxml.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B18E6119A92A2001AD6DF /* ezxml.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C90B18D1119A9238001AD6DF /* libezxml.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libezxml.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90B18E5119A92A2001AD6DF /* ezxml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ezxml.c; path = src/ezxml.c; sourceTree = "<group>"; };
+		C90B18E6119A92A2001AD6DF /* ezxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ezxml.h; path = src/ezxml.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C90B18CF119A9238001AD6DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C90B18BA119A9218001AD6DF = {
+			isa = PBXGroup;
+			children = (
+				C90B18C6119A921F001AD6DF /* Source */,
+				C90B18D2119A9238001AD6DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C90B18C6119A921F001AD6DF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C90B18E5119A92A2001AD6DF /* ezxml.c */,
+				C90B18E6119A92A2001AD6DF /* ezxml.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		C90B18D2119A9238001AD6DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90B18D1119A9238001AD6DF /* libezxml.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C90B18CD119A9238001AD6DF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B18E8119A92A2001AD6DF /* ezxml.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C90B18D0119A9238001AD6DF /* ezxml */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C90B18D5119A9238001AD6DF /* Build configuration list for PBXNativeTarget "ezxml" */;
+			buildPhases = (
+				C90B18CD119A9238001AD6DF /* Headers */,
+				C90B18CE119A9238001AD6DF /* Sources */,
+				C90B18CF119A9238001AD6DF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ezxml;
+			productName = libezxml;
+			productReference = C90B18D1119A9238001AD6DF /* libezxml.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C90B18BC119A9218001AD6DF /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C90B18BF119A9218001AD6DF /* Build configuration list for PBXProject "libezxml" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			mainGroup = C90B18BA119A9218001AD6DF;
+			productRefGroup = C90B18D2119A9238001AD6DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C90B18D0119A9238001AD6DF /* ezxml */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C90B18CE119A9238001AD6DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B18E7119A92A2001AD6DF /* ezxml.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C90B18BE119A9218001AD6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		C90B18D4119A9238001AD6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = ezxml;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C90B18BF119A9218001AD6DF /* Build configuration list for PBXProject "libezxml" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B18BE119A9218001AD6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90B18D5119A9238001AD6DF /* Build configuration list for PBXNativeTarget "ezxml" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B18D4119A9238001AD6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C90B18BC119A9218001AD6DF /* Project object */;
+}

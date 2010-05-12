@@ -1,0 +1,165 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C90B1918119A9374001AD6DF /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B190B119A935E001AD6DF /* config.h */; };
+		C90B1919119A9374001AD6DF /* waitress.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B190C119A935E001AD6DF /* waitress.c */; };
+		C90B191A119A9374001AD6DF /* waitress.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B190D119A935E001AD6DF /* waitress.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C90B190B119A935E001AD6DF /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = src/config.h; sourceTree = "<group>"; };
+		C90B190C119A935E001AD6DF /* waitress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = waitress.c; path = src/waitress.c; sourceTree = "<group>"; };
+		C90B190D119A935E001AD6DF /* waitress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = waitress.h; path = src/waitress.h; sourceTree = "<group>"; };
+		C90B1913119A9367001AD6DF /* libwaitress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libwaitress.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C90B1911119A9367001AD6DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C90B18F3119A930A001AD6DF = {
+			isa = PBXGroup;
+			children = (
+				C90B1908119A931B001AD6DF /* Source */,
+				C90B1914119A9367001AD6DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C90B1908119A931B001AD6DF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C90B190B119A935E001AD6DF /* config.h */,
+				C90B190C119A935E001AD6DF /* waitress.c */,
+				C90B190D119A935E001AD6DF /* waitress.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		C90B1914119A9367001AD6DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90B1913119A9367001AD6DF /* libwaitress.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C90B190F119A9367001AD6DF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B1918119A9374001AD6DF /* config.h in Headers */,
+				C90B191A119A9374001AD6DF /* waitress.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C90B1912119A9367001AD6DF /* waitress */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C90B1917119A9368001AD6DF /* Build configuration list for PBXNativeTarget "waitress" */;
+			buildPhases = (
+				C90B190F119A9367001AD6DF /* Headers */,
+				C90B1910119A9367001AD6DF /* Sources */,
+				C90B1911119A9367001AD6DF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = waitress;
+			productName = waitress;
+			productReference = C90B1913119A9367001AD6DF /* libwaitress.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C90B18F5119A930A001AD6DF /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C90B18F8119A930A001AD6DF /* Build configuration list for PBXProject "libwaitress" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			mainGroup = C90B18F3119A930A001AD6DF;
+			productRefGroup = C90B1914119A9367001AD6DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C90B1912119A9367001AD6DF /* waitress */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C90B1910119A9367001AD6DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B1919119A9374001AD6DF /* waitress.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C90B18F7119A930A001AD6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		C90B1916119A9368001AD6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = waitress;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C90B18F8119A930A001AD6DF /* Build configuration list for PBXProject "libwaitress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B18F7119A930A001AD6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90B1917119A9368001AD6DF /* Build configuration list for PBXNativeTarget "waitress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B1916119A9368001AD6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C90B18F5119A930A001AD6DF /* Project object */;
+}

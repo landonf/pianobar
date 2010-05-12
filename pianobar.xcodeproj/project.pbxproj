@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		C90B1873119A8DDD001AD6DF /* libao */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C90B1876119A8E23001AD6DF /* Build configuration list for PBXAggregateTarget "libao" */;
+			buildPhases = (
+				C90B1872119A8DDD001AD6DF /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = libao;
+			productName = libao;
+		};
+		C90B187D119A8EDA001AD6DF /* libmad */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C90B1884119A8F21001AD6DF /* Build configuration list for PBXAggregateTarget "libmad" */;
+			buildPhases = (
+				C90B187C119A8EDA001AD6DF /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = libmad;
+			productName = libmad;
+		};
+		C90B1881119A8EFA001AD6DF /* libfaad */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C90B1885119A8F21001AD6DF /* Build configuration list for PBXAggregateTarget "libfaad" */;
+			buildPhases = (
+				C90B1880119A8EFA001AD6DF /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = libfaad;
+			productName = libfaad2;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		C90B19E4119A9639001AD6DF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19D7119A9639001AD6DF /* main.c */; };
+		C90B19E5119A9639001AD6DF /* player.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19D8119A9639001AD6DF /* player.c */; };
+		C90B19E6119A9639001AD6DF /* settings.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19DA119A9639001AD6DF /* settings.c */; };
+		C90B19E7119A9639001AD6DF /* terminal.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19DC119A9639001AD6DF /* terminal.c */; };
+		C90B19E8119A9639001AD6DF /* ui_act.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19DE119A9639001AD6DF /* ui_act.c */; };
+		C90B19E9119A9639001AD6DF /* ui_readline.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19E0119A9639001AD6DF /* ui_readline.c */; };
+		C90B19EA119A9639001AD6DF /* ui.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19E2119A9639001AD6DF /* ui.c */; };
+		C90B1A20119A9905001AD6DF /* libfaad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B1A1F119A9905001AD6DF /* libfaad.a */; };
+		C90B1A22119A991A001AD6DF /* libmad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B1A21119A991A001AD6DF /* libmad.a */; };
+		C90B1A27119A99D2001AD6DF /* libao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B1A26119A99D2001AD6DF /* libao.a */; };
+		C9ECB1B9119A9BF20075E08B /* libwaitress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B19FC119A96D4001AD6DF /* libwaitress.a */; };
+		C9ECB1BA119A9BF80075E08B /* libpiano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B19C1119A95B4001AD6DF /* libpiano.a */; };
+		C9ECB1C5119A9C5C0075E08B /* libezxml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ECB1C2119A9C480075E08B /* libezxml.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C90B19C0119A95B4001AD6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90B19B1119A95B4001AD6DF /* libpiano.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C90B1955119A9417001AD6DF;
+			remoteInfo = piano;
+		};
+		C90B19EB119A964F001AD6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90B19B1119A95B4001AD6DF /* libpiano.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B1954119A9417001AD6DF;
+			remoteInfo = piano;
+		};
+		C90B19FB119A96D4001AD6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90B19F7119A96D3001AD6DF /* libwaitress.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C90B1913119A9367001AD6DF;
+			remoteInfo = waitress;
+		};
+		C90B19FD119A96E4001AD6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90B19F7119A96D3001AD6DF /* libwaitress.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B1912119A9367001AD6DF;
+			remoteInfo = waitress;
+		};
+		C90B1A15119A9828001AD6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B1873119A8DDD001AD6DF;
+			remoteInfo = libao;
+		};
+		C90B1A17119A982B001AD6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B187D119A8EDA001AD6DF;
+			remoteInfo = libmad;
+		};
+		C90B1A19119A982E001AD6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B1881119A8EFA001AD6DF;
+			remoteInfo = libfaad2;
+		};
+		C9ECB1C1119A9C480075E08B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9ECB1BD119A9C480075E08B /* libezxml.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C90B18D1119A9238001AD6DF /* libezxml.a */;
+			remoteInfo = ezxml;
+		};
+		C9ECB1C3119A9C540075E08B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9ECB1BD119A9C480075E08B /* libezxml.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B18D0119A9238001AD6DF /* ezxml */;
+			remoteInfo = ezxml;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C90B19B1119A95B4001AD6DF /* libpiano.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpiano.xcodeproj; path = libpiano/libpiano.xcodeproj; sourceTree = "<group>"; };
+		C90B19CE119A960A001AD6DF /* pianobar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pianobar; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90B19D6119A9639001AD6DF /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = src/config.h; sourceTree = "<group>"; };
+		C90B19D7119A9639001AD6DF /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = src/main.c; sourceTree = "<group>"; };
+		C90B19D8119A9639001AD6DF /* player.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = player.c; path = src/player.c; sourceTree = "<group>"; };
+		C90B19D9119A9639001AD6DF /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = player.h; path = src/player.h; sourceTree = "<group>"; };
+		C90B19DA119A9639001AD6DF /* settings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = settings.c; path = src/settings.c; sourceTree = "<group>"; };
+		C90B19DB119A9639001AD6DF /* settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = settings.h; path = src/settings.h; sourceTree = "<group>"; };
+		C90B19DC119A9639001AD6DF /* terminal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = terminal.c; path = src/terminal.c; sourceTree = "<group>"; };
+		C90B19DD119A9639001AD6DF /* terminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = terminal.h; path = src/terminal.h; sourceTree = "<group>"; };
+		C90B19DE119A9639001AD6DF /* ui_act.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ui_act.c; path = src/ui_act.c; sourceTree = "<group>"; };
+		C90B19DF119A9639001AD6DF /* ui_act.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ui_act.h; path = src/ui_act.h; sourceTree = "<group>"; };
+		C90B19E0119A9639001AD6DF /* ui_readline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ui_readline.c; path = src/ui_readline.c; sourceTree = "<group>"; };
+		C90B19E1119A9639001AD6DF /* ui_readline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ui_readline.h; path = src/ui_readline.h; sourceTree = "<group>"; };
+		C90B19E2119A9639001AD6DF /* ui.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ui.c; path = src/ui.c; sourceTree = "<group>"; };
+		C90B19E3119A9639001AD6DF /* ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ui.h; path = src/ui.h; sourceTree = "<group>"; };
+		C90B19F7119A96D3001AD6DF /* libwaitress.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libwaitress.xcodeproj; path = libwaitress/libwaitress.xcodeproj; sourceTree = "<group>"; };
+		C90B1A1F119A9905001AD6DF /* libfaad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfaad.a; path = libfaad2/build/lib/libfaad.a; sourceTree = "<group>"; };
+		C90B1A21119A991A001AD6DF /* libmad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmad.a; path = libmad/build/lib/libmad.a; sourceTree = "<group>"; };
+		C90B1A26119A99D2001AD6DF /* libao.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libao.a; path = libao/build/lib/libao.a; sourceTree = "<group>"; };
+		C9ECB1B7119A9BD60075E08B /* libpiano.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpiano.a; path = libpiano/build/Release/libpiano.a; sourceTree = "<group>"; };
+		C9ECB1BD119A9C480075E08B /* libezxml.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libezxml.xcodeproj; path = libezxml/libezxml.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C90B19CC119A960A001AD6DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B1A20119A9905001AD6DF /* libfaad.a in Frameworks */,
+				C90B1A22119A991A001AD6DF /* libmad.a in Frameworks */,
+				C90B1A27119A99D2001AD6DF /* libao.a in Frameworks */,
+				C9ECB1B9119A9BF20075E08B /* libwaitress.a in Frameworks */,
+				C9ECB1BA119A9BF80075E08B /* libpiano.a in Frameworks */,
+				C9ECB1C5119A9C5C0075E08B /* libezxml.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* pianobar */ = {
+			isa = PBXGroup;
+			children = (
+				C90B189C119A9047001AD6DF /* Dependencies */,
+				C90B189F119A90B5001AD6DF /* Source */,
+				C90B18B1119A917A001AD6DF /* Products */,
+				C9ECB1B7119A9BD60075E08B /* libpiano.a */,
+			);
+			name = pianobar;
+			sourceTree = "<group>";
+		};
+		C90B189C119A9047001AD6DF /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				C90B1A1F119A9905001AD6DF /* libfaad.a */,
+				C90B1A21119A991A001AD6DF /* libmad.a */,
+				C90B1A26119A99D2001AD6DF /* libao.a */,
+				C90B19F7119A96D3001AD6DF /* libwaitress.xcodeproj */,
+				C90B19B1119A95B4001AD6DF /* libpiano.xcodeproj */,
+				C9ECB1BD119A9C480075E08B /* libezxml.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		C90B189F119A90B5001AD6DF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C90B19D6119A9639001AD6DF /* config.h */,
+				C90B19D7119A9639001AD6DF /* main.c */,
+				C90B19D8119A9639001AD6DF /* player.c */,
+				C90B19D9119A9639001AD6DF /* player.h */,
+				C90B19DA119A9639001AD6DF /* settings.c */,
+				C90B19DB119A9639001AD6DF /* settings.h */,
+				C90B19DC119A9639001AD6DF /* terminal.c */,
+				C90B19DD119A9639001AD6DF /* terminal.h */,
+				C90B19DE119A9639001AD6DF /* ui_act.c */,
+				C90B19DF119A9639001AD6DF /* ui_act.h */,
+				C90B19E0119A9639001AD6DF /* ui_readline.c */,
+				C90B19E1119A9639001AD6DF /* ui_readline.h */,
+				C90B19E2119A9639001AD6DF /* ui.c */,
+				C90B19E3119A9639001AD6DF /* ui.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		C90B18B1119A917A001AD6DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90B19CE119A960A001AD6DF /* pianobar */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C90B19B2119A95B4001AD6DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90B19C1119A95B4001AD6DF /* libpiano.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C90B19F8119A96D3001AD6DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90B19FC119A96D4001AD6DF /* libwaitress.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9ECB1BE119A9C480075E08B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9ECB1C2119A9C480075E08B /* libezxml.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C90B19CD119A960A001AD6DF /* pianobar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C90B19D5119A961D001AD6DF /* Build configuration list for PBXNativeTarget "pianobar" */;
+			buildPhases = (
+				C90B19CB119A960A001AD6DF /* Sources */,
+				C90B19CC119A960A001AD6DF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C90B1A16119A9828001AD6DF /* PBXTargetDependency */,
+				C90B1A18119A982B001AD6DF /* PBXTargetDependency */,
+				C90B1A1A119A982E001AD6DF /* PBXTargetDependency */,
+				C90B19EC119A964F001AD6DF /* PBXTargetDependency */,
+				C90B19FE119A96E4001AD6DF /* PBXTargetDependency */,
+				C9ECB1C4119A9C540075E08B /* PBXTargetDependency */,
+			);
+			name = pianobar;
+			productName = pianobar;
+			productReference = C90B19CE119A960A001AD6DF /* pianobar */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "pianobar" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* pianobar */;
+			productRefGroup = C90B18B1119A917A001AD6DF /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C9ECB1BE119A9C480075E08B /* Products */;
+					ProjectRef = C9ECB1BD119A9C480075E08B /* libezxml.xcodeproj */;
+				},
+				{
+					ProductGroup = C90B19B2119A95B4001AD6DF /* Products */;
+					ProjectRef = C90B19B1119A95B4001AD6DF /* libpiano.xcodeproj */;
+				},
+				{
+					ProductGroup = C90B19F8119A96D3001AD6DF /* Products */;
+					ProjectRef = C90B19F7119A96D3001AD6DF /* libwaitress.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				C90B19CD119A960A001AD6DF /* pianobar */,
+				C90B1873119A8DDD001AD6DF /* libao */,
+				C90B187D119A8EDA001AD6DF /* libmad */,
+				C90B1881119A8EFA001AD6DF /* libfaad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C90B19C1119A95B4001AD6DF /* libpiano.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libpiano.a;
+			remoteRef = C90B19C0119A95B4001AD6DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C90B19FC119A96D4001AD6DF /* libwaitress.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libwaitress.a;
+			remoteRef = C90B19FB119A96D4001AD6DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C9ECB1C2119A9C480075E08B /* libezxml.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libezxml.a;
+			remoteRef = C9ECB1C1119A9C480075E08B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C90B1872119A8DDD001AD6DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd libao\n./configure --prefix=$SRCROOT/libao/build --enable-static\nmake\nmake install";
+		};
+		C90B187C119A8EDA001AD6DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd libmad\n./configure --prefix=$SRCROOT/libmad/build\nmake\nmake install";
+		};
+		C90B1880119A8EFA001AD6DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd libfaad2\n./configure --prefix=$SRCROOT/libfaad2/build\nmake\nmake install";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C90B19CB119A960A001AD6DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B19E4119A9639001AD6DF /* main.c in Sources */,
+				C90B19E5119A9639001AD6DF /* player.c in Sources */,
+				C90B19E6119A9639001AD6DF /* settings.c in Sources */,
+				C90B19E7119A9639001AD6DF /* terminal.c in Sources */,
+				C90B19E8119A9639001AD6DF /* ui_act.c in Sources */,
+				C90B19E9119A9639001AD6DF /* ui_readline.c in Sources */,
+				C90B19EA119A9639001AD6DF /* ui.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C90B19EC119A964F001AD6DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = piano;
+			targetProxy = C90B19EB119A964F001AD6DF /* PBXContainerItemProxy */;
+		};
+		C90B19FE119A96E4001AD6DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = waitress;
+			targetProxy = C90B19FD119A96E4001AD6DF /* PBXContainerItemProxy */;
+		};
+		C90B1A16119A9828001AD6DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C90B1873119A8DDD001AD6DF /* libao */;
+			targetProxy = C90B1A15119A9828001AD6DF /* PBXContainerItemProxy */;
+		};
+		C90B1A18119A982B001AD6DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C90B187D119A8EDA001AD6DF /* libmad */;
+			targetProxy = C90B1A17119A982B001AD6DF /* PBXContainerItemProxy */;
+		};
+		C90B1A1A119A982E001AD6DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C90B1881119A8EFA001AD6DF /* libfaad */;
+			targetProxy = C90B1A19119A982E001AD6DF /* PBXContainerItemProxy */;
+		};
+		C9ECB1C4119A9C540075E08B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ezxml;
+			targetProxy = C9ECB1C3119A9C540075E08B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB919408733D9F0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB919508733D9F0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		C90B1874119A8DDE001AD6DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					"$(ARCHS_STANDARD_64_BIT)",
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = libao;
+			};
+			name = Debug;
+		};
+		C90B1875119A8DDE001AD6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					"$(ARCHS_STANDARD_64_BIT)",
+				);
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = libao;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C90B187E119A8EDA001AD6DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = libmad;
+			};
+			name = Debug;
+		};
+		C90B187F119A8EDA001AD6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = libmad;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C90B1882119A8EFA001AD6DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = libfaad2;
+			};
+			name = Debug;
+		};
+		C90B1883119A8EFA001AD6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = libfaad2;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C90B19D0119A960B001AD6DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/libmad",
+					"$(SRCROOT)/libwaitress/src",
+					"$(SRCROOT)/libpiano/src",
+					"$(SRCROOT)/libao/build/include",
+					"$(SRCROOT)/libfaad2/build/include",
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/libfaad2/build/lib\"",
+					"\"$(SRCROOT)/libmad/build/lib\"",
+					"\"$(SRCROOT)/libao/build/lib\"",
+					"\"$(SRCROOT)/libpiano/build/Release\"",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = pianobar;
+			};
+			name = Debug;
+		};
+		C90B19D1119A960B001AD6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/libmad",
+					"$(SRCROOT)/libwaitress/src",
+					"$(SRCROOT)/libpiano/src",
+					"$(SRCROOT)/libao/build/include",
+					"$(SRCROOT)/libfaad2/build/include",
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/libfaad2/build/lib\"",
+					"\"$(SRCROOT)/libmad/build/lib\"",
+					"\"$(SRCROOT)/libao/build/lib\"",
+					"\"$(SRCROOT)/libpiano/build/Release\"",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = pianobar;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "pianobar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB919408733D9F0010E9CD /* Debug */,
+				1DEB919508733D9F0010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90B1876119A8E23001AD6DF /* Build configuration list for PBXAggregateTarget "libao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B1874119A8DDE001AD6DF /* Debug */,
+				C90B1875119A8DDE001AD6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90B1884119A8F21001AD6DF /* Build configuration list for PBXAggregateTarget "libmad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B187E119A8EDA001AD6DF /* Debug */,
+				C90B187F119A8EDA001AD6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90B1885119A8F21001AD6DF /* Build configuration list for PBXAggregateTarget "libfaad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B1882119A8EFA001AD6DF /* Debug */,
+				C90B1883119A8EFA001AD6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90B19D5119A961D001AD6DF /* Build configuration list for PBXNativeTarget "pianobar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B19D0119A960B001AD6DF /* Debug */,
+				C90B19D1119A960B001AD6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
