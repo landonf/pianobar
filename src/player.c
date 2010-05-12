@@ -446,11 +446,7 @@ void *BarPlayerThread (void *data) {
 
 		default:
 			BarUiMsg (MSG_ERR, "Unsupported audio format!\n");
-<<<<<<< HEAD
-			return PLAYER_RET_OK;
-=======
 			return NULL;
->>>>>>> 13bd3c8253a5c2998ce85a084a854f7a3d0ba7f5
 			break;
 	}
 	
