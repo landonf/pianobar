@@ -11,6 +11,7 @@
 #include "player_macosx.h"
 
 #define PRINTERROR(LABEL)	printf("%s\n", LABEL)
+unsigned long int EstimatedDuration(struct audioPlayer * player);
 
 void StreamPropertyListenerProc(void * inClientData,
                                 AudioFileStreamID inAudioFileStream,
@@ -36,6 +37,8 @@ void StreamPropertyListenerProc(void * inClientData,
             //TODO: Is this really right!?!
             player->songDuration = player->waith.contentLength * 2000 / asbd.mSampleRate;
             player->samplerate = asbd.mSampleRate;
+            
+            player->packetDuration = asbd.mFramesPerPacket / asbd.mSampleRate;
             
 			// create the audio queue
 			err = AudioQueueNewOutput(&asbd, PianobarAudioQueueOutputCallback, player, NULL, NULL, 0, &player->audioQueue);
@@ -89,6 +92,9 @@ void StreamPacketsProc(void * inClientData,
 		SInt64 packetOffset = inPacketDescriptions[i].mStartOffset;
 		SInt64 packetSize   = inPacketDescriptions[i].mDataByteSize;
         
+        player->processedPacketsSize += packetSize;
+        player->processedPacketCount += 1;
+        
 		// if the space remaining in the buffer is not enough for this packet, then enqueue the buffer.
 		size_t bufSpaceRemaining = kAQBufSize - player->bytesFilled;
 		if (bufSpaceRemaining < packetSize) {
@@ -105,7 +111,8 @@ void StreamPacketsProc(void * inClientData,
 		// keep track of bytes filled and packets filled
 		player->bytesFilled += packetSize;
 		player->packetsFilled += 1;
-		
+		player->dSongPlayed += player->packetDuration * 1000.0f; 
+        player->songPlayed = (unsigned long int)player->dSongPlayed;
 		// if that was the last free packet description, then enqueue the buffer.
 		size_t packetsDescsRemaining = kAQMaxPacketDescs - player->packetsFilled;
 		if (packetsDescsRemaining == 0) {
@@ -184,7 +191,7 @@ void PianobarAudioQueueOutputCallback(void* inClientData,
         // signal waiting thread that the buffer is free.
         pthread_mutex_lock(&player->mutex);
         player->inuse[bufIndex] = false;
-        player->songPlayed += (player->samplerate / (1024)) * 4;
+        player->songDuration = EstimatedDuration(player);
         pthread_cond_signal(&player->cond);
         pthread_mutex_unlock(&player->mutex);
     }
@@ -207,3 +214,25 @@ void AudioQueueIsRunningCallback(void* inClientData,
 	}
 }
 
+double CalculatedBitRate(struct audioPlayer * player)
+{
+	if (player->packetDuration && player->processedPacketCount > 50)
+	{
+		double averagePacketByteSize = player->processedPacketsSize / player->processedPacketCount;
+		return 8.0 * averagePacketByteSize / player->packetDuration;
+	}
+    
+	return 0;
+}
+
+unsigned long int EstimatedDuration(struct audioPlayer * player)
+{
+	double calculatedBitRate = CalculatedBitRate(player);
+    
+	if (calculatedBitRate == 0 || player->waith.contentLength == 0)
+	{
+		return 0.0;
+	}
+    
+	return (unsigned long int)(((double)(player->waith.contentLength) / (calculatedBitRate * 0.125)) * 1000);
+}

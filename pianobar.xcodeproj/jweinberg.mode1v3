@@ -274,7 +274,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>26</integer>
+									<integer>38</integer>
 									<integer>20</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -300,7 +300,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>43 55 1379 823 0 0 1440 878 </string>
+						<string>318 55 1379 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -318,7 +318,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>player_macosx.c</string>
+								<string>mac_audio.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,11 +326,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>player_macosx.c</string>
+										<string>mac_audio.c</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>821DADED119B7FDB00078BBF</string>
+										<string>821DAEA4119C57C900078BBF</string>
 										<key>history</key>
 										<array>
 											<string>82EFC506119B037600D502A5</string>
@@ -359,20 +359,20 @@
 											<string>821DACB8119B59F700078BBF</string>
 											<string>821DACD4119B5C5F00078BBF</string>
 											<string>821DAD2B119B63A600078BBF</string>
-											<string>821DAD2C119B63A600078BBF</string>
 											<string>821DAD44119B658400078BBF</string>
 											<string>821DAD7A119B69F300078BBF</string>
 											<string>821DAD7E119B6A4100078BBF</string>
 											<string>821DAD99119B6D4800078BBF</string>
 											<string>821DADB3119B6F6C00078BBF</string>
-											<string>821DADC2119B747100078BBF</string>
 											<string>821DADCD119B77E700078BBF</string>
-											<string>821DADCE119B77E700078BBF</string>
 											<string>821DADCF119B77E700078BBF</string>
-											<string>821DADD0119B77E700078BBF</string>
-											<string>821DADDF119B7F8700078BBF</string>
 											<string>821DADEB119B7FDB00078BBF</string>
-											<string>821DADEC119B7FDB00078BBF</string>
+											<string>821DAE37119C4E3800078BBF</string>
+											<string>821DAE6B119C502C00078BBF</string>
+											<string>821DAEA0119C57C900078BBF</string>
+											<string>821DAEA1119C57C900078BBF</string>
+											<string>821DAEA2119C57C900078BBF</string>
+											<string>821DAEA3119C57C900078BBF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -386,7 +386,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1171, 586}}</string>
 								<key>RubberWindowFrame</key>
-								<string>43 55 1379 823 0 0 1440 878 </string>
+								<string>318 55 1379 823 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -406,7 +406,7 @@
 								<key>Frame</key>
 								<string>{{0, 591}, {1171, 191}}</string>
 								<key>RubberWindowFrame</key>
-								<string>43 55 1379 823 0 0 1440 878 </string>
+								<string>318 55 1379 823 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -570,18 +570,18 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>821DADEE119B7FDB00078BBF</string>
+		<string>821DAEA5119C57C900078BBF</string>
 		<string>82EFC62E119B148600D502A5</string>
 		<string>821DAC33119B414B00078BBF</string>
 		<string>821DAC34119B414B00078BBF</string>
-		<string>82EFC50F119B037600D502A5</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>82EFC50F119B037600D502A5</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/jweinberg/Developer/player/pianobar/pianobar.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
-	<string>43 55 1379 823 0 0 1440 878 </string>
+	<string>318 55 1379 823 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -597,14 +597,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>terminal.c</string>
+								<string>mac_audio.c</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -621,6 +619,8 @@
 							<string>391pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

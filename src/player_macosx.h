@@ -44,7 +44,10 @@ struct audioPlayer {
     /* duration and already played time; measured in milliseconds */
 	unsigned long int songDuration;
 	unsigned long int songPlayed;
-	
+    double packetDuration;
+    double dSongPlayed;
+    unsigned long int processedPacketsSize;
+    unsigned long int processedPacketCount;
     AudioFileStreamID audioFileStream;	// the audio file stream parser
     
 	AudioQueueRef audioQueue;								// the audio queue
