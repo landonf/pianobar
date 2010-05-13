@@ -200,6 +200,16 @@
 			821DADD1119B77E700078BBF /* PBXTextBookmark */ = 821DADD1119B77E700078BBF /* PBXTextBookmark */;
 			821DADD2119B77E700078BBF /* PBXTextBookmark */ = 821DADD2119B77E700078BBF /* PBXTextBookmark */;
 			821DADD4119B782900078BBF /* PBXTextBookmark */ = 821DADD4119B782900078BBF /* PBXTextBookmark */;
+			821DADDB119B7CF200078BBF /* PBXTextBookmark */ = 821DADDB119B7CF200078BBF /* PBXTextBookmark */;
+			821DADDF119B7F8700078BBF /* PBXTextBookmark */ = 821DADDF119B7F8700078BBF /* PBXTextBookmark */;
+			821DADE0119B7F8700078BBF /* PBXTextBookmark */ = 821DADE0119B7F8700078BBF /* PBXTextBookmark */;
+			821DADE1119B7F8700078BBF /* PBXTextBookmark */ = 821DADE1119B7F8700078BBF /* PBXTextBookmark */;
+			821DADE2119B7FB500078BBF /* PBXTextBookmark */ = 821DADE2119B7FB500078BBF /* PBXTextBookmark */;
+			821DADE3119B7FB500078BBF /* PBXTextBookmark */ = 821DADE3119B7FB500078BBF /* PBXTextBookmark */;
+			821DADE5119B7FB500078BBF /* PBXTextBookmark */ = 821DADE5119B7FB500078BBF /* PBXTextBookmark */;
+			821DADEB119B7FDB00078BBF /* PBXTextBookmark */ = 821DADEB119B7FDB00078BBF /* PBXTextBookmark */;
+			821DADEC119B7FDB00078BBF /* PBXTextBookmark */ = 821DADEC119B7FDB00078BBF /* PBXTextBookmark */;
+			821DADED119B7FDB00078BBF /* PBXTextBookmark */ = 821DADED119B7FDB00078BBF /* PBXTextBookmark */;
 			82CF17AB119B228B0064702A = 82CF17AB119B228B0064702A /* PBXTextBookmark */;
 			82CF17DE119B2F990064702A = 82CF17DE119B2F990064702A /* PBXTextBookmark */;
 			82CF17DF119B2F990064702A = 82CF17DF119B2F990064702A /* PBXTextBookmark */;
@@ -428,9 +438,9 @@
 	};
 	1E1057E5119A7630008CC292 /* player_macosx.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1110, 1652}}";
-			sepNavSelRange = "{621, 0}";
-			sepNavVisRange = "{185, 894}";
+			sepNavIntBoundsRect = "{{0, 0}, {1110, 1512}}";
+			sepNavSelRange = "{2832, 0}";
+			sepNavVisRange = "{2057, 1032}";
 			sepNavWindowFrame = "{{76, 0}, {1031, 878}}";
 		};
 	};
@@ -979,7 +989,7 @@
 		fRef = 1E1057E5119A7630008CC292 /* player_macosx.c */;
 		name = "player_macosx.m: 446";
 		rLen = 0;
-		rLoc = 2751;
+		rLoc = 2864;
 		rType = 0;
 		vrLen = 893;
 		vrLoc = 14677;
@@ -989,7 +999,7 @@
 		fRef = 1E1057E5119A7630008CC292 /* player_macosx.c */;
 		name = "player_macosx.m: 444";
 		rLen = 0;
-		rLoc = 2751;
+		rLoc = 2864;
 		rType = 0;
 		vrLen = 893;
 		vrLoc = 14651;
@@ -999,7 +1009,7 @@
 		fRef = 1E1057E5119A7630008CC292 /* player_macosx.c */;
 		name = "player_macosx.m: 443";
 		rLen = 0;
-		rLoc = 2751;
+		rLoc = 2864;
 		rType = 0;
 		vrLen = 843;
 		vrLoc = 14672;
@@ -1124,7 +1134,7 @@
 		fRef = 1E1057E5119A7630008CC292 /* player_macosx.c */;
 		name = "player_macosx.m: 315";
 		rLen = 0;
-		rLoc = 2976;
+		rLoc = 3089;
 		rType = 0;
 		vrLen = 946;
 		vrLoc = 7601;
@@ -1139,9 +1149,9 @@
 	};
 	821DAC7C119B56F700078BBF /* mac_audio.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1110, 2912}}";
-			sepNavSelRange = "{1368, 0}";
-			sepNavVisRange = "{437, 1842}";
+			sepNavIntBoundsRect = "{{0, 0}, {1110, 3192}}";
+			sepNavSelRange = "{7178, 2}";
+			sepNavVisRange = "{6492, 1365}";
 		};
 	};
 	821DACB6119B59F700078BBF /* PBXTextBookmark */ = {
@@ -1982,6 +1992,121 @@
 		rType = 0;
 		vrLen = 1842;
 		vrLoc = 437;
+	};
+	821DADDB119B7CF200078BBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 821DAC7C119B56F700078BBF /* mac_audio.c */;
+		name = "mac_audio.c: 187";
+		rLen = 2;
+		rLoc = 7178;
+		rType = 0;
+		vrLen = 1365;
+		vrLoc = 6492;
+	};
+	821DADDF119B7F8700078BBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 821DAC7C119B56F700078BBF /* mac_audio.c */;
+		name = "mac_audio.c: 187";
+		rLen = 2;
+		rLoc = 7178;
+		rType = 0;
+		vrLen = 1365;
+		vrLoc = 6492;
+	};
+	821DADE0119B7F8700078BBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1E1057E5119A7630008CC292 /* player_macosx.c */;
+		name = "player_macosx.c: 26";
+		rLen = 0;
+		rLoc = 621;
+		rType = 0;
+		vrLen = 893;
+		vrLoc = 185;
+	};
+	821DADE1119B7F8700078BBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1E1057E5119A7630008CC292 /* player_macosx.c */;
+		name = "player_macosx.c: 97";
+		rLen = 0;
+		rLoc = 2701;
+		rType = 0;
+		vrLen = 995;
+		vrLoc = 2047;
+	};
+	821DADE2119B7FB500078BBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1E1057E5119A7630008CC292 /* player_macosx.c */;
+		name = "player_macosx.c: 99";
+		rLen = 17;
+		rLoc = 2808;
+		rType = 0;
+		vrLen = 1040;
+		vrLoc = 2047;
+	};
+	821DADE3119B7FB500078BBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 821DADE4119B7FB500078BBF /* AudioQueue.h */;
+		rLen = 1;
+		rLoc = 736;
+		rType = 1;
+	};
+	821DADE4119B7FB500078BBF /* AudioQueue.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = AudioQueue.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AudioToolbox.framework/Versions/A/Headers/AudioQueue.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1110, 20104}}";
+			sepNavSelRange = "{36610, 0}";
+			sepNavVisRange = "{35688, 1751}";
+		};
+	};
+	821DADE5119B7FB500078BBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 821DADE6119B7FB500078BBF /* AudioQueue.h */;
+		name = "AudioQueue.h: 737";
+		rLen = 67;
+		rLoc = 36630;
+		rType = 0;
+		vrLen = 1751;
+		vrLoc = 35688;
+	};
+	821DADE6119B7FB500078BBF /* AudioQueue.h */ = {
+		isa = PBXFileReference;
+		name = AudioQueue.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AudioToolbox.framework/Versions/A/Headers/AudioQueue.h;
+		sourceTree = "<absolute>";
+	};
+	821DADEB119B7FDB00078BBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 821DADE4119B7FB500078BBF /* AudioQueue.h */;
+		name = "AudioQueue.h: 734";
+		rLen = 0;
+		rLoc = 36610;
+		rType = 0;
+		vrLen = 1751;
+		vrLoc = 35688;
+	};
+	821DADEC119B7FDB00078BBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1E1057E5119A7630008CC292 /* player_macosx.c */;
+		name = "player_macosx.c: 99";
+		rLen = 0;
+		rLoc = 2853;
+		rType = 0;
+		vrLen = 1036;
+		vrLoc = 2037;
+	};
+	821DADED119B7FDB00078BBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1E1057E5119A7630008CC292 /* player_macosx.c */;
+		name = "player_macosx.c: 99";
+		rLen = 0;
+		rLoc = 2832;
+		rType = 0;
+		vrLen = 1032;
+		vrLoc = 2057;
 	};
 	82CF17AB119B228B0064702A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

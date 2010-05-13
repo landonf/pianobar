@@ -94,7 +94,9 @@ void *BarPlayerMacOSXThread(void *data){
 		case PIANO_AF_AACPLUS:
         case PIANO_AF_MP3:
 		case PIANO_AF_MP3_HI:
+            AudioQueueStop(player->audioQueue, false);
             AudioFileStreamClose(player->streamID);
+            AudioQueueDispose(player->audioQueue, false);
 			break;
 		default:
 			/* this should never happen: thread is aborted above */
