@@ -10,7 +10,6 @@
 #include "mac_audio.h"
 #include "player_macosx.h"
 
-#define PRINTERROR(LABEL)	printf("%s\n", LABEL)
 unsigned long int EstimatedDuration(struct audioPlayer * player);
 
 void StreamPropertyListenerProc(void * inClientData,

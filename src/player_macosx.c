@@ -57,7 +57,7 @@ void *BarPlayerMacOSXThread(void *data){
             OSStatus err = AudioFileStreamOpen(player, StreamPropertyListenerProc, StreamPacketsProc, 
                                                kAudioFileAAC_ADTSType, &player->audioFileStream);
             if (err) 
-                BarUiMsg (MSG_ERR, "Error opening stream!\n");
+                PRINTERROR ("Error opening stream!\n");
 			player->waith.callback = BarPlayerAACCb;
         }
 			break;
@@ -68,13 +68,13 @@ void *BarPlayerMacOSXThread(void *data){
             OSStatus err = AudioFileStreamOpen(player, StreamPropertyListenerProc, StreamPacketsProc, 
                                                kAudioFileMP3Type, &player->audioFileStream);			
             if (err)
-                BarUiMsg (MSG_ERR, "Error opening stream!\n");
+                PRINTERROR ("Error opening stream!\n");
 			player->waith.callback = BarPlayerAACCb;
         }
 			break;
 			
 		default:
-			BarUiMsg (MSG_ERR, "Unsupported audio format!\n");
+			PRINTERROR ("Unsupported audio format!\n");
 			return PLAYER_RET_OK;
 			break;
 	}

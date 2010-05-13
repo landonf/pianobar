@@ -15,8 +15,8 @@
 #include <CoreAudio/AudioHardware.h>
 #include <pthread.h>
 
-#include <piano.h>
-#include <waitress.h>
+#include <PianoBar/piano.h>
+#include <PianoBar/waitress.h>
 #include <AudioToolbox/AudioToolbox.h>
 #include <CoreAudio/CoreAudio.h>
 
@@ -26,6 +26,7 @@
 #define kAQBufSize (1024)
 #define kAQMaxPacketDescs (512)
 
+#define PRINTERROR(LABEL)	printf("%s\n", LABEL)
 
 struct audioPlayer {
 
