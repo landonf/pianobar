@@ -371,10 +371,14 @@
 }
 
 -(IBAction)playPauseCurrentSong:(id)sender;
-{
+{	
     if (pthread_mutex_trylock (&player.pauseMutex) == EBUSY) {
 		pthread_mutex_unlock (&player.pauseMutex);
 	}
+	[self willChangeValueForKey:@"isPlaying"];
+	self.paused = !self.paused;
+	[self  didChangeValueForKey:@"isPlaying"];
+	
 }
 
 -(IBAction)playNextSong:(id)sender;

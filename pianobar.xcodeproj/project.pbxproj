@@ -58,6 +58,10 @@
 		821DB107119C70FE00078BBF /* piano.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E105746119A6ABC008CC292 /* piano.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		821DB108119C70FE00078BBF /* xml.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E105748119A6ABC008CC292 /* xml.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		821DB111119C713600078BBF /* waitress.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E105739119A6AA4008CC292 /* waitress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82BD2EAD119D0D6A00122BFD /* PPStation.h in Headers */ = {isa = PBXBuildFile; fileRef = 82BD2EA9119D0D6A00122BFD /* PPStation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82BD2EAE119D0D6A00122BFD /* PPStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BD2EAA119D0D6A00122BFD /* PPStation.m */; };
+		82BD2EAF119D0D6A00122BFD /* PPTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 82BD2EAB119D0D6A00122BFD /* PPTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82BD2EB0119D0D6A00122BFD /* PPTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BD2EAC119D0D6A00122BFD /* PPTrack.m */; };
 		82EFC525119B040B00D502A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFC524119B040B00D502A5 /* Foundation.framework */; };
 		82EFC55A119B065E00D502A5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFC559119B065E00D502A5 /* AudioToolbox.framework */; };
 		82EFC55F119B066B00D502A5 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFC543119B064E00D502A5 /* AudioUnit.framework */; };
@@ -160,6 +164,10 @@
 		821DAFF8119C660F00078BBF /* PPPianobarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPianobarController.m; sourceTree = "<group>"; };
 		821DB031119C695700078BBF /* mac_piano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mac_piano.h; sourceTree = "<group>"; };
 		821DB032119C695700078BBF /* mac_piano.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mac_piano.c; sourceTree = "<group>"; };
+		82BD2EA9119D0D6A00122BFD /* PPStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPStation.h; sourceTree = "<group>"; };
+		82BD2EAA119D0D6A00122BFD /* PPStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPStation.m; sourceTree = "<group>"; };
+		82BD2EAB119D0D6A00122BFD /* PPTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTrack.h; sourceTree = "<group>"; };
+		82BD2EAC119D0D6A00122BFD /* PPTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTrack.m; sourceTree = "<group>"; };
 		82EFC524119B040B00D502A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		82EFC543119B064E00D502A5 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		82EFC559119B065E00D502A5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -324,6 +332,10 @@
 		821DAFF6119C65FF00078BBF /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				82BD2EA9119D0D6A00122BFD /* PPStation.h */,
+				82BD2EAA119D0D6A00122BFD /* PPStation.m */,
+				82BD2EAB119D0D6A00122BFD /* PPTrack.h */,
+				82BD2EAC119D0D6A00122BFD /* PPTrack.m */,
 				821DAFF7119C660F00078BBF /* PPPianobarController.h */,
 				821DAFF8119C660F00078BBF /* PPPianobarController.m */,
 			);
@@ -390,6 +402,8 @@
 				821DB00D119C66CF00078BBF /* settings.h in Headers */,
 				821DB033119C695700078BBF /* mac_piano.h in Headers */,
 				821DB03D119C69CF00078BBF /* ui_readline.h in Headers */,
+				82BD2EAD119D0D6A00122BFD /* PPStation.h in Headers */,
+				82BD2EAF119D0D6A00122BFD /* PPTrack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +571,8 @@
 				821DB00E119C66D100078BBF /* settings.c in Sources */,
 				821DB034119C695700078BBF /* mac_piano.c in Sources */,
 				821DB03C119C69CC00078BBF /* ui_readline.c in Sources */,
+				82BD2EAE119D0D6A00122BFD /* PPStation.m in Sources */,
+				82BD2EB0119D0D6A00122BFD /* PPTrack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

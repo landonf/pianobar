@@ -111,7 +111,7 @@ void BarSettingsRead (BarSettings_t *settings) {
 		settings->audioFormat = PIANO_AF_MP3;
 		#endif
 	#endif*/
-    settings->audioFormat = PIANO_AF_MP3_HI;
+    settings->audioFormat = PIANO_AF_AACPLUS;
 	settings->history = 5;
 	memcpy (settings->keys, defaultKeys, sizeof (defaultKeys));
 
