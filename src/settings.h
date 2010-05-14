@@ -24,8 +24,8 @@ THE SOFTWARE.
 #ifndef _SETTINGS_H
 #define _SETTINGS_H
 
-#include <PianoBar/piano.h>
-#include <PianoBar/waitress.h>
+#include "piano.h"
+#include "waitress.h"
 
 #include "player_macosx.h"
 

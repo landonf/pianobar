@@ -7,10 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <PianoBar/piano.h>
-#import <PianoBar/waitress.h>
-#import "PianoBar/settings.h"
-#import "PianoBar/player_macosx.h"
+#import "piano.h"
+#import "waitress.h"
+#import "settings.h"
+#import "player_macosx.h"
 
 @interface PPPianobarController : NSObject {
 	PianoHandle_t ph;

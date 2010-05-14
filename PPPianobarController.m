@@ -173,6 +173,12 @@
 -(void)playStationWithID:(NSString *)stationID;
 {
     [backgroundPlayer cancel];
+    [self playNextSong:nil];
+    
+    while (player.mode != PLAYER_FINISHED_PLAYBACK && player.mode != PLAYER_FREED)
+    {
+        usleep(10);
+    }
     curStation = BarSelectStation(&ph, [stationID intValue]);
     backgroundPlayer = [[NSThread alloc] initWithTarget:self selector:@selector(startPlayback) object:nil];
     [backgroundPlayer start];
@@ -343,7 +349,6 @@
 {
  	player.doQuit = 1;
 	pthread_mutex_unlock (&player.pauseMutex);
-
 }
 
 

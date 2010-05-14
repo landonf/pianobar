@@ -14,7 +14,7 @@
 #define QUIT_PAUSE_CHECK \
 pthread_mutex_lock (&player->pauseMutex); \
 pthread_mutex_unlock (&player->pauseMutex); \
-if (player->doQuit) { \
+if (player->doQuit || player->mode == PLAYER_FREED) { \
 /* err => abort playback */ \
 return WAITRESS_CB_RET_ERR; \
 }
