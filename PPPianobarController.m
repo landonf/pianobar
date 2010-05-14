@@ -308,6 +308,9 @@
 -(void)stop;
 {
     [backgroundPlayer cancel];
+    [backgroundPlayer release];
+    backgroundPlayer = nil;
+    
     [self playNextSong:nil];
 }
 
