@@ -77,7 +77,7 @@
 
 }
 
-- (void)updateHistory;
+- (void)advancePlaylist;
 {
     if (settings.history != 0)
     {

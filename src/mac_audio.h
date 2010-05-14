@@ -8,7 +8,7 @@
  */
 
 #pragma once
-#include <CoreAudio/CoreAudio.h>
+
 #include <AudioToolbox/AudioToolbox.h>
 #include "player_macosx.h"
 

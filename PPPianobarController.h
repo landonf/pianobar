@@ -6,7 +6,14 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#include <TargetConditionals.h>
+
+#if TARGET_OS_MAC
+    #import <AppKit/AppKit.h>
+#else
+    #import <UIKit/UIKit.h>
+#endif
+
 #import "piano.h"
 #import "waitress.h"
 #import "settings.h"

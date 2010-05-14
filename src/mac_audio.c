@@ -9,6 +9,7 @@
 
 #include "mac_audio.h"
 #include "player_macosx.h"
+#include <unistd.h>
 
 unsigned long int EstimatedDuration(struct audioPlayer * player);
 

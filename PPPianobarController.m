@@ -230,18 +230,17 @@
 		if (player.mode >= PLAYER_FINISHED_PLAYBACK ||
             player.mode == PLAYER_FREED) {
 			if (curStation != NULL) {
-				/* what's next? */
 				if (playlist != NULL) {
-                    [self updateHistory];
+                    [self advancePlaylist];
 				}
 				if (playlist == NULL) {
                     [self fetchPlaylist];
                 }
-				/* song ready to play */
+                
 				if (playlist != NULL) {
                     [self playSong];
-				} /* end if playlist != NULL */
-			} /* end if curStation != NULL */
+				}
+			}
 		}
         else
         {

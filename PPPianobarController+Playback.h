@@ -11,6 +11,6 @@
 @interface PPPianobarController (Playback)
 - (void)playSong;
 - (void)fetchPlaylist;
-- (void)updateHistory;
+- (void)advancePlaylist;
 - (void)finishSong;
 @end
