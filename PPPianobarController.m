@@ -117,6 +117,24 @@
     return self;
 }
 
+- (void)dealloc;
+{
+    [stations release], stations = nil;
+    [nowPlaying release], nowPlaying = nil;
+    [selectedStation release], selectedStation = nil;
+    
+    free(settings.username);
+    free(settings.password);
+    
+    PianoDestroy (&ph);
+	PianoDestroyPlaylist (songHistory);
+	PianoDestroyPlaylist (playlist);
+    
+    BarSettingsDestroy (&settings);
+    
+    [super dealloc];
+}
+
 - (BOOL)login;
 {
     PianoReturn_t pRet;

@@ -272,7 +272,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>4</integer>
 									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -328,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>82B7B326119CE011007AFF52</string>
+										<string>82B7B32F119CE2A1007AFF52</string>
 										<key>history</key>
 										<array>
 											<string>82CF17E0119B2F990064702A</string>
@@ -361,9 +361,7 @@
 											<string>820CCD75119C7FED00538AF0</string>
 											<string>820CCD7D119C808000538AF0</string>
 											<string>820CCDAA119C871400538AF0</string>
-											<string>820CCDAB119C871400538AF0</string>
 											<string>820CCDAE119C871400538AF0</string>
-											<string>820CCDAF119C871400538AF0</string>
 											<string>82B7B2C2119CD995007AFF52</string>
 											<string>82B7B2C3119CD995007AFF52</string>
 											<string>82B7B2C4119CD995007AFF52</string>
@@ -376,8 +374,10 @@
 											<string>82B7B2D5119CDBE8007AFF52</string>
 											<string>82B7B2D7119CDBE8007AFF52</string>
 											<string>82B7B2F3119CDCB8007AFF52</string>
-											<string>82B7B30A119CDEAE007AFF52</string>
-											<string>82B7B30B119CDEAE007AFF52</string>
+											<string>82B7B327119CE272007AFF52</string>
+											<string>82B7B32C119CE2A1007AFF52</string>
+											<string>82B7B32D119CE2A1007AFF52</string>
+											<string>82B7B32E119CE2A1007AFF52</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -578,8 +578,8 @@
 		<string>82EFC50F119B037600D502A5</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>/Users/jweinberg/Developer/PlayerPiano/contrib/pianobar/pianobar.xcodeproj</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>/Users/jweinberg/Developer/PlayerPiano/contrib/pianobar/pianobar.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>61 55 1379 823 0 0 1440 878 </string>
