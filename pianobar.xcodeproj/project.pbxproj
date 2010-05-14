@@ -121,14 +121,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E105721119A6A2D008CC292 /* libwaitress */;
+			remoteGlobalIDString = 1E105721119A6A2D008CC292;
 			remoteInfo = libwaitress;
 		};
 		823059C3119DB16300317630 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E105728119A6A33008CC292 /* libpiano */;
+			remoteGlobalIDString = 1E105728119A6A33008CC292;
 			remoteInfo = libpiano;
 		};
 /* End PBXContainerItemProxy section */

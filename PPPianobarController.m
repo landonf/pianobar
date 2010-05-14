@@ -15,7 +15,7 @@
 
 @implementation PPPianobarController
 
-@synthesize stations, selectedStation, nowPlaying, paused;
+@synthesize stations, selectedStation, nowPlaying, paused, delegate;
 
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key{
 	if([key isEqualToString:@"paused"]){
@@ -122,6 +122,8 @@
 
 - (void)dealloc;
 {
+    delegate = nil;
+    
     [stations release], stations = nil;
     [nowPlaying release], nowPlaying = nil;
     [selectedStation release], selectedStation = nil;
@@ -145,11 +147,13 @@
     PianoRequestDataLogin_t reqData;
     reqData.user = settings.username;
     reqData.password = settings.password;
-    
+ 
+    [self.delegate pianobarWillLogin:self];
     if (!BarUiPianoCall (&ph, PIANO_REQUEST_LOGIN, &waith, &reqData, &pRet,
                          &wRet)) {
         return NO;
     }
+    [self.delegate pianobarDidLogin:self];
     return YES;
 }
 
@@ -197,6 +201,7 @@
     pthread_join(playerThread, NULL);
 
     curStation = BarSelectStation(&ph, [stationID intValue]);
+    [self.delegate pianobar:self didBeginPlayingChannel:[self.stations objectAtIndex:[stationID intValue]]];
     backgroundPlayer = [[NSThread alloc] initWithTarget:self selector:@selector(startPlayback) object:nil];
     [backgroundPlayer start];
 }

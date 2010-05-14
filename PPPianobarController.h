@@ -19,7 +19,18 @@
 #import "settings.h"
 #import "player_macosx.h"
 
-@class PPStation, PPTrack;
+@class PPStation, PPTrack, PPPianobarController;
+
+@protocol PPPianobarDelegate
+
+-(void)pianobarWillLogin:(PPPianobarController *)pianobar;
+-(void)pianobarDidLogin:(PPPianobarController *)pianobar;
+
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingSong:(PPTrack *)song;
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingChannel:(PPStation *)channel;
+
+@end
+
 
 @interface PPPianobarController : NSObject {
 	PianoHandle_t ph;
@@ -39,6 +50,8 @@
     BOOL paused;
     NSThread * backgroundPlayer;
     struct audioPlayer player;
+    
+    id <PPPianobarDelegate> delegate;
 }
 
 @property (nonatomic, retain) PPStation *selectedStation;
@@ -47,7 +60,7 @@
 @property (nonatomic, retain) NSArray *stations;
 
 @property (nonatomic, assign) BOOL paused;
-
+@property (nonatomic, assign) id <PPPianobarDelegate> delegate;
 -(NSAttributedString *)nowPlayingAttributedDescription;
 -(BOOL)isInPlaybackMode;
 -(BOOL)isPlaying;
