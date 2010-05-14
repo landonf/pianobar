@@ -18,7 +18,8 @@
     //Figure out the new track
     self.nowPlaying = [PPTrack trackWithTitle:[NSString stringWithUTF8String:playlist->title]
                                        artist:[NSString stringWithUTF8String:playlist->artist] 
-                                        album:[NSString stringWithUTF8String:playlist->album]];
+                                        album:[NSString stringWithUTF8String:playlist->album]
+                                       artURL:[NSString stringWithUTF8String:playlist->artRadio]];
     
     if (playlist->audioUrl == NULL) 
     {

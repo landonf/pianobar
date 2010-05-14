@@ -75,6 +75,7 @@ typedef struct PianoSong {
 	char *title;
 	char *focusTraitId;
 	char *identity;
+    char *artRadio;
 	PianoAudioFormat_t audioFormat;
 	struct PianoSong *next;
 } PianoSong_t;

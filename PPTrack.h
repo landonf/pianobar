@@ -14,18 +14,21 @@
 	NSString * _artist;
 	NSString * _album;
 	
+    NSString * _url;
+    
 	NSTimeInterval _duration;
 	NSTimeInterval _currentTime;
 	NSTimeInterval _timeLeft;
 	
 }
 
-- (id)initWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album;
-+ (id)trackWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album;
+- (id)initWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album artURL:(NSString*)aURL;
++ (id)trackWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album artURL:(NSString*)aURL;
 
 @property (nonatomic, readonly) NSString * title;
 @property (nonatomic, readonly) NSString * artist;
 @property (nonatomic, readonly) NSString * album;
+@property (nonatomic, readonly) NSString * url;
 @property (nonatomic, assign) NSTimeInterval duration;
 @property (nonatomic, assign) NSTimeInterval currentTime;
 @property (nonatomic, assign) NSTimeInterval timeLeft;
