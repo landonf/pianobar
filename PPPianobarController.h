@@ -8,10 +8,10 @@
 
 #include <TargetConditionals.h>
 
-#if TARGET_OS_MAC
-    #import <AppKit/AppKit.h>
-#else
+#if TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR
     #import <UIKit/UIKit.h>
+#else
+    #import <AppKit/AppKit.h>
 #endif
 
 #import "piano.h"
