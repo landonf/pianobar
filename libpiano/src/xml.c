@@ -298,6 +298,10 @@ static void PianoXmlParsePlaylistCb (const char *key, const ezxml_t value,
 	} else if (strcmp ("artistMusicId", key) == 0) {
 		song->artistMusicId = strdup (valueStr);
  	}
+    else
+    {
+        printf("Unhandled tag: %s\nValue: %s\n---\n",key, valueStr);
+    }
 }
 
 /*	parses userinfos sent by pandora as login response

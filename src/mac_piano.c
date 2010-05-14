@@ -219,10 +219,6 @@ PianoStation_t *BarSelectStation (PianoHandle_t *ph, int station) {
 	/* sort and print stations */
 	sortedStations = BarSortedStations (ph->stations, &stationCount);
 
-	if (station == 0) {
-		free (sortedStations);
-		return NULL;
-	}
 	if (station < stationCount) {
 		retStation = sortedStations[station];
 	}
