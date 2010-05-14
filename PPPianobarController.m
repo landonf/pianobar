@@ -301,6 +301,17 @@
 				} /* end if playlist != NULL */
 			} /* end if curStation != NULL */
 		}
+        else
+        {
+            double timeTotalInterval = player.songDuration / 1000.0f;
+            double timePlayed = player.songPlayed / 1000.0f;
+            NSMutableDictionary *dict = [[self.nowPlaying mutableCopy] autorelease];
+            [dict setObject:[NSNumber numberWithDouble:timePlayed] forKey:@"timeSoFar"];
+            [dict setObject:[NSNumber numberWithDouble:timeTotalInterval] forKey:@"timeTotal"];
+            [dict setObject:[NSNumber numberWithDouble:timeTotalInterval - timePlayed ] forKey:@"timeLeft" ];
+            self.nowPlaying = dict;
+        }
+
         
     }
     
