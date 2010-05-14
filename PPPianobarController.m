@@ -55,7 +55,7 @@
 
 -(NSAttributedString *)nowPlayingAttributedDescription{
 	NSMutableAttributedString *description = [[[NSMutableAttributedString alloc] initWithString:@""] autorelease];
-#if !TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+#if !TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR
 	PPTrack *playing = self.nowPlaying;
 	if(playing){
 		NSFont *titleFont = [[NSFontManager sharedFontManager] convertFont: [NSFont fontWithName:@"Helvetica" size:18.0]

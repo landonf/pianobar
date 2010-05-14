@@ -275,7 +275,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
+									<integer>10</integer>
 									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -301,7 +301,7 @@
 							<real>287</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>359 -462 1379 823 0 0 1440 878 </string>
+						<string>409 -151 1379 823 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -312,14 +312,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PPPianobarController.h</string>
+								<string>PPPianobarController+Playback.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PPPianobarController.h</string>
+										<string>PPPianobarController+Playback.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>82305AD5119DB71F00317630</string>
+										<string>82F7F79E119DC08000883AF6</string>
 										<key>history</key>
 										<array>
 											<string>823059CE119DB1B700317630</string>
@@ -346,10 +344,10 @@
 											<string>823059D7119DB1B700317630</string>
 											<string>823059DC119DB1B700317630</string>
 											<string>823059DD119DB1B700317630</string>
-											<string>82305AB7119DB67600317630</string>
-											<string>82305AB8119DB67600317630</string>
 											<string>82305AB9119DB67600317630</string>
-											<string>82305ABA119DB67600317630</string>
+											<string>82F7F779119DBF7100883AF6</string>
+											<string>82F7F77A119DBF7100883AF6</string>
+											<string>82F7F77B119DBF7100883AF6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -361,14 +359,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1070, 635}}</string>
+								<string>{{0, 0}, {1070, 631}}</string>
 								<key>RubberWindowFrame</key>
-								<string>359 -462 1379 823 0 0 1440 878 </string>
+								<string>409 -151 1379 823 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>635pt</string>
+							<string>631pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -381,14 +379,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 640}, {1070, 142}}</string>
+								<string>{{0, 636}, {1070, 146}}</string>
 								<key>RubberWindowFrame</key>
-								<string>359 -462 1379 823 0 0 1440 878 </string>
+								<string>409 -151 1379 823 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>142pt</string>
+							<string>146pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -407,9 +405,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>82305ABC119DB67600317630</string>
+				<string>82F7F727119DBE4900883AF6</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>82305ABD119DB67600317630</string>
+				<string>82F7F728119DBE4900883AF6</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -547,12 +545,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>82EFC50F119B037600D502A5</string>
 		<string>/Users/jweinberg/Developer/PlayerPiano/contrib/pianobar/pianobar.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>359 -462 1379 823 0 0 1440 878 </string>
+	<string>409 -151 1379 823 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -568,14 +565,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PPPianobarController.h</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -631,7 +626,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>82EFC50F119B037600D502A5</string>
-				<string>82305ABE119DB67600317630</string>
+				<string>82F7F729119DBE4900883AF6</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
