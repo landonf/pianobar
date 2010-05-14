@@ -12,6 +12,8 @@
 #import "settings.h"
 #import "player_macosx.h"
 
+@class PPStation, PPTrack;
+
 @interface PPPianobarController : NSObject {
 	PianoHandle_t ph;
     WaitressHandle_t waith;
@@ -24,16 +26,16 @@
     
 	NSArray *stations;
     
-	NSDictionary *selectedStation;
-	NSDictionary *nowPlaying;
+	PPStation *selectedStation;
+	PPTrack *nowPlaying;
     
     BOOL paused;
     NSThread * backgroundPlayer;
     struct audioPlayer player;
 }
 
-@property (nonatomic, retain) NSDictionary *selectedStation;
-@property (nonatomic, retain) NSDictionary *nowPlaying;
+@property (nonatomic, retain) PPStation *selectedStation;
+@property (nonatomic, retain) PPTrack *nowPlaying;
 
 @property (nonatomic, retain) NSArray *stations;
 

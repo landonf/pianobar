@@ -9,6 +9,8 @@
 #import "PPPianobarController.h"
 #import "mac_piano.h"
 #import "piano.h"
+#import "PPTrack.h"
+#import "PPStation.h"
 
 @implementation PPPianobarController
 
@@ -28,11 +30,11 @@
 	}
 }
 
--(void)setNowPlaying:(NSDictionary *)aDict{
+-(void)setNowPlaying:(PPTrack *)aTrack{
 	[self willChangeValueForKey:@"nowPlaying"];
 	[self willChangeValueForKey:@"nowPlayingAttributedDescription"];
 	[nowPlaying autorelease];
-	nowPlaying = [aDict copy];
+	nowPlaying = [aTrack retain];
 	[self didChangeValueForKey:@"nowPlayingAttributedDescription"];
 	[self didChangeValueForKey:@"nowPlaying"];
 }
@@ -52,7 +54,7 @@
 
 -(NSAttributedString *)nowPlayingAttributedDescription{
 	NSMutableAttributedString *description = [[[NSMutableAttributedString alloc] initWithString:@""] autorelease];
-	NSDictionary *playing = self.nowPlaying;
+	PPTrack *playing = self.nowPlaying;
 	if(playing){
 		NSFont *titleFont = [[NSFontManager sharedFontManager] convertFont: [NSFont fontWithName:@"Helvetica" size:18.0]
 															   toHaveTrait:NSBoldFontMask];
@@ -63,17 +65,17 @@
 		
 		NSAttributedString *newline = [[[NSAttributedString alloc] initWithString:@"\n"] autorelease];
 		
-		NSAttributedString *title = [[[NSAttributedString alloc] initWithString:[playing objectForKey:@"songTitle"]
+		NSAttributedString *title = [[[NSAttributedString alloc] initWithString:[playing title]
 																	 attributes:[NSDictionary dictionaryWithObjectsAndKeys:
 																				 titleFont, NSFontAttributeName,
 																				 titleColor, NSForegroundColorAttributeName,
 																				 nil]] autorelease];
-		NSAttributedString *artist = [[[NSAttributedString alloc] initWithString:[@"by " stringByAppendingString:[playing objectForKey:@"songArtist"]]
+		NSAttributedString *artist = [[[NSAttributedString alloc] initWithString:[@"by " stringByAppendingString:[playing artist]]
                                                                       attributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                                   restFont, NSFontAttributeName,
                                                                                   restColor, NSForegroundColorAttributeName,
                                                                                   nil]] autorelease];
-		NSAttributedString *album = [[[NSAttributedString alloc] initWithString:[@"on " stringByAppendingString:[playing objectForKey:@"songAlbum"]]
+		NSAttributedString *album = [[[NSAttributedString alloc] initWithString:[@"on " stringByAppendingString:[playing album]]
 																	 attributes:[NSDictionary dictionaryWithObjectsAndKeys:
 																				 restFont, NSFontAttributeName,
 																				 restColor, NSForegroundColorAttributeName,
@@ -170,9 +172,8 @@
 	for (i = 0; i < stationCount; i++) {
         
 		const PianoStation_t *currStation = sortedStations[i];
-        [tempStations addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                                 [NSString stringWithUTF8String:currStation->name], @"name",
-                                 [NSNumber numberWithInt:i], @"id", nil]];
+		[tempStations addObject:[PPStation stationWithName:[NSString stringWithUTF8String:currStation->name]
+												 stationID:i]];
         //
 //		BarUiMsg (MSG_LIST, "%2i) %c%c%c %s\n", i,
 //                  currStation->useQuickMix ? 'q' : ' ',
@@ -288,10 +289,10 @@
 /*					BarUiPrintSong (playlist, curStation->isQuickMix ?
                                     PianoFindStationById (ph.stations,
                                                           playlist->stationId) : NULL);*/
-                    self.nowPlaying = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithUTF8String:playlist->title], @"songTitle",
-                                       [NSString stringWithUTF8String:playlist->artist], @"songArtist", 
-                                       [NSString stringWithUTF8String:playlist->album], @"songAlbum", nil];
-                    
+                    self.nowPlaying = [PPTrack trackWithTitle:[NSString stringWithUTF8String:playlist->title]
+													   artist:[NSString stringWithUTF8String:playlist->artist] 
+														album:[NSString stringWithUTF8String:playlist->album]];
+				    
 					if (playlist->audioUrl == NULL) {
 						BarUiMsg (MSG_ERR, "Invalid song url.\n");
 					} else {
@@ -323,11 +324,14 @@
         {
             double timeTotalInterval = player.songDuration / 1000.0f;
             double timePlayed = player.songPlayed / 1000.0f;
-            NSMutableDictionary *dict = [[self.nowPlaying mutableCopy] autorelease];
+			[self.nowPlaying setDuration:timeTotalInterval];
+			[self.nowPlaying setCurrentTime:timePlayed];
+			[self.nowPlaying setTimeLeft:timeTotalInterval-timePlayed];
+            /*NSMutableDictionary *dict = [[self.nowPlaying mutableCopy] autorelease];
             [dict setObject:[NSNumber numberWithDouble:timePlayed] forKey:@"timeSoFar"];
             [dict setObject:[NSNumber numberWithDouble:timeTotalInterval] forKey:@"timeTotal"];
-            [dict setObject:[NSNumber numberWithDouble:timeTotalInterval - timePlayed ] forKey:@"timeLeft" ];
-            self.nowPlaying = dict;
+            [dict setObject:[NSNumber numberWithDouble:timeTotalInterval - timePlayed ] forKey:@"timeLeft" ];*/
+            //self.nowPlaying = dict;
         }
 
         
