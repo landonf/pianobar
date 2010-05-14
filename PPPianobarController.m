@@ -11,6 +11,7 @@
 #import "piano.h"
 #import "PPTrack.h"
 #import "PPStation.h"
+#import "PPPianobarController+Playback.h"
 
 @implementation PPPianobarController
 
@@ -193,10 +194,8 @@
 {
     [self stop];
     
-    while (player.mode != PLAYER_FINISHED_PLAYBACK && player.mode != PLAYER_FREED)
-    {
-        usleep(10);
-    }
+    pthread_join(playerThread, NULL);
+
     curStation = BarSelectStation(&ph, [stationID intValue]);
     backgroundPlayer = [[NSThread alloc] initWithTarget:self selector:@selector(startPlayback) object:nil];
     [backgroundPlayer start];
@@ -233,108 +232,27 @@
 			if (curStation != NULL) {
 				/* what's next? */
 				if (playlist != NULL) {
-					if (settings.history != 0) {
-						/* prepend song to history list */
-						PianoSong_t *tmpSong = songHistory;
-						songHistory = playlist;
-						/* select next song */
-						playlist = playlist->next;
-						songHistory->next = tmpSong;
-                        
-						/* limit history's length */
-						/* start with 1, so we're stopping at n-1 and have the
-						 * chance to set ->next = NULL */
-						unsigned int i = 1;
-						tmpSong = songHistory;
-						while (i < settings.history && tmpSong != NULL) {
-							tmpSong = tmpSong->next;
-							++i;
-						}
-						/* if too many songs in history... */
-						if (tmpSong != NULL) {
-							PianoSong_t *delSong = tmpSong->next;
-							tmpSong->next = NULL;
-							if (delSong != NULL) {
-								PianoDestroyPlaylist (delSong);
-							}
-						}
-					} else {
-						/* don't keep history */
-						playlist = playlist->next;
-					}
+                    [self updateHistory];
 				}
 				if (playlist == NULL) {
-					PianoReturn_t pRet;
-					WaitressReturn_t wRet;
-					PianoRequestDataGetPlaylist_t reqData;
-					reqData.station = curStation;
-					reqData.format = settings.audioFormat;
-                    
-					BarUiMsg (MSG_INFO, "Receiving new playlist... ");
-					if (!BarUiPianoCall (&ph, PIANO_REQUEST_GET_PLAYLIST,
-                                         &waith, &reqData, &pRet, &wRet)) {
-						curStation = NULL;
-					} else {
-						playlist = reqData.retPlaylist;
-						if (playlist == NULL) {
-							BarUiMsg (MSG_INFO, "No tracks left.\n");
-							curStation = NULL;
-						}
-					}
-					BarUiStartEventCmd (&settings, "stationfetchplaylist",
-                                        curStation, playlist, &player, pRet, wRet);
-				}
+                    [self fetchPlaylist];
+                }
 				/* song ready to play */
 				if (playlist != NULL) {
-/*					BarUiPrintSong (playlist, curStation->isQuickMix ?
-                                    PianoFindStationById (ph.stations,
-                                                          playlist->stationId) : NULL);*/
-                    self.nowPlaying = [PPTrack trackWithTitle:[NSString stringWithUTF8String:playlist->title]
-													   artist:[NSString stringWithUTF8String:playlist->artist] 
-														album:[NSString stringWithUTF8String:playlist->album]];
-				    
-					if (playlist->audioUrl == NULL) {
-						BarUiMsg (MSG_ERR, "Invalid song url.\n");
-					} else {
-						/* setup player */
-						memset (&player, 0, sizeof (player));
-                        
-						WaitressInit (&player.waith);
-						WaitressSetUrl (&player.waith, playlist->audioUrl);
-                        
-						player.gain = playlist->fileGain;
-						player.audioFormat = playlist->audioFormat;
-                        
-						/* throw event */
-						BarUiStartEventCmd (&settings, "songstart", curStation,
-                                            playlist, &player, PIANO_RET_OK,
-                                            WAITRESS_RET_OK);
-                        
-						/* prevent race condition, mode must _not_ be FREED if
-						 * thread has been started */
-						player.mode = PLAYER_STARTING;
-						/* start player */
-						pthread_create (&playerThread, NULL, BarPlayerThread,
-                                        &player);
-					} /* end if audioUrl == NULL */
+                    [self playSong];
 				} /* end if playlist != NULL */
 			} /* end if curStation != NULL */
 		}
         else
         {
-            double timeTotalInterval = player.songDuration / 1000.0f;
-            double timePlayed = player.songPlayed / 1000.0f;
-			[self.nowPlaying setDuration:timeTotalInterval];
+            //double timeTotalInterval = player.songDuration / 1000.0f;
+            //double timePlayed = player.songPlayed / 1000.0f;
+            /*[self.nowPlaying setDuration:timeTotalInterval];
 			[self.nowPlaying setCurrentTime:timePlayed];
-			[self.nowPlaying setTimeLeft:timeTotalInterval-timePlayed];
-            /*NSMutableDictionary *dict = [[self.nowPlaying mutableCopy] autorelease];
-            [dict setObject:[NSNumber numberWithDouble:timePlayed] forKey:@"timeSoFar"];
-            [dict setObject:[NSNumber numberWithDouble:timeTotalInterval] forKey:@"timeTotal"];
-            [dict setObject:[NSNumber numberWithDouble:timeTotalInterval - timePlayed ] forKey:@"timeLeft" ];*/
-            //self.nowPlaying = dict;
+			[self.nowPlaying setTimeLeft:timeTotalInterval-timePlayed];*/
         }
 
-        
+        usleep(100);
     }
     
     [pool drain];

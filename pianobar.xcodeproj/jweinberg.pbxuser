@@ -110,30 +110,30 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 295506992;
-			PBXWorkspaceStateSaveDate = 295506992;
+			PBXPerProjectTemplateStateSaveDate = 295546231;
+			PBXWorkspaceStateSaveDate = 295546231;
 		};
 		perUserProjectItems = {
-			82BD2EC8119D0D7E00122BFD /* PBXTextBookmark */ = 82BD2EC8119D0D7E00122BFD /* PBXTextBookmark */;
-			82BD2F16119D0E0F00122BFD /* PBXTextBookmark */ = 82BD2F16119D0E0F00122BFD /* PBXTextBookmark */;
-			82BD2F17119D0E0F00122BFD /* PBXTextBookmark */ = 82BD2F17119D0E0F00122BFD /* PBXTextBookmark */;
-			82BD2F1A119D0E0F00122BFD /* PBXTextBookmark */ = 82BD2F1A119D0E0F00122BFD /* PBXTextBookmark */;
-			82BD2F5E119D112200122BFD /* PBXTextBookmark */ = 82BD2F5E119D112200122BFD /* PBXTextBookmark */;
-			82BD2F63119D112200122BFD /* PBXTextBookmark */ = 82BD2F63119D112200122BFD /* PBXTextBookmark */;
-			82BD2F94119D142300122BFD /* PBXTextBookmark */ = 82BD2F94119D142300122BFD /* PBXTextBookmark */;
-			82BD2F95119D142300122BFD /* PBXTextBookmark */ = 82BD2F95119D142300122BFD /* PBXTextBookmark */;
-			82BD2F96119D142300122BFD /* PBXTextBookmark */ = 82BD2F96119D142300122BFD /* PBXTextBookmark */;
-			82BD2F97119D142300122BFD /* PBXTextBookmark */ = 82BD2F97119D142300122BFD /* PBXTextBookmark */;
-			82BD2F98119D142300122BFD /* PBXTextBookmark */ = 82BD2F98119D142300122BFD /* PBXTextBookmark */;
-			82BD2F99119D142300122BFD /* PBXTextBookmark */ = 82BD2F99119D142300122BFD /* PBXTextBookmark */;
-			82BD2F9A119D142300122BFD /* PBXTextBookmark */ = 82BD2F9A119D142300122BFD /* PBXTextBookmark */;
-			82BD2F9B119D142300122BFD /* PBXTextBookmark */ = 82BD2F9B119D142300122BFD /* PBXTextBookmark */;
-			82BD2FC0119D871A00122BFD /* PBXTextBookmark */ = 82BD2FC0119D871A00122BFD /* PBXTextBookmark */;
-			82BD2FC1119D871A00122BFD /* PBXTextBookmark */ = 82BD2FC1119D871A00122BFD /* PBXTextBookmark */;
-			82BD2FC2119D871A00122BFD /* PBXTextBookmark */ = 82BD2FC2119D871A00122BFD /* PBXTextBookmark */;
-			82BD2FC3119D871A00122BFD /* PBXTextBookmark */ = 82BD2FC3119D871A00122BFD /* PBXTextBookmark */;
-			82BD2FC4119D871A00122BFD /* PBXTextBookmark */ = 82BD2FC4119D871A00122BFD /* PBXTextBookmark */;
-			82BD2FC5119D871A00122BFD /* PBXTextBookmark */ = 82BD2FC5119D871A00122BFD /* PBXTextBookmark */;
+			82BD2EC8119D0D7E00122BFD = 82BD2EC8119D0D7E00122BFD /* PBXTextBookmark */;
+			82BD2F16119D0E0F00122BFD = 82BD2F16119D0E0F00122BFD /* PBXTextBookmark */;
+			82BD2F17119D0E0F00122BFD = 82BD2F17119D0E0F00122BFD /* PBXTextBookmark */;
+			82BD2F1A119D0E0F00122BFD = 82BD2F1A119D0E0F00122BFD /* PBXTextBookmark */;
+			82BD2F5E119D112200122BFD = 82BD2F5E119D112200122BFD /* PBXTextBookmark */;
+			82BD2F63119D112200122BFD = 82BD2F63119D112200122BFD /* PBXTextBookmark */;
+			82BD2F94119D142300122BFD = 82BD2F94119D142300122BFD /* PBXTextBookmark */;
+			82BD2F95119D142300122BFD = 82BD2F95119D142300122BFD /* PBXTextBookmark */;
+			82BD2F96119D142300122BFD = 82BD2F96119D142300122BFD /* PBXTextBookmark */;
+			82BD2F97119D142300122BFD = 82BD2F97119D142300122BFD /* PBXTextBookmark */;
+			82BD2F98119D142300122BFD = 82BD2F98119D142300122BFD /* PBXTextBookmark */;
+			82BD2F99119D142300122BFD = 82BD2F99119D142300122BFD /* PBXTextBookmark */;
+			82BD2F9A119D142300122BFD = 82BD2F9A119D142300122BFD /* PBXTextBookmark */;
+			82BD2F9B119D142300122BFD = 82BD2F9B119D142300122BFD /* PBXTextBookmark */;
+			82BD2FC0119D871A00122BFD = 82BD2FC0119D871A00122BFD /* PBXTextBookmark */;
+			82BD2FC1119D871A00122BFD = 82BD2FC1119D871A00122BFD /* PBXTextBookmark */;
+			82BD2FC2119D871A00122BFD = 82BD2FC2119D871A00122BFD /* PBXTextBookmark */;
+			82BD2FC3119D871A00122BFD = 82BD2FC3119D871A00122BFD /* PBXTextBookmark */;
+			82BD2FC4119D871A00122BFD = 82BD2FC4119D871A00122BFD /* PBXTextBookmark */;
+			82BD2FC5119D871A00122BFD = 82BD2FC5119D871A00122BFD /* PBXTextBookmark */;
 		};
 		sourceControlManager = 82EFC4F7119B024D00D502A5 /* Source Control */;
 		userBuildSettings = {
@@ -416,16 +416,16 @@
 	};
 	821DAFF7119C660F00078BBF /* PPPianobarController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {896, 910}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1009, 896}}";
 			sepNavSelRange = "{843, 0}";
-			sepNavVisRange = "{259, 740}";
+			sepNavVisRange = "{148, 1031}";
 		};
 	};
 	821DAFF8119C660F00078BBF /* PPPianobarController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {896, 5628}}";
-			sepNavSelRange = "{573, 0}";
-			sepNavVisRange = "{7647, 1052}";
+			sepNavIntBoundsRect = "{{0, 0}, {1009, 5418}}";
+			sepNavSelRange = "{305, 0}";
+			sepNavVisRange = "{1152, 2387}";
 		};
 	};
 	821DB031119C695700078BBF /* mac_piano.h */ = {
@@ -443,18 +443,32 @@
 			sepNavWindowFrame = "{{76, 0}, {1031, 878}}";
 		};
 	};
+	823058BE119DAD8000317630 /* PPPianobarController+Playback.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1009, 1876}}";
+			sepNavSelRange = "{3287, 19}";
+			sepNavVisRange = "{2556, 1235}";
+		};
+	};
+	823058C0119DADA400317630 /* PPPianobarController+Playback.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1009, 611}}";
+			sepNavSelRange = "{194, 0}";
+			sepNavVisRange = "{0, 327}";
+		};
+	};
 	82BD2EA9119D0D6A00122BFD /* PPStation.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {896, 434}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1009, 611}}";
 			sepNavSelRange = "{48, 0}";
 			sepNavVisRange = "{0, 497}";
 		};
 	};
 	82BD2EAA119D0D6A00122BFD /* PPStation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {896, 546}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1009, 611}}";
 			sepNavSelRange = "{157, 0}";
-			sepNavVisRange = "{78, 649}";
+			sepNavVisRange = "{0, 733}";
 		};
 	};
 	82BD2EAB119D0D6A00122BFD /* PPTrack.h */ = {
@@ -536,7 +550,7 @@
 		fRef = 821DAFF8119C660F00078BBF /* PPPianobarController.m */;
 		name = "PPPianobarController.m: 24";
 		rLen = 0;
-		rLoc = 573;
+		rLoc = 615;
 		rType = 0;
 		vrLen = 1129;
 		vrLoc = 6843;
@@ -666,7 +680,7 @@
 		fRef = 821DAFF8119C660F00078BBF /* PPPianobarController.m */;
 		name = "PPPianobarController.m: 24";
 		rLen = 0;
-		rLoc = 573;
+		rLoc = 615;
 		rType = 0;
 		vrLen = 1052;
 		vrLoc = 7647;
