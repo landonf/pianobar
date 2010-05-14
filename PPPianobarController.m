@@ -172,8 +172,7 @@
 
 -(void)playStationWithID:(NSString *)stationID;
 {
-    [backgroundPlayer cancel];
-    [self playNextSong:nil];
+    [self stop];
     
     while (player.mode != PLAYER_FINISHED_PLAYBACK && player.mode != PLAYER_FREED)
     {
@@ -351,5 +350,10 @@
 	pthread_mutex_unlock (&player.pauseMutex);
 }
 
+-(void)stop;
+{
+    [backgroundPlayer cancel];
+    [self playNextSong:nil];
+}
 
 @end

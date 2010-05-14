@@ -49,6 +49,8 @@
 - (BOOL)loadStations;
 - (void)playStationWithID:(NSString *)stationID;
 
+- (void)stop;
+
 - (IBAction)thumbsUpCurrentSong:(id)sender;
 - (IBAction)thumbsDownCurrentSong:(id)sender;
 - (IBAction)playPauseCurrentSong:(id)sender;
