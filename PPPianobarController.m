@@ -52,6 +52,20 @@
 	return [self isInPlaybackMode] && paused;
 }
 
+-(double)volume{
+	AudioQueueRef audioQueue = player.audioQueue;
+	
+	AudioQueueParameterValue volume;
+	if(AudioQueueGetParameter(audioQueue, kAudioQueueParam_Volume, &volume) == noErr){
+		return (double)volume;
+	}else{
+		return 0.;
+	}
+}
+
+-(void)setVolume:(double)volume{
+	AudioQueueSetParameter(player.audioQueue, kAudioQueueParam_Volume, (AudioQueueParameterValue)volume);
+}
 
 -(NSAttributedString *)nowPlayingAttributedDescription{
 	NSMutableAttributedString *description = [[[NSMutableAttributedString alloc] initWithString:@""] autorelease];

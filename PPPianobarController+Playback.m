@@ -35,6 +35,8 @@
         
         player.gain = playlist->fileGain;
         player.audioFormat = playlist->audioFormat;
+		
+		[self setVolume:1.];
         
         // throw event
         BarUiStartEventCmd (&settings, "songstart", curStation,

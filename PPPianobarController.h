@@ -61,6 +61,9 @@
 
 @property (nonatomic, assign) BOOL paused;
 @property (nonatomic, assign) id <PPPianobarDelegate> delegate;
+
+@property (nonatomic, assign) double volume;
+
 -(NSAttributedString *)nowPlayingAttributedDescription;
 -(BOOL)isInPlaybackMode;
 -(BOOL)isPlaying;
