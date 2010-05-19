@@ -19,23 +19,23 @@
 @synthesize artURL = _artURL;
 @synthesize audioURL = _audioURL;
 
-- (id)initWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album artURL:(NSString*)url audioURL:(NSURL *)audioURL;
+- (id)initWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album artURL:(NSURL *)artURL audioURL:(NSURL *)audioURL;
 {
 	if ((self = [super init]))
 	{
 		_title = [title copy];
 		_artist = [artist copy];
 		_album = [album copy];
-        _artURL = [url copy];
+        _artURL = [artURL copy];
 		_audioURL = [audioURL copy];
         NSLog(@"%@", _artURL);
 	}
 	return self;
 }
 
-+ (id)trackWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album artURL:(NSString*)url audioURL:(NSURL *)audioURL;
++ (id)trackWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album artURL:(NSURL *)artURL audioURL:(NSURL *)audioURL;
 {
-    return [[[PPTrack alloc] initWithTitle:title artist:artist album:album artURL:url audioURL:audioURL] autorelease];
+    return [[[PPTrack alloc] initWithTitle:title artist:artist album:album artURL:artURL audioURL:audioURL] autorelease];
 }
 
 - (void)dealloc;
