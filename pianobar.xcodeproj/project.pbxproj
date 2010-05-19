@@ -88,6 +88,7 @@
 		C9371E2511A3762D001CF691 /* ui_readline.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B19E1119A9639001AD6DF /* ui_readline.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9371E2611A37635001CF691 /* settings.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B19DB119A9639001AD6DF /* settings.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9371E2811A3764B001CF691 /* piano_private.h in Headers */ = {isa = PBXBuildFile; fileRef = C9371E2711A3764B001CF691 /* piano_private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9371ED511A3C001001CF691 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = C9371ED411A3C001001CF691 /* config.h */; };
 		C9ECB1B9119A9BF20075E08B /* libwaitress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B19FC119A96D4001AD6DF /* libwaitress.a */; };
 		C9ECB1BA119A9BF80075E08B /* libpiano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B19C1119A95B4001AD6DF /* libpiano.a */; };
 		C9ECB1C5119A9C5C0075E08B /* libezxml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ECB1C2119A9C480075E08B /* libezxml.a */; };
@@ -230,6 +231,7 @@
 		C9371E1E11A375F9001CF691 /* xml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xml.h; path = libpiano/src/xml.h; sourceTree = "<group>"; };
 		C9371E2311A3760A001CF691 /* waitress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = waitress.h; path = libwaitress/src/waitress.h; sourceTree = "<group>"; };
 		C9371E2711A3764B001CF691 /* piano_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = piano_private.h; path = libpiano/src/piano_private.h; sourceTree = "<group>"; };
+		C9371ED411A3C001001CF691 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = libpiano/src/config.h; sourceTree = "<group>"; };
 		C9ECB1B7119A9BD60075E08B /* libpiano.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpiano.a; path = libpiano/build/Release/libpiano.a; sourceTree = "<group>"; };
 		C9ECB1BD119A9C480075E08B /* libezxml.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libezxml.xcodeproj; path = libezxml/libezxml.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -381,6 +383,7 @@
 		C9371E1A11A374FF001CF691 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				C9371ED411A3C001001CF691 /* config.h */,
 				C9371E2311A3760A001CF691 /* waitress.h */,
 				C9371E1B11A375F9001CF691 /* crypt_key_output.h */,
 				C9371E1C11A375F9001CF691 /* crypt.h */,
@@ -420,6 +423,7 @@
 				C9371E2511A3762D001CF691 /* ui_readline.h in Headers */,
 				C9371E2611A37635001CF691 /* settings.h in Headers */,
 				C9371E2811A3764B001CF691 /* piano_private.h in Headers */,
+				C9371ED511A3C001001CF691 /* config.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
