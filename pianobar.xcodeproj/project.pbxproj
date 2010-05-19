@@ -88,7 +88,7 @@
 		C9371E2511A3762D001CF691 /* ui_readline.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B19E1119A9639001AD6DF /* ui_readline.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9371E2611A37635001CF691 /* settings.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B19DB119A9639001AD6DF /* settings.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9371E2811A3764B001CF691 /* piano_private.h in Headers */ = {isa = PBXBuildFile; fileRef = C9371E2711A3764B001CF691 /* piano_private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C9371ED511A3C001001CF691 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = C9371ED411A3C001001CF691 /* config.h */; };
+		C9371ED511A3C001001CF691 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = C9371ED411A3C001001CF691 /* config.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9ECB1B9119A9BF20075E08B /* libwaitress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B19FC119A96D4001AD6DF /* libwaitress.a */; };
 		C9ECB1BA119A9BF80075E08B /* libpiano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B19C1119A95B4001AD6DF /* libpiano.a */; };
 		C9ECB1C5119A9C5C0075E08B /* libezxml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ECB1C2119A9C480075E08B /* libezxml.a */; };
