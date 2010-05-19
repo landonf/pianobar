@@ -61,7 +61,6 @@
 
 @property (nonatomic, assign) BOOL paused;
 @property (nonatomic, assign) id <PPPianobarDelegate> delegate;
--(NSAttributedString *)nowPlayingAttributedDescription;
 -(BOOL)isInPlaybackMode;
 -(BOOL)isPlaying;
 -(BOOL)isPaused;
@@ -77,5 +76,7 @@
 - (IBAction)thumbsDownCurrentSong:(id)sender;
 - (IBAction)playPauseCurrentSong:(id)sender;
 - (IBAction)playNextSong:(id)sender;
+
+-(IBAction)openInStore:(id)sender;
 
 @end
