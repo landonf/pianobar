@@ -44,7 +44,7 @@ THE SOFTWARE.
 /* pandora.com library */
 #include <piano.h>
 
-#include "player.h"
+#include "player_macosx.h"
 #include "settings.h"
 #include "terminal.h"
 #include "config.h"
@@ -80,7 +80,7 @@ int main (int argc, char **argv) {
 	BarTermSetEcho (0);
 	BarTermSetBuffer (0);
 	/* init some things */
-	ao_initialize ();
+//	ao_initialize ();
 	PianoInit (&ph);
 
 	WaitressInit (&waith);
@@ -371,7 +371,7 @@ int main (int argc, char **argv) {
 	PianoDestroy (&ph);
 	PianoDestroyPlaylist (songHistory);
 	PianoDestroyPlaylist (playlist);
-	ao_shutdown();
+//	ao_shutdown();
 	BarSettingsDestroy (&settings);
 
 	/* restore terminal attributes, zsh doesn't need this, bash does... */

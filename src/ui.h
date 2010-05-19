@@ -28,7 +28,7 @@ THE SOFTWARE.
 #include <waitress.h>
 
 #include "settings.h"
-#include "player.h"
+#include "player_macosx.h"
 
 typedef enum {MSG_NONE, MSG_INFO, MSG_PLAYING, MSG_TIME, MSG_ERR,
 		MSG_QUESTION, MSG_LIST} uiMsg_t;

@@ -24,10 +24,10 @@ THE SOFTWARE.
 #ifndef _SETTINGS_H
 #define _SETTINGS_H
 
-#include <piano.h>
-#include <waitress.h>
+#include "piano.h"
+#include "waitress.h"
 
-#include "player.h"
+#include "player_macosx.h"
 
 #define BAR_KS_ARGS PianoHandle_t *ph, WaitressHandle_t *waith, \
 		struct audioPlayer *player, \
