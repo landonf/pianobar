@@ -16,24 +16,26 @@
 @synthesize currentTime = _currentTime;
 @synthesize duration = _duration;
 @synthesize timeLeft = _timeLeft;
-@synthesize url = _url;
+@synthesize artURL = _artURL;
+@synthesize audioURL = _audioURL;
 
-- (id)initWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album artURL:(NSString*)url;
+- (id)initWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album artURL:(NSString*)url audioURL:(NSURL *)audioURL;
 {
 	if ((self = [super init]))
 	{
 		_title = [title copy];
 		_artist = [artist copy];
 		_album = [album copy];
-        _url = [url copy];
-        NSLog(@"%@", _url);
+        _artURL = [url copy];
+		_audioURL = [audioURL copy];
+        NSLog(@"%@", _artURL);
 	}
 	return self;
 }
 
-+ (id)trackWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album artURL:(NSString*)url;
++ (id)trackWithTitle:(NSString*)title artist:(NSString*)artist album:(NSString*)album artURL:(NSString*)url audioURL:(NSURL *)audioURL;
 {
-    return [[[PPTrack alloc] initWithTitle:title artist:artist album:album artURL:url] autorelease];
+    return [[[PPTrack alloc] initWithTitle:title artist:artist album:album artURL:url audioURL:audioURL] autorelease];
 }
 
 - (void)dealloc;
@@ -41,7 +43,8 @@
 	[_title release], _title = nil;
 	[_artist release], _artist = nil;
 	[_album release], _album = nil;
-    [_url release], _url = nil;
+    [_artURL release], _artURL = nil;
+	[_audioURL release], _audioURL = nil;
 	[super dealloc];
 }
 
