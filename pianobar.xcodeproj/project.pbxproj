@@ -139,21 +139,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = C90B19B1119A95B4001AD6DF /* libpiano.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = C90B1954119A9417001AD6DF /* piano */;
+			remoteGlobalIDString = C90B1954119A9417001AD6DF;
 			remoteInfo = piano;
 		};
 		C9371CC811A35A96001CF691 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C90B19F7119A96D3001AD6DF /* libwaitress.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = C90B1912119A9367001AD6DF /* waitress */;
+			remoteGlobalIDString = C90B1912119A9367001AD6DF;
 			remoteInfo = waitress;
 		};
 		C9371D1A11A36036001CF691 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9ECB1BD119A9C480075E08B /* libezxml.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = C90B18D0119A9238001AD6DF /* ezxml */;
+			remoteGlobalIDString = C90B18D0119A9238001AD6DF;
 			remoteInfo = ezxml;
 		};
 		C9ECB1C1119A9C480075E08B /* PBXContainerItemProxy */ = {
