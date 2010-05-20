@@ -165,6 +165,27 @@
 			remoteGlobalIDString = C90B18D0119A9238001AD6DF;
 			remoteInfo = ezxml;
 		};
+		C9B60DD411A4B51100A28F37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B1873119A8DDD001AD6DF /* libao */;
+			remoteInfo = libao;
+		};
+		C9B60DD611A4B51100A28F37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B187D119A8EDA001AD6DF /* libmad */;
+			remoteInfo = libmad;
+		};
+		C9B60DD811A4B51100A28F37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B1881119A8EFA001AD6DF /* libfaad */;
+			remoteInfo = libfaad;
+		};
 		C9ECB1C1119A9C480075E08B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9ECB1BD119A9C480075E08B /* libezxml.xcodeproj */;
@@ -202,15 +223,15 @@
 		C90B1A1F119A9905001AD6DF /* libfaad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfaad.a; path = libfaad2/build/lib/libfaad.a; sourceTree = "<group>"; };
 		C90B1A21119A991A001AD6DF /* libmad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmad.a; path = libmad/build/lib/libmad.a; sourceTree = "<group>"; };
 		C90B1A26119A99D2001AD6DF /* libao.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libao.a; path = libao/build/lib/libao.a; sourceTree = "<group>"; };
-		C9371CAC11A35A2E001CF691 /* PianoBarFramework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PianoBarFramework-Info.plist"; sourceTree = "<group>"; };
-		C9371CAD11A35A2E001CF691 /* PPPianobarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPianobarController.h; sourceTree = "<group>"; };
-		C9371CAE11A35A2E001CF691 /* PPPianobarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPianobarController.m; sourceTree = "<group>"; };
-		C9371CAF11A35A2E001CF691 /* PPPianobarController+Playback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PPPianobarController+Playback.h"; sourceTree = "<group>"; };
-		C9371CB011A35A2E001CF691 /* PPPianobarController+Playback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PPPianobarController+Playback.m"; sourceTree = "<group>"; };
-		C9371CB111A35A2E001CF691 /* PPStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPStation.h; sourceTree = "<group>"; };
-		C9371CB211A35A2E001CF691 /* PPStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPStation.m; sourceTree = "<group>"; };
-		C9371CB311A35A2E001CF691 /* PPTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTrack.h; sourceTree = "<group>"; };
-		C9371CB411A35A2E001CF691 /* PPTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTrack.m; sourceTree = "<group>"; };
+		C9371CAC11A35A2E001CF691 /* PianoBarFramework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "PianoBarFramework-Info.plist"; path = "framework/PianoBarFramework-Info.plist"; sourceTree = "<group>"; };
+		C9371CAD11A35A2E001CF691 /* PPPianobarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPianobarController.h; path = framework/PPPianobarController.h; sourceTree = "<group>"; };
+		C9371CAE11A35A2E001CF691 /* PPPianobarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPianobarController.m; path = framework/PPPianobarController.m; sourceTree = "<group>"; };
+		C9371CAF11A35A2E001CF691 /* PPPianobarController+Playback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PPPianobarController+Playback.h"; path = "framework/PPPianobarController+Playback.h"; sourceTree = "<group>"; };
+		C9371CB011A35A2E001CF691 /* PPPianobarController+Playback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PPPianobarController+Playback.m"; path = "framework/PPPianobarController+Playback.m"; sourceTree = "<group>"; };
+		C9371CB111A35A2E001CF691 /* PPStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPStation.h; path = framework/PPStation.h; sourceTree = "<group>"; };
+		C9371CB211A35A2E001CF691 /* PPStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPStation.m; path = framework/PPStation.m; sourceTree = "<group>"; };
+		C9371CB311A35A2E001CF691 /* PPTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPTrack.h; path = framework/PPTrack.h; sourceTree = "<group>"; };
+		C9371CB411A35A2E001CF691 /* PPTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPTrack.m; path = framework/PPTrack.m; sourceTree = "<group>"; };
 		C9371CC211A35A7B001CF691 /* PianoBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PianoBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9371CCC11A35AE0001CF691 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C9371CCE11A35AE7001CF691 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -467,6 +488,9 @@
 				C9371CC711A35A90001CF691 /* PBXTargetDependency */,
 				C9371CC911A35A96001CF691 /* PBXTargetDependency */,
 				C9371D1B11A36036001CF691 /* PBXTargetDependency */,
+				C9B60DD511A4B51100A28F37 /* PBXTargetDependency */,
+				C9B60DD711A4B51100A28F37 /* PBXTargetDependency */,
+				C9B60DD911A4B51100A28F37 /* PBXTargetDependency */,
 			);
 			name = PianoBarFramework;
 			productName = PianoBarFramework;
@@ -660,6 +684,21 @@
 			name = ezxml;
 			targetProxy = C9371D1A11A36036001CF691 /* PBXContainerItemProxy */;
 		};
+		C9B60DD511A4B51100A28F37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C90B1873119A8DDD001AD6DF /* libao */;
+			targetProxy = C9B60DD411A4B51100A28F37 /* PBXContainerItemProxy */;
+		};
+		C9B60DD711A4B51100A28F37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C90B187D119A8EDA001AD6DF /* libmad */;
+			targetProxy = C9B60DD611A4B51100A28F37 /* PBXContainerItemProxy */;
+		};
+		C9B60DD911A4B51100A28F37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C90B1881119A8EFA001AD6DF /* libfaad */;
+			targetProxy = C9B60DD811A4B51100A28F37 /* PBXContainerItemProxy */;
+		};
 		C9ECB1C4119A9C540075E08B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ezxml;
@@ -846,9 +885,12 @@
 					"$(SRCROOT)/libwaitress/src",
 					"$(SRCROOT)/libpiano/src",
 				);
-				INFOPLIST_FILE = "PianoBarFramework-Info.plist";
+				INFOPLIST_FILE = "framework/PianoBarFramework-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/libao/build/lib\"",
+					"\"$(SRCROOT)/libmad/build/lib\"",
+					"\"$(SRCROOT)/libfaad2/build/lib\"",
 					"\"$(SRCROOT)/libwaitress/build/$(CONFIGURATION)\"",
 					"\"$(SRCROOT)/libpiano/build/$(CONFIGURATION)\"",
 					"\"$(SRCROOT)/libezxml/build/$(CONFIGURATION)\"",
@@ -884,9 +926,12 @@
 					"$(SRCROOT)/libwaitress/src",
 					"$(SRCROOT)/libpiano/src",
 				);
-				INFOPLIST_FILE = "PianoBarFramework-Info.plist";
+				INFOPLIST_FILE = "framework/PianoBarFramework-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/libao/build/lib\"",
+					"\"$(SRCROOT)/libmad/build/lib\"",
+					"\"$(SRCROOT)/libfaad2/build/lib\"",
 					"\"$(SRCROOT)/libwaitress/build/$(CONFIGURATION)\"",
 					"\"$(SRCROOT)/libpiano/build/$(CONFIGURATION)\"",
 					"\"$(SRCROOT)/libezxml/build/$(CONFIGURATION)\"",
