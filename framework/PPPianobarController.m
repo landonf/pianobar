@@ -89,9 +89,6 @@
     [nowPlaying release], nowPlaying = nil;
     [selectedStation release], selectedStation = nil;
     
-    free(settings.username);
-    free(settings.password);
-    
     PianoDestroy (&ph);
 	PianoDestroyPlaylist (songHistory);
 	PianoDestroyPlaylist (playlist);
