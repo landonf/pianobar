@@ -81,4 +81,5 @@
 - (IBAction)playPauseCurrentSong:(id)sender;
 - (IBAction)playNextSong:(id)sender;
 
+-(IBAction)openInStore:(id)sender;
 @end

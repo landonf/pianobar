@@ -330,4 +330,33 @@
     [self playNextSong:nil];
 }
 
+-(IBAction)openInStore:(id)sender
+{
+	NSURL *link = [self iTunesLink];
+#if (TARGET_OS_MAC == 1) && (TARGET_OS_IPHONE == 0)
+	if ([[NSApp currentEvent] modifierFlags] & NSAlternateKeyMask) {
+		link = [self amazonLink];
+	}
+#endif
+	
+#if TARGET_OS_IPHONE
+	[[UIApplication sharedApplication] openURL:link];
+#else
+	[[NSWorkspace sharedWorkspace] openURL:link];
+#endif
+}
+
+-(NSURL *)iTunesLink
+{
+	NSString *link = [[[NSString stringWithFormat:@"itms://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=%@&artistTerm=%@", [[self nowPlaying] title], [[self nowPlaying] artist]] copy] autorelease];
+	return [NSURL URLWithString:[link stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+}
+
+-(NSURL *)amazonLink
+{
+	NSString *searchTerm = [NSString stringWithFormat:@"%@ %@", [[self nowPlaying] title], [[self nowPlaying] artist]];
+	searchTerm = [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+	return [[[NSURL URLWithString:[NSString stringWithFormat:@"http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias=digital-music&field-keywords=%@", searchTerm]] copy] autorelease];
+}
+
 @end
