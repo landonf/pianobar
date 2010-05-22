@@ -137,14 +137,11 @@
 
 - (void)dealloc;
 {
-    delegate = nil;
+   delegate = nil;
     
     [stations release], stations = nil;
     [nowPlaying release], nowPlaying = nil;
     [selectedStation release], selectedStation = nil;
-    
-    free(settings.username);
-    free(settings.password);
     
     PianoDestroy (&ph);
 	PianoDestroyPlaylist (songHistory);
