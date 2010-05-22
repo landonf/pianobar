@@ -6,42 +6,6 @@
 	objectVersion = 45;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		C90B1873119A8DDD001AD6DF /* libao */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = C90B1876119A8E23001AD6DF /* Build configuration list for PBXAggregateTarget "libao" */;
-			buildPhases = (
-				C90B1872119A8DDD001AD6DF /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = libao;
-			productName = libao;
-		};
-		C90B187D119A8EDA001AD6DF /* libmad */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = C90B1884119A8F21001AD6DF /* Build configuration list for PBXAggregateTarget "libmad" */;
-			buildPhases = (
-				C90B187C119A8EDA001AD6DF /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = libmad;
-			productName = libmad;
-		};
-		C90B1881119A8EFA001AD6DF /* libfaad */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = C90B1885119A8F21001AD6DF /* Build configuration list for PBXAggregateTarget "libfaad" */;
-			buildPhases = (
-				C90B1880119A8EFA001AD6DF /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = libfaad;
-			productName = libfaad2;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		C90B19E4119A9639001AD6DF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19D7119A9639001AD6DF /* main.c */; };
 		C90B19E6119A9639001AD6DF /* settings.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19DA119A9639001AD6DF /* settings.c */; };
@@ -49,9 +13,6 @@
 		C90B19E8119A9639001AD6DF /* ui_act.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19DE119A9639001AD6DF /* ui_act.c */; };
 		C90B19E9119A9639001AD6DF /* ui_readline.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19E0119A9639001AD6DF /* ui_readline.c */; };
 		C90B19EA119A9639001AD6DF /* ui.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B19E2119A9639001AD6DF /* ui.c */; };
-		C90B1A20119A9905001AD6DF /* libfaad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B1A1F119A9905001AD6DF /* libfaad.a */; };
-		C90B1A22119A991A001AD6DF /* libmad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B1A21119A991A001AD6DF /* libmad.a */; };
-		C90B1A27119A99D2001AD6DF /* libao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90B1A26119A99D2001AD6DF /* libao.a */; };
 		C9371CCB11A35AD0001CF691 /* libpiano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9ECB1B7119A9BD60075E08B /* libpiano.a */; };
 		C9371CCD11A35AE0001CF691 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9371CCC11A35AE0001CF691 /* Foundation.framework */; };
 		C9371CCF11A35AE7001CF691 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9371CCE11A35AE7001CF691 /* AudioToolbox.framework */; };
@@ -123,27 +84,6 @@
 			remoteGlobalIDString = C90B1912119A9367001AD6DF;
 			remoteInfo = waitress;
 		};
-		C90B1A15119A9828001AD6DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C90B1873119A8DDD001AD6DF;
-			remoteInfo = libao;
-		};
-		C90B1A17119A982B001AD6DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C90B187D119A8EDA001AD6DF;
-			remoteInfo = libmad;
-		};
-		C90B1A19119A982E001AD6DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C90B1881119A8EFA001AD6DF;
-			remoteInfo = libfaad2;
-		};
 		C9371CC611A35A90001CF691 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C90B19B1119A95B4001AD6DF /* libpiano.xcodeproj */;
@@ -164,27 +104,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = C90B18D0119A9238001AD6DF;
 			remoteInfo = ezxml;
-		};
-		C9B60DD411A4B51100A28F37 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C90B1873119A8DDD001AD6DF;
-			remoteInfo = libao;
-		};
-		C9B60DD611A4B51100A28F37 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C90B187D119A8EDA001AD6DF;
-			remoteInfo = libmad;
-		};
-		C9B60DD811A4B51100A28F37 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C90B1881119A8EFA001AD6DF;
-			remoteInfo = libfaad;
 		};
 		C9ECB1C1119A9C480075E08B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -220,9 +139,6 @@
 		C90B19E2119A9639001AD6DF /* ui.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ui.c; path = src/ui.c; sourceTree = "<group>"; };
 		C90B19E3119A9639001AD6DF /* ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ui.h; path = src/ui.h; sourceTree = "<group>"; };
 		C90B19F7119A96D3001AD6DF /* libwaitress.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libwaitress.xcodeproj; path = libwaitress/libwaitress.xcodeproj; sourceTree = "<group>"; };
-		C90B1A1F119A9905001AD6DF /* libfaad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfaad.a; path = libfaad2/build/lib/libfaad.a; sourceTree = "<group>"; };
-		C90B1A21119A991A001AD6DF /* libmad.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmad.a; path = libmad/build/lib/libmad.a; sourceTree = "<group>"; };
-		C90B1A26119A99D2001AD6DF /* libao.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libao.a; path = libao/build/lib/libao.a; sourceTree = "<group>"; };
 		C9371CAC11A35A2E001CF691 /* PianoBarFramework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "PianoBarFramework-Info.plist"; path = "framework/PianoBarFramework-Info.plist"; sourceTree = "<group>"; };
 		C9371CAD11A35A2E001CF691 /* PPPianobarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPianobarController.h; path = framework/PPPianobarController.h; sourceTree = "<group>"; };
 		C9371CAE11A35A2E001CF691 /* PPPianobarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPianobarController.m; path = framework/PPPianobarController.m; sourceTree = "<group>"; };
@@ -262,9 +178,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90B1A20119A9905001AD6DF /* libfaad.a in Frameworks */,
-				C90B1A22119A991A001AD6DF /* libmad.a in Frameworks */,
-				C90B1A27119A99D2001AD6DF /* libao.a in Frameworks */,
 				C9ECB1B9119A9BF20075E08B /* libwaitress.a in Frameworks */,
 				C9ECB1BA119A9BF80075E08B /* libpiano.a in Frameworks */,
 				C9ECB1C5119A9C5C0075E08B /* libezxml.a in Frameworks */,
@@ -314,9 +227,6 @@
 		C90B189C119A9047001AD6DF /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				C90B1A1F119A9905001AD6DF /* libfaad.a */,
-				C90B1A21119A991A001AD6DF /* libmad.a */,
-				C90B1A26119A99D2001AD6DF /* libao.a */,
 				C90B19F7119A96D3001AD6DF /* libwaitress.xcodeproj */,
 				C90B19B1119A95B4001AD6DF /* libpiano.xcodeproj */,
 				C9ECB1BD119A9C480075E08B /* libezxml.xcodeproj */,
@@ -461,9 +371,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C90B1A16119A9828001AD6DF /* PBXTargetDependency */,
-				C90B1A18119A982B001AD6DF /* PBXTargetDependency */,
-				C90B1A1A119A982E001AD6DF /* PBXTargetDependency */,
 				C90B19EC119A964F001AD6DF /* PBXTargetDependency */,
 				C90B19FE119A96E4001AD6DF /* PBXTargetDependency */,
 				C9ECB1C4119A9C540075E08B /* PBXTargetDependency */,
@@ -488,9 +395,6 @@
 				C9371CC711A35A90001CF691 /* PBXTargetDependency */,
 				C9371CC911A35A96001CF691 /* PBXTargetDependency */,
 				C9371D1B11A36036001CF691 /* PBXTargetDependency */,
-				C9B60DD511A4B51100A28F37 /* PBXTargetDependency */,
-				C9B60DD711A4B51100A28F37 /* PBXTargetDependency */,
-				C9B60DD911A4B51100A28F37 /* PBXTargetDependency */,
 			);
 			name = PianoBarFramework;
 			productName = PianoBarFramework;
@@ -525,9 +429,6 @@
 			projectRoot = "";
 			targets = (
 				C90B19CD119A960A001AD6DF /* pianobar */,
-				C90B1873119A8DDD001AD6DF /* libao */,
-				C90B187D119A8EDA001AD6DF /* libmad */,
-				C90B1881119A8EFA001AD6DF /* libfaad */,
 				C9371CC111A35A7B001CF691 /* PianoBarFramework */,
 			);
 		};
@@ -566,48 +467,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C90B1872119A8DDD001AD6DF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd libao\nif [ ! -f Makefile ]; then\n\t./configure --prefix=$SRCROOT/libao/build --enable-static\nfi\nmake\nmake install";
-		};
-		C90B187C119A8EDA001AD6DF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd libmad\nif [ ! -f Makefile ]; then\n\t./configure --prefix=$SRCROOT/libmad/build\nfi\nmake\nmake install";
-		};
-		C90B1880119A8EFA001AD6DF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd libfaad2\nif [ ! -f Makefile ]; then\n\t./configure --prefix=$SRCROOT/libfaad2/build\nfi\nmake\nmake install";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C90B19CB119A960A001AD6DF /* Sources */ = {
@@ -654,21 +513,6 @@
 			name = waitress;
 			targetProxy = C90B19FD119A96E4001AD6DF /* PBXContainerItemProxy */;
 		};
-		C90B1A16119A9828001AD6DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C90B1873119A8DDD001AD6DF /* libao */;
-			targetProxy = C90B1A15119A9828001AD6DF /* PBXContainerItemProxy */;
-		};
-		C90B1A18119A982B001AD6DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C90B187D119A8EDA001AD6DF /* libmad */;
-			targetProxy = C90B1A17119A982B001AD6DF /* PBXContainerItemProxy */;
-		};
-		C90B1A1A119A982E001AD6DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C90B1881119A8EFA001AD6DF /* libfaad */;
-			targetProxy = C90B1A19119A982E001AD6DF /* PBXContainerItemProxy */;
-		};
 		C9371CC711A35A90001CF691 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = piano;
@@ -683,21 +527,6 @@
 			isa = PBXTargetDependency;
 			name = ezxml;
 			targetProxy = C9371D1A11A36036001CF691 /* PBXContainerItemProxy */;
-		};
-		C9B60DD511A4B51100A28F37 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C90B1873119A8DDD001AD6DF /* libao */;
-			targetProxy = C9B60DD411A4B51100A28F37 /* PBXContainerItemProxy */;
-		};
-		C9B60DD711A4B51100A28F37 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C90B187D119A8EDA001AD6DF /* libmad */;
-			targetProxy = C9B60DD611A4B51100A28F37 /* PBXContainerItemProxy */;
-		};
-		C9B60DD911A4B51100A28F37 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C90B1881119A8EFA001AD6DF /* libfaad */;
-			targetProxy = C9B60DD811A4B51100A28F37 /* PBXContainerItemProxy */;
 		};
 		C9ECB1C4119A9C540075E08B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -730,77 +559,6 @@
 			};
 			name = Release;
 		};
-		C90B1874119A8DDE001AD6DF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					"$(ARCHS_STANDARD_64_BIT)",
-				);
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = libao;
-			};
-			name = Debug;
-		};
-		C90B1875119A8DDE001AD6DF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					"$(ARCHS_STANDARD_64_BIT)",
-				);
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = libao;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		C90B187E119A8EDA001AD6DF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = libmad;
-			};
-			name = Debug;
-		};
-		C90B187F119A8EDA001AD6DF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = libmad;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		C90B1882119A8EFA001AD6DF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = libfaad2;
-			};
-			name = Debug;
-		};
-		C90B1883119A8EFA001AD6DF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = libfaad2;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 		C90B19D0119A960B001AD6DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -822,9 +580,6 @@
 				INSTALL_PATH = /usr/local/bin;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/libfaad2/build/lib\"",
-					"\"$(SRCROOT)/libmad/build/lib\"",
-					"\"$(SRCROOT)/libao/build/lib\"",
 					"\"$(SRCROOT)/libpiano/build/Release\"",
 				);
 				PREBINDING = NO;
@@ -853,9 +608,6 @@
 				INSTALL_PATH = /usr/local/bin;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/libfaad2/build/lib\"",
-					"\"$(SRCROOT)/libmad/build/lib\"",
-					"\"$(SRCROOT)/libao/build/lib\"",
 					"\"$(SRCROOT)/libpiano/build/Release\"",
 				);
 				PREBINDING = NO;
@@ -888,9 +640,6 @@
 				INFOPLIST_FILE = "framework/PianoBarFramework-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/libao/build/lib\"",
-					"\"$(SRCROOT)/libmad/build/lib\"",
-					"\"$(SRCROOT)/libfaad2/build/lib\"",
 					"\"$(SRCROOT)/libwaitress/build/$(CONFIGURATION)\"",
 					"\"$(SRCROOT)/libpiano/build/$(CONFIGURATION)\"",
 					"\"$(SRCROOT)/libezxml/build/$(CONFIGURATION)\"",
@@ -929,9 +678,6 @@
 				INFOPLIST_FILE = "framework/PianoBarFramework-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/libao/build/lib\"",
-					"\"$(SRCROOT)/libmad/build/lib\"",
-					"\"$(SRCROOT)/libfaad2/build/lib\"",
 					"\"$(SRCROOT)/libwaitress/build/$(CONFIGURATION)\"",
 					"\"$(SRCROOT)/libpiano/build/$(CONFIGURATION)\"",
 					"\"$(SRCROOT)/libezxml/build/$(CONFIGURATION)\"",
@@ -957,33 +703,6 @@
 			buildConfigurations = (
 				1DEB919408733D9F0010E9CD /* Debug */,
 				1DEB919508733D9F0010E9CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C90B1876119A8E23001AD6DF /* Build configuration list for PBXAggregateTarget "libao" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C90B1874119A8DDE001AD6DF /* Debug */,
-				C90B1875119A8DDE001AD6DF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C90B1884119A8F21001AD6DF /* Build configuration list for PBXAggregateTarget "libmad" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C90B187E119A8EDA001AD6DF /* Debug */,
-				C90B187F119A8EDA001AD6DF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C90B1885119A8F21001AD6DF /* Build configuration list for PBXAggregateTarget "libfaad" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C90B1882119A8EFA001AD6DF /* Debug */,
-				C90B1883119A8EFA001AD6DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
