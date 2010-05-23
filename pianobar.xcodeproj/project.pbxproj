@@ -34,7 +34,7 @@
 		1E1057E6119A7630008CC292 /* player_macosx.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E1057E5119A7630008CC292 /* player_macosx.c */; };
 		1E1057F0119A7938008CC292 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1057EF119A7938008CC292 /* CoreAudio.framework */; };
 		1E1057F2119A7938008CC292 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1057F1119A7938008CC292 /* CoreFoundation.framework */; };
-		1E4E5C2A11A9A891008EEAA8 /* PPSearchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E4E5C2811A9A891008EEAA8 /* PPSearchResult.h */; };
+		1E4E5C2A11A9A891008EEAA8 /* PPSearchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E4E5C2811A9A891008EEAA8 /* PPSearchResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E4E5C2B11A9A891008EEAA8 /* PPSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4E5C2911A9A891008EEAA8 /* PPSearchResult.m */; };
 		1E4E5C2C11A9A891008EEAA8 /* PPSearchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E4E5C2811A9A891008EEAA8 /* PPSearchResult.h */; };
 		1E4E5C2D11A9A891008EEAA8 /* PPSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4E5C2911A9A891008EEAA8 /* PPSearchResult.m */; };
