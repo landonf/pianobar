@@ -77,6 +77,10 @@
 - (IBAction)playPauseCurrentSong:(id)sender;
 - (IBAction)playNextSong:(id)sender;
 
+-(NSArray *)stationsSimilarToArtist:(NSString *)query;
+-(NSArray *)stationsSimilarToSong:(NSString *)query;
+-(void)createStationForMusicID:(NSString *)musicID;
+
 -(IBAction)openInStore:(id)sender;
 
 @end
