@@ -12,6 +12,12 @@
 #import "PPTrack.h"
 #import "PPStation.h"
 #import "PPPianobarController+Playback.h"
+#import "PPSearchResult.h"
+
+@interface PPPianobarController ()
+-(NSURL *)iTunesLink;
+-(NSURL *)amazonLink;
+@end
 
 @implementation PPPianobarController
 
@@ -33,10 +39,8 @@
 
 -(void)setNowPlaying:(PPTrack *)aTrack{
 	[self willChangeValueForKey:@"nowPlaying"];
-	[self willChangeValueForKey:@"nowPlayingAttributedDescription"];
 	[nowPlaying autorelease];
 	nowPlaying = [aTrack retain];
-	[self didChangeValueForKey:@"nowPlayingAttributedDescription"];
 	[self didChangeValueForKey:@"nowPlaying"];
 }
 
@@ -171,6 +175,15 @@
 
 - (BOOL)loadStations;
 {
+	// Get rid of any of any existing stations
+	PianoStation_t *currentStation = ph.stations;
+	while (currentStation) {
+		PianoStation_t *next = currentStation->next;
+		free(currentStation);
+		currentStation = next;
+	}
+	ph.stations = NULL;
+	
     PianoReturn_t pRet;
     WaitressReturn_t wRet;
     
@@ -187,7 +200,6 @@
     /* sort and print stations */
 	sortedStations = BarSortedStations (ph.stations, &stationCount);
 	for (i = 0; i < stationCount; i++) {
-        
 		const PianoStation_t *currStation = sortedStations[i];
 		[tempStations addObject:[PPStation stationWithName:[NSString stringWithUTF8String:currStation->name]
 												 stationID:i]];
@@ -199,7 +211,7 @@
 //                  currStation->name);
 	}
     
-    stations = [[NSArray alloc] initWithArray:tempStations];
+    self.stations = [NSArray arrayWithArray:tempStations];
     [tempStations release];
     
     free(sortedStations);
@@ -272,6 +284,74 @@
     }
     
     [pool drain];
+}
+
+-(NSArray *)stationsSimilarToArtist:(NSString *)query
+{
+	PianoReturn_t pRet;
+	WaitressReturn_t wRet;
+	PianoRequestDataSearch_t reqData;
+	reqData.searchStr = (char *)[query cStringUsingEncoding:NSASCIIStringEncoding];
+	BarUiPianoCall(&ph, PIANO_REQUEST_SEARCH, &waith, &reqData, &pRet, &wRet);
+	
+	PianoSearchResult_t searchResult;
+	memcpy(&searchResult, &reqData.searchResult, sizeof(searchResult));
+	
+	PianoArtist_t *artist = searchResult.artists;
+	NSMutableArray *results = [[NSMutableArray alloc] init];
+	while (artist != NULL) {
+		NSString *artistName = [NSString stringWithCString:artist->name encoding:NSASCIIStringEncoding];
+		NSString *musicID = [NSString stringWithCString:artist->musicId encoding:NSASCIIStringEncoding];
+		PPSearchResult *result = [PPSearchResult searchResultWithArtist:artistName title:nil musicID:musicID];
+		[results addObject:result];
+		artist = artist->next;
+	}
+	PianoDestroySearchResult(&searchResult);
+	
+	NSArray *returnArray = [NSArray arrayWithArray:results];
+	[results release];
+	return returnArray;
+}
+
+-(NSArray *)stationsSimilarToSong:(NSString *)query
+{
+	PianoReturn_t pRet;
+	WaitressReturn_t wRet;
+	PianoRequestDataSearch_t reqData;
+	reqData.searchStr = (char *)[query cStringUsingEncoding:NSASCIIStringEncoding];
+	BarUiPianoCall(&ph, PIANO_REQUEST_SEARCH, &waith, &reqData, &pRet, &wRet);
+	
+	PianoSearchResult_t searchResult;
+	memcpy(&searchResult, &reqData.searchResult, sizeof(searchResult));
+	
+	PianoSong_t *song = searchResult.songs;
+	NSMutableArray *results = [[NSMutableArray alloc] init];
+	while (song != NULL) {
+		NSString *artistName = [NSString stringWithCString:song->artist encoding:NSASCIIStringEncoding];
+		NSString *songTitle = [NSString stringWithCString:song->title encoding:NSASCIIStringEncoding];
+		NSString *musicID = [NSString stringWithCString:song->musicId encoding:NSASCIIStringEncoding];
+		PPSearchResult *result = [PPSearchResult searchResultWithArtist:artistName title:songTitle musicID:musicID];
+		[results addObject:result];
+		song = song->next;
+	}
+	PianoDestroySearchResult(&searchResult);
+	
+	NSArray *returnArray = [NSArray arrayWithArray:results];
+	[results release];
+	return returnArray;
+}
+
+-(void)createStationForMusicID:(NSString *)musicID
+{
+	PianoReturn_t pRet;
+	WaitressReturn_t wRet;
+	PianoRequestDataCreateStation_t reqData;
+	char *stationId = (char *)[musicID cStringUsingEncoding:NSASCIIStringEncoding];
+	reqData.id = stationId;
+	reqData.type = "mi";
+	BarUiPianoCall(&ph, PIANO_REQUEST_CREATE_STATION, &waith, &reqData, &pRet, &wRet);
+	BarUiStartEventCmd(&settings, "stationcreate", curStation, playlist, &player, pRet, wRet);
+	[self loadStations];
 }
 
 -(IBAction)thumbsUpCurrentSong:(id)sender;

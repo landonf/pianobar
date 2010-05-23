@@ -38,6 +38,8 @@ THE SOFTWARE.
 #define RETURN_IF_NO_SONG if (*curStation == NULL || *curSong == NULL) { \
 		BarUiMsg (MSG_ERR, "No song playing.\n"); \
 		return; }
+		
+void DownloadSong (BarSettings_t *settings, PianoSong_t **song);
 
 /*	helper to _really_ skip a song (unlock mutex, quit player)
  *	@param player handle
@@ -94,6 +96,7 @@ void BarUiActHelp (BAR_KS_ARGS) {
 			"select quickmix stations",
 			NULL,
 			"bookmark song/artist",
+			"download song",
 			};
 	size_t i;
 
@@ -285,6 +288,36 @@ void BarUiActDebug (BAR_KS_ARGS) {
 			(*curSong)->focusTraitId, (*curSong)->identity,
 			(*curSong)->matchingSeed, (*curSong)->musicId, (*curSong)->rating,
 			(*curSong)->stationId, (*curSong)->title, (*curSong)->userSeed);
+}
+
+/*  download current song
+ */
+void BarUiActDownloadSong (BAR_KS_ARGS) {
+	RETURN_IF_NO_SONG;
+	
+	if (!BarTransformIfShared (ph, waith, *curStation)) {
+		return;
+	}
+	
+	DownloadSong (settings, curSong);
+}
+
+/*  download specified song
+ */
+void DownloadSong (BarSettings_t *settings, PianoSong_t **song) {
+	char *uri = (*song)->audioUrl;
+	char *artist = (*song)->artist;
+	char *title = (*song)->title;
+	char *path = settings->downloadDir;
+	
+	BarUiMsg(MSG_INFO, "Downloading song to %s", path);
+	
+	char *formatString = "wget \"%s\" -O \"%s/%s-%s.mp3\"";
+	int length = strlen(formatString) + strlen(uri) + strlen(artist) + strlen(title) + strlen(path) - 8;
+	char command[length];
+	
+	sprintf(command, formatString, uri, path, artist, title);
+	system(command);
 }
 
 /*	rate current song

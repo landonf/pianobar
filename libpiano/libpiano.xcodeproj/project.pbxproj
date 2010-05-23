@@ -1,0 +1,301 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C90B1966119A942E001AD6DF /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B195C119A942E001AD6DF /* config.h */; };
+		C90B1967119A942E001AD6DF /* crypt_key_input.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B195D119A942E001AD6DF /* crypt_key_input.h */; };
+		C90B1968119A942E001AD6DF /* crypt_key_output.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B195E119A942E001AD6DF /* crypt_key_output.h */; };
+		C90B1969119A942E001AD6DF /* crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B195F119A942E001AD6DF /* crypt.c */; };
+		C90B196A119A942E001AD6DF /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B1960119A942E001AD6DF /* crypt.h */; };
+		C90B196B119A942E001AD6DF /* piano_private.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B1961119A942E001AD6DF /* piano_private.h */; };
+		C90B196C119A942E001AD6DF /* piano.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B1962119A942E001AD6DF /* piano.c */; };
+		C90B196D119A942E001AD6DF /* piano.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B1963119A942E001AD6DF /* piano.h */; };
+		C90B196E119A942E001AD6DF /* xml.c in Sources */ = {isa = PBXBuildFile; fileRef = C90B1964119A942E001AD6DF /* xml.c */; };
+		C90B196F119A942E001AD6DF /* xml.h in Headers */ = {isa = PBXBuildFile; fileRef = C90B1965119A942E001AD6DF /* xml.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C90B197E119A947F001AD6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90B1977119A947F001AD6DF /* libezxml.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C90B18D1119A9238001AD6DF;
+			remoteInfo = ezxml;
+		};
+		C90B1987119A9489001AD6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90B1980119A9489001AD6DF /* libwaitress.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C90B1913119A9367001AD6DF;
+			remoteInfo = waitress;
+		};
+		C90B1989119A94A4001AD6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90B1977119A947F001AD6DF /* libezxml.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B18D0119A9238001AD6DF;
+			remoteInfo = ezxml;
+		};
+		C90B198B119A94A8001AD6DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C90B1980119A9489001AD6DF /* libwaitress.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C90B1912119A9367001AD6DF;
+			remoteInfo = waitress;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C90B1955119A9417001AD6DF /* libpiano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpiano.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90B195C119A942E001AD6DF /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = src/config.h; sourceTree = "<group>"; };
+		C90B195D119A942E001AD6DF /* crypt_key_input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crypt_key_input.h; path = src/crypt_key_input.h; sourceTree = "<group>"; };
+		C90B195E119A942E001AD6DF /* crypt_key_output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crypt_key_output.h; path = src/crypt_key_output.h; sourceTree = "<group>"; };
+		C90B195F119A942E001AD6DF /* crypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = crypt.c; path = src/crypt.c; sourceTree = "<group>"; };
+		C90B1960119A942E001AD6DF /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = src/crypt.h; sourceTree = "<group>"; };
+		C90B1961119A942E001AD6DF /* piano_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = piano_private.h; path = src/piano_private.h; sourceTree = "<group>"; };
+		C90B1962119A942E001AD6DF /* piano.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = piano.c; path = src/piano.c; sourceTree = "<group>"; };
+		C90B1963119A942E001AD6DF /* piano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = piano.h; path = src/piano.h; sourceTree = "<group>"; };
+		C90B1964119A942E001AD6DF /* xml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xml.c; path = src/xml.c; sourceTree = "<group>"; };
+		C90B1965119A942E001AD6DF /* xml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xml.h; path = src/xml.h; sourceTree = "<group>"; };
+		C90B1977119A947F001AD6DF /* libezxml.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libezxml.xcodeproj; path = ../libezxml/libezxml.xcodeproj; sourceTree = SOURCE_ROOT; };
+		C90B1980119A9489001AD6DF /* libwaitress.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libwaitress.xcodeproj; path = ../libwaitress/libwaitress.xcodeproj; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C90B1953119A9417001AD6DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C90B193A119A93FE001AD6DF = {
+			isa = PBXGroup;
+			children = (
+				C90B1976119A9474001AD6DF /* Dependencies */,
+				C90B195B119A941F001AD6DF /* Source */,
+				C90B1956119A9417001AD6DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C90B1956119A9417001AD6DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90B1955119A9417001AD6DF /* libpiano.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C90B195B119A941F001AD6DF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C90B195C119A942E001AD6DF /* config.h */,
+				C90B195D119A942E001AD6DF /* crypt_key_input.h */,
+				C90B195E119A942E001AD6DF /* crypt_key_output.h */,
+				C90B195F119A942E001AD6DF /* crypt.c */,
+				C90B1960119A942E001AD6DF /* crypt.h */,
+				C90B1961119A942E001AD6DF /* piano_private.h */,
+				C90B1962119A942E001AD6DF /* piano.c */,
+				C90B1963119A942E001AD6DF /* piano.h */,
+				C90B1964119A942E001AD6DF /* xml.c */,
+				C90B1965119A942E001AD6DF /* xml.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		C90B1976119A9474001AD6DF /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				C90B1977119A947F001AD6DF /* libezxml.xcodeproj */,
+				C90B1980119A9489001AD6DF /* libwaitress.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		C90B1978119A947F001AD6DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90B197F119A947F001AD6DF /* libezxml.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C90B1981119A9489001AD6DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90B1988119A9489001AD6DF /* libwaitress.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C90B1951119A9417001AD6DF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B1966119A942E001AD6DF /* config.h in Headers */,
+				C90B1967119A942E001AD6DF /* crypt_key_input.h in Headers */,
+				C90B1968119A942E001AD6DF /* crypt_key_output.h in Headers */,
+				C90B196A119A942E001AD6DF /* crypt.h in Headers */,
+				C90B196B119A942E001AD6DF /* piano_private.h in Headers */,
+				C90B196D119A942E001AD6DF /* piano.h in Headers */,
+				C90B196F119A942E001AD6DF /* xml.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C90B1954119A9417001AD6DF /* piano */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C90B1959119A9418001AD6DF /* Build configuration list for PBXNativeTarget "piano" */;
+			buildPhases = (
+				C90B1951119A9417001AD6DF /* Headers */,
+				C90B1952119A9417001AD6DF /* Sources */,
+				C90B1953119A9417001AD6DF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C90B198A119A94A4001AD6DF /* PBXTargetDependency */,
+				C90B198C119A94A8001AD6DF /* PBXTargetDependency */,
+			);
+			name = piano;
+			productName = piano;
+			productReference = C90B1955119A9417001AD6DF /* libpiano.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C90B193C119A93FE001AD6DF /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C90B193F119A93FE001AD6DF /* Build configuration list for PBXProject "libpiano" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			mainGroup = C90B193A119A93FE001AD6DF;
+			productRefGroup = C90B1956119A9417001AD6DF /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C90B1978119A947F001AD6DF /* Products */;
+					ProjectRef = C90B1977119A947F001AD6DF /* libezxml.xcodeproj */;
+				},
+				{
+					ProductGroup = C90B1981119A9489001AD6DF /* Products */;
+					ProjectRef = C90B1980119A9489001AD6DF /* libwaitress.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				C90B1954119A9417001AD6DF /* piano */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C90B197F119A947F001AD6DF /* libezxml.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libezxml.a;
+			remoteRef = C90B197E119A947F001AD6DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C90B1988119A9489001AD6DF /* libwaitress.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libwaitress.a;
+			remoteRef = C90B1987119A9489001AD6DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C90B1952119A9417001AD6DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90B1969119A942E001AD6DF /* crypt.c in Sources */,
+				C90B196C119A942E001AD6DF /* piano.c in Sources */,
+				C90B196E119A942E001AD6DF /* xml.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C90B198A119A94A4001AD6DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ezxml;
+			targetProxy = C90B1989119A94A4001AD6DF /* PBXContainerItemProxy */;
+		};
+		C90B198C119A94A8001AD6DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = waitress;
+			targetProxy = C90B198B119A94A8001AD6DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C90B193E119A93FE001AD6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		C90B1958119A9418001AD6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../libezxml/src",
+					"$(SRCROOT)/../libwaitress/src",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = piano;
+				VALID_ARCHS = "armv7 armv6 i386 ppc ppc64 ppc7400 ppc970 x86_64";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C90B193F119A93FE001AD6DF /* Build configuration list for PBXProject "libpiano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B193E119A93FE001AD6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C90B1959119A9418001AD6DF /* Build configuration list for PBXNativeTarget "piano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90B1958119A9418001AD6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C90B193C119A93FE001AD6DF /* Project object */;
+}

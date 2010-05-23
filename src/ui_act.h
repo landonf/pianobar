@@ -48,5 +48,6 @@ void BarUiActQuit (BAR_KS_ARGS);
 void BarUiActDebug (BAR_KS_ARGS);
 void BarUiActHistory (BAR_KS_ARGS);
 void BarUiActBookmark (BAR_KS_ARGS);
+void BarUiActDownloadSong (BAR_KS_ARGS);
 
 #endif /* _UI_ACT_H */
