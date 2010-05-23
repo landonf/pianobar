@@ -81,14 +81,11 @@
 - (IBAction)playPauseCurrentSong:(id)sender;
 - (IBAction)playNextSong:(id)sender;
 
-<<<<<<< HEAD:PPPianobarController.h
 -(IBAction)openInStore:(id)sender;
-=======
 -(NSArray *)stationsSimilarToArtist:(NSString *)query;
 -(NSArray *)stationsSimilarToSong:(NSString *)query;
 -(void)createStationForMusicID:(NSString *)musicID;
 
 -(IBAction)openInStore:(id)sender;
 
->>>>>>> mattball/master:framework/PPPianobarController.h
 @end
