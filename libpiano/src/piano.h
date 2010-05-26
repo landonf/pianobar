@@ -71,6 +71,7 @@ typedef struct PianoSong {
 	char *album;
 	char *userSeed;
 	char *audioUrl;
+    char *itunesUrl;
 	char *musicId;
 	char *title;
 	char *focusTraitId;

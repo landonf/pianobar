@@ -20,7 +20,11 @@
                                        artist:[NSString stringWithUTF8String:playlist->artist] 
                                         album:[NSString stringWithUTF8String:playlist->album]
                                        artURL:[NSURL URLWithString:[NSString stringWithUTF8String:playlist->artRadio]]
-									 audioURL:[NSURL URLWithString:[NSString stringWithUTF8String:playlist->audioUrl]]];
+									 audioURL:[NSURL URLWithString:[NSString stringWithUTF8String:playlist->audioUrl]]
+                                    itunesURL:[NSURL URLWithString:[[[[NSString stringWithUTF8String:playlist->itunesUrl] stringByRemovingPercentEscapes] stringByRemovingPercentEscapes] substringFromIndex:10]]
+                       
+                       
+                       ];
     
     if (playlist->audioUrl == NULL) 
     {

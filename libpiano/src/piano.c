@@ -145,6 +145,7 @@ void PianoDestroyPlaylist (PianoSong_t *playlist) {
 		PianoFree (curSong->album, 0);
 		PianoFree (curSong->artistMusicId, 0);
         PianoFree (curSong->artRadio, 0);
+        PianoFree (curSong->itunesUrl, 0);
 		lastSong = curSong;
 		curSong = curSong->next;
 		PianoFree (lastSong, sizeof (*lastSong));

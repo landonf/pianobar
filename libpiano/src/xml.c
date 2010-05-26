@@ -297,7 +297,9 @@ static void PianoXmlParsePlaylistCb (const char *key, const ezxml_t value,
 		}
 	} else if (strcmp ("artistMusicId", key) == 0) {
 		song->artistMusicId = strdup (valueStr);
- 	}
+ 	} else if (strcmp ("itunesUrl", key) == 0) {
+        song->itunesUrl = strdup(valueStr);
+    }
     else
     {
         printf("Unhandled tag: %s\nValue: %s\n---\n",key, valueStr);

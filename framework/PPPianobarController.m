@@ -434,8 +434,9 @@ NSString *PPPianobarControllerDidBeginPlayingTrackDistributedNotification = @"co
 
 -(NSURL *)iTunesLink
 {
-	NSString *link = [[[NSString stringWithFormat:@"itms://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=%@&artistTerm=%@", [[self nowPlaying] title], [[self nowPlaying] artist]] copy] autorelease];
-	return [NSURL URLWithString:[link stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+	//NSString *link = [[[NSString stringWithFormat:@"itms://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=%@&artistTerm=%@", [[self nowPlaying] title], [[self nowPlaying] artist]] copy] autorelease];
+	//return [NSURL URLWithString:[link stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+    return [[self nowPlaying] itunesURL];
 }
 
 -(NSURL *)amazonLink
