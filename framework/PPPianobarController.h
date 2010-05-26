@@ -37,8 +37,8 @@
 
 extern NSString *PPPianobarControllerWillLoginNotification;
 extern NSString *PPPianobarControllerDidLoginNotification;
-extern NSString *PPPianobarControllerDidBeginPlayingSongNotification;
-extern NSString *PPPianobarControllerDidBeginPlayingChannelNotification;
+extern NSString *PPPianobarControllerDidBeginPlayingTrackNotification;
+extern NSString *PPPianobarControllerDidBeginPlayingStationNotification;
 
 @interface PPPianobarController : NSObject {
 	PianoHandle_t ph;
