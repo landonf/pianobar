@@ -51,7 +51,7 @@
         pthread_create (&playerThread, NULL, BarPlayerThread,
                         &player);
         
-        [self.delegate pianobar:self didBeginPlayingSong:self.nowPlaying];
+		[self _didBeginPlayingTrack:self.nowPlaying];
     }
 }
 

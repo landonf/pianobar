@@ -21,16 +21,24 @@
 
 @class PPStation, PPTrack, PPPianobarController;
 
-@protocol PPPianobarDelegate
+@protocol PPPianobarDelegate <NSObject>
+@optional
 
 -(void)pianobarWillLogin:(PPPianobarController *)pianobar;
 -(void)pianobarDidLogin:(PPPianobarController *)pianobar;
 
--(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingSong:(PPTrack *)song;
--(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingChannel:(PPStation *)channel;
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingTrack:(PPTrack *)track;
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingStation:(PPStation *)station;
+
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingSong:(PPTrack *)song DEPRECATED_ATTRIBUTE;
+-(void)pianobar:(PPPianobarController *)pianobar didBeginPlayingChannel:(PPStation *)channel DEPRECATED_ATTRIBUTE;
 
 @end
 
+extern NSString *PPPianobarControllerWillLoginNotification;
+extern NSString *PPPianobarControllerDidLoginNotification;
+extern NSString *PPPianobarControllerDidBeginPlayingSongNotification;
+extern NSString *PPPianobarControllerDidBeginPlayingChannelNotification;
 
 @interface PPPianobarController : NSObject {
 	PianoHandle_t ph;
@@ -87,5 +95,11 @@
 -(void)createStationForMusicID:(NSString *)musicID;
 
 -(IBAction)openInStore:(id)sender;
+
+// Calls the delegate if possible, and fires the notification
+-(void)_willLogin;
+-(void)_didLogin;
+-(void)_didBeginPlayingTrack:(PPTrack *)track;
+-(void)_didBeginPlayingStation:(PPStation *)station;
 
 @end

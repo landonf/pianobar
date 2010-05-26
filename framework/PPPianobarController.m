@@ -14,6 +14,11 @@
 #import "PPPianobarController+Playback.h"
 #import "PPSearchResult.h"
 
+NSString *PPPianobarControllerWillLoginNotification = @"PPPianobarControllerWillLoginNotification";
+NSString *PPPianobarControllerDidLoginNotification = @"PPPianobarControllerDidLoginNotification";
+NSString *PPPianobarControllerDidBeginPlayingTrackNotification = @"PPPianobarControllerDidBeginPlayingTrackNotification";
+NSString *PPPianobarControllerDidBeginPlayingStationNotification = @"PPPianobarControllerDidBeginPlayingStationNotification";
+
 @interface PPPianobarController ()
 -(NSURL *)iTunesLink;
 -(NSURL *)amazonLink;
@@ -163,14 +168,14 @@
     PianoRequestDataLogin_t reqData;
     reqData.user = settings.username;
     reqData.password = settings.password;
- 
-    [self.delegate pianobarWillLogin:self];
+	
+	[self _willLogin];
     if (!BarUiPianoCall (&ph, PIANO_REQUEST_LOGIN, &waith, &reqData, &pRet,
                          &wRet)) {
         return NO;
     }
-    [self.delegate pianobarDidLogin:self];
-    return YES;
+    [self _didLogin];
+	return YES;
 }
 
 - (BOOL)loadStations;
@@ -225,7 +230,7 @@
     pthread_join(playerThread, NULL);
 
     curStation = BarSelectStation(&ph, [stationID intValue]);
-    [self.delegate pianobar:self didBeginPlayingChannel:[self.stations objectAtIndex:[stationID intValue]]];
+	[self _didBeginPlayingStation:[self.stations objectAtIndex:[stationID intValue]]];
     backgroundPlayer = [[NSThread alloc] initWithTarget:self selector:@selector(startPlayback) object:nil];
     [backgroundPlayer start];
 }
@@ -437,6 +442,52 @@
 	NSString *searchTerm = [NSString stringWithFormat:@"%@ %@", [[self nowPlaying] title], [[self nowPlaying] artist]];
 	searchTerm = [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"+"];
 	return [[[NSURL URLWithString:[NSString stringWithFormat:@"http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias=digital-music&field-keywords=%@", searchTerm]] copy] autorelease];
+}
+
+-(void)_willLogin{
+	if(self.delegate && [self.delegate respondsToSelector:@selector(pianobarWillLogin:)]){
+		[self.delegate pianobarWillLogin:self];
+	}
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:PPPianobarControllerWillLoginNotification
+														object:self];
+}
+
+-(void)_didLogin{
+	if(self.delegate && [self.delegate respondsToSelector:@selector(pianobarDidLogin:)]){
+		[self.delegate pianobarDidLogin:self];
+	}
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:PPPianobarControllerDidLoginNotification
+														object:self];	
+}
+
+-(void)_didBeginPlayingTrack:(PPTrack *)track{
+	if(self.delegate && [self.delegate respondsToSelector:@selector(pianobar:didBeginPlayingTrack:)]){
+		[self.delegate pianobar:self didBeginPlayingTrack:track];
+	}else if(self.delegate && [self.delegate respondsToSelector:@selector(pianobar:didBeginPlayingSong:)]){
+		NSLog(@" * Calling -[%@<PPPianobarDelegate> pianobar:didBeginPlayingSong:], which is deprecated. Use -[id<PPPianobarDelegate> pianobar:didBeginPlayingTrack:] instead.",[self.delegate class]);
+		[self.delegate pianobar:self didBeginPlayingSong:track];
+	}
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:PPPianobarControllerDidBeginPlayingTrackNotification
+														object:self
+													  userInfo:[NSDictionary dictionaryWithObject:track 
+																						   forKey:@"track"]];
+}
+
+-(void)_didBeginPlayingStation:(PPStation *)station{
+	if(self.delegate && [self.delegate respondsToSelector:@selector(pianobar:didBeginPlayingStation:)]){
+		[self.delegate pianobar:self didBeginPlayingStation:station];
+	}else if(self.delegate && [self.delegate respondsToSelector:@selector(pianobar:didBeginPlayingChannel:)]){
+		NSLog(@" * Calling -[%@<PPPianobarDelegate> pianobar:didBeginPlayingChannel:], which is deprecated. Use -[id<PPPianobarDelegate> pianobar:didBeginPlayingStation:] instead.",[self.delegate class]);
+		[self.delegate pianobar:self didBeginPlayingChannel:station];
+	}
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:PPPianobarControllerDidBeginPlayingStationNotification
+														object:self
+													  userInfo:[NSDictionary dictionaryWithObject:station 
+																						   forKey:@"station"]];	
 }
 
 @end
