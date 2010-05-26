@@ -16,8 +16,9 @@
 
 NSString *PPPianobarControllerWillLoginNotification = @"PPPianobarControllerWillLoginNotification";
 NSString *PPPianobarControllerDidLoginNotification = @"PPPianobarControllerDidLoginNotification";
-NSString *PPPianobarControllerDidBeginPlayingTrackNotification = @"PPPianobarControllerDidBeginPlayingTrackNotification";
 NSString *PPPianobarControllerDidBeginPlayingStationNotification = @"PPPianobarControllerDidBeginPlayingStationNotification";
+NSString *PPPianobarControllerDidBeginPlayingTrackNotification = @"PPPianobarControllerDidBeginPlayingTrackNotification";
+NSString *PPPianobarControllerDidBeginPlayingTrackDistributedNotification = @"com.villainware.PlayerPiano.PPPianobarControllerDidBeginPlayingTrackNotification";
 
 @interface PPPianobarController ()
 -(NSURL *)iTunesLink;
@@ -470,10 +471,16 @@ NSString *PPPianobarControllerDidBeginPlayingStationNotification = @"PPPianobarC
 		[self.delegate pianobar:self didBeginPlayingSong:track];
 	}
 	
+	NSDictionary *trackDict = [NSDictionary dictionaryWithObject:track 
+														  forKey:@"track"];
+	
 	[[NSNotificationCenter defaultCenter] postNotificationName:PPPianobarControllerDidBeginPlayingTrackNotification
 														object:self
-													  userInfo:[NSDictionary dictionaryWithObject:track 
-																						   forKey:@"track"]];
+													  userInfo:trackDict];
+	
+	[[NSDistributedNotificationCenter defaultCenter] postNotificationName:PPPianobarControllerDidBeginPlayingTrackDistributedNotification
+																   object:self
+																 userInfo:trackDict];
 }
 
 -(void)_didBeginPlayingStation:(PPStation *)station{

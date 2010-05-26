@@ -39,6 +39,7 @@ extern NSString *PPPianobarControllerWillLoginNotification;
 extern NSString *PPPianobarControllerDidLoginNotification;
 extern NSString *PPPianobarControllerDidBeginPlayingTrackNotification;
 extern NSString *PPPianobarControllerDidBeginPlayingStationNotification;
+extern NSString *PPPianobarControllerDidBeginPlayingTrackDistributedNotification; // "com.villainware.PlayerPiano.PPPianobarControllerDidBeginPlayingTrackNotification"
 
 @interface PPPianobarController : NSObject {
 	PianoHandle_t ph;
