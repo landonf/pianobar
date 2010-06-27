@@ -29,6 +29,26 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, size_t size, void *stream) 
     return WAITRESS_CB_RET_OK;
 }
 
+void BarPlayerInit (struct audioPlayer *player) {
+    memset(player, 0, sizeof(*player));
+
+    pthread_mutex_init(&player->mutex, NULL);
+    pthread_mutex_init(&player->pauseMutex, NULL);
+
+    pthread_cond_init(&player->cond, NULL);
+    pthread_cond_init(&player->done, NULL);
+}
+
+void BarPlayerCleanup (struct audioPlayer *player) {
+    pthread_mutex_destroy(&player->mutex);
+    pthread_mutex_destroy(&player->pauseMutex);
+
+    pthread_cond_destroy(&player->cond);
+    pthread_cond_destroy(&player->done);
+
+    memset(player, 0, sizeof(*player));
+}
+
 #pragma mark Thread
 
 void *BarPlayerThread (void *data){
@@ -44,8 +64,6 @@ void *BarPlayerMacOSXThread(void *data){
 	WaitressReturn_t wRet = WAITRESS_RET_ERR;
 	
 	/* init handles */
-	pthread_mutex_init (&player->pauseMutex, NULL);
-
 	player->waith.data = (void *) player;
 	/* extraHeaders will be initialized later */
 	player->waith.extraHeaders = extraHeaders;
@@ -104,8 +122,11 @@ void *BarPlayerMacOSXThread(void *data){
 	}
     
 	WaitressFree (&player->waith);
-	pthread_mutex_destroy (&player->pauseMutex);
+
+	pthread_mutex_lock(&player->mutex);
 	player->mode = PLAYER_FINISHED_PLAYBACK;
-	
+	pthread_cond_broadcast(&player->cond);
+	pthread_mutex_unlock(&player->mutex);
+
 	return ret;	
 }

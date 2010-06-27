@@ -238,10 +238,6 @@ NSString *PPPianobarControllerDidBeginPlayingTrackDistributedNotification = @"co
 
 - (void)startPlayback;
 {
-	/* little hack, needed to signal: hey! we need a playlist, but don't
-	 * free anything (there is nothing to be freed yet) */
-	memset (&player, 0, sizeof (player));
-    
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
 	while (![[NSThread currentThread] isCancelled]) 
     {
@@ -257,7 +253,7 @@ NSString *PPPianobarControllerDidBeginPlayingTrackDistributedNotification = @"co
 			if (threadRet != (void *) PLAYER_RET_OK) {
 				curStation = NULL;
 			}
-			memset (&player, 0, sizeof (player));
+			BarPlayerCleanup(&player);
 		}
         
 		/* check whether player finished playing and start playing new
@@ -286,7 +282,9 @@ NSString *PPPianobarControllerDidBeginPlayingTrackDistributedNotification = @"co
 			[self.nowPlaying setTimeLeft:timeTotalInterval-timePlayed];*/
         }
 
-        usleep(100);
+        pthread_mutex_lock(&player.mutex);
+        pthread_cond_wait(&player.cond, &player.mutex);
+        pthread_mutex_unlock(&player.mutex);
     }
     
     [pool drain];

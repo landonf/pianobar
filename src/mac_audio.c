@@ -161,7 +161,6 @@ void WaitForFreeBuffer(struct audioPlayer* player)
 	pthread_mutex_lock(&player->mutex); 
 	while (player->inuse[player->fillBufferIndex]) {
 		pthread_cond_wait(&player->cond, &player->mutex);
-        usleep(100);
 	}
 	pthread_mutex_unlock(&player->mutex);
 }

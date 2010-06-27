@@ -33,8 +33,8 @@
     else 
     {
         // setup player
-        memset (&player, 0, sizeof (player));
-        
+        BarPlayerInit(&player);
+
         WaitressInit (&player.waith);
         WaitressSetUrl (&player.waith, playlist->audioUrl);
         
@@ -138,6 +138,7 @@
     if (threadRet != (void *) PLAYER_RET_OK) {
         curStation = NULL;
     }
-    memset (&player, 0, sizeof (player));
+
+    BarPlayerCleanup(&player);
 }
 @end

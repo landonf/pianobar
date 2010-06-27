@@ -80,6 +80,9 @@ struct audioPlayer {
 
 enum {PLAYER_RET_OK = 0, PLAYER_RET_ERR = 1};
 
+void BarPlayerInit (struct audioPlayer *player);
+void BarPlayerCleanup (struct audioPlayer *player);
+
 void *BarPlayerThread (void *data);
 void *BarPlayerMacOSXThread(void *data);
 
